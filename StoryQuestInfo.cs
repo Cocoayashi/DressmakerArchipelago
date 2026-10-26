@@ -10,8 +10,16 @@ namespace DressmakerArchipelago
         public List<SideQuestInfo> sideQuestInfos;
         public List<FabricInfo> fabricInfos;
         public List<PatternInfo> patternInfos;
+        public FinalQuestInfo finalQuestInfo;
+        public ActiveDress activeDress;
     }
     public class StoryQuestInfo
+    {
+        public string name;
+        public string prettyName;
+        public string questGiverCharacterName;
+    }
+    public class FinalQuestInfo
     {
         public string name;
         public string prettyName;

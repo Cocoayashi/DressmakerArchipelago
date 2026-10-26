@@ -45,6 +45,13 @@ public class Plugin : BaseUnityPlugin
                 storyQuestInfo.prettyName = storyQuest.PrettyName;
                 mainStory.Add(storyQuestInfo);
             }
+
+            FinalQuestInfo finalQuestInfo = new FinalQuestInfo();
+            finalQuestInfo.name = QuestDefinition.FinalQuest.name;
+            finalQuestInfo.prettyName = QuestDefinition.FinalQuest.PrettyName;
+            finalQuestInfo.questGiverCharacterName = QuestDefinition.FinalQuest.questGiverCharacter.GetName();
+
+            dump.finalQuestInfo = finalQuestInfo;
             dump.storyQuestInfos = mainStory;
 
             List<SideQuestInfo> pigeonStories = new List<SideQuestInfo>();
@@ -76,13 +83,22 @@ public class Plugin : BaseUnityPlugin
                 patternInfo.name = pattern.name;
                 patternInfo.prettyName = pattern.PrettyName;
                 patternInfo.PatternType = pattern.type.ToString();
+                patterns.Add(patternInfo);
             }
-            dump.
+            dump.patternInfos = patterns;
+
+/*            ActiveDress dress = new ActiveDress();
+            dress.collarName = SingletonBehaviour<GameManager>.Instance.activeDress.state.collarDefinition.GetName();
+            dress.skirtName = SingletonBehaviour<GameManager>.Instance.activeDress.state.skirtDefinition.GetName();
+            dress.bodiceName = SingletonBehaviour<GameManager>.Instance.activeDress.state.bodiceDefinition.GetName();
+            dress.sleeveName = SingletonBehaviour<GameManager>.Instance.activeDress.state.sleeveDefinition.GetName();
+            dump.activeDress = dress;*/
+
             string json = JsonConvert.SerializeObject(dump, Formatting.Indented);
             File.WriteAllText(Path.Combine(Paths.PluginPath, "dressmaker_dump.json"), json);
             Logger.LogInfo("printed json successfully, check plugins folder");
         }
-            }
+    }
         }
 
     
