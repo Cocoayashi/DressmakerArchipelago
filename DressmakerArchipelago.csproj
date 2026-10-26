@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>DressmakerArchipelago</AssemblyName>
+    <Product>Dressmaker Archipelago</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+    <RootNamespace>DressmakerArchipelago</RootNamespace>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<DressmakerFolder>C:\Program Files (x86)\Steam\steamapps\common\Dressmaker</DressmakerFolder>
+	</PropertyGroup>
+	
+	<Target Name="DressmakerArchipelago" AfterTargets="Build">
+		<Copy SourceFiles="$(ProjectDir)\bin\Debug\netstandard2.1\DressmakerArchipelago.dll"
+			  DestinationFolder="$(DressmakerFolder)\BepInEx\plugins" />
+	</Target>
+
+
+	<ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="UnityEngine.Modules" Version="6000.3.4.54200" IncludeAssets="compile" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
+  </ItemGroup>
+	
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Framework">
+			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\Framework.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+</Project>
