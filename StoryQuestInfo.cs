@@ -11,7 +11,6 @@ namespace DressmakerArchipelago
         public List<FabricInfo> fabricInfos;
         public List<PatternInfo> patternInfos;
         public FinalQuestInfo finalQuestInfo;
-        public ActiveDress activeDress;
     }
     public class StoryQuestInfo
     {
@@ -35,6 +34,8 @@ namespace DressmakerArchipelago
     {
         public string name;
         public string prettyName;
+        public Dictionary<string, float> itemTags;
+
     }
 
     public class PatternInfo
@@ -42,6 +43,7 @@ namespace DressmakerArchipelago
         public string PatternType;
         public string name;
         public string prettyName;
+        public Dictionary<string, float> itemTags;
     }
 
     public class ActiveDress
