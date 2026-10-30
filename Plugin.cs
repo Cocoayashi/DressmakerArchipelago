@@ -41,15 +41,15 @@ public class Plugin : BaseUnityPlugin
                         {
                             StoryQuestInfo storyQuestInfo = new StoryQuestInfo();
                             storyQuestInfo.questGiverCharacterName = storyQuest.questGiverCharacter.GetName();
-                            storyQuestInfo.name = storyQuest.name;
-                            storyQuestInfo.prettyName = storyQuest.PrettyName;
+                            storyQuestInfo.name = storyQuest.name.Trim();
+                            storyQuestInfo.prettyName = storyQuest.PrettyName.Trim();
                             mainStory.Add(storyQuestInfo);
                         }
 
                         FinalQuestInfo finalQuestInfo = new FinalQuestInfo();
-                        finalQuestInfo.name = QuestDefinition.FinalQuest.name;
-                        finalQuestInfo.prettyName = QuestDefinition.FinalQuest.PrettyName;
-                        finalQuestInfo.questGiverCharacterName = QuestDefinition.FinalQuest.questGiverCharacter.GetName();
+                        finalQuestInfo.name = QuestDefinition.FinalQuest.name.Trim();
+                        finalQuestInfo.prettyName = QuestDefinition.FinalQuest.PrettyName.Trim();
+                        finalQuestInfo.questGiverCharacterName = QuestDefinition.FinalQuest.questGiverCharacter.GetName().Trim();
 
                         dump.finalQuestInfo = finalQuestInfo;
                         dump.storyQuestInfos = mainStory;
@@ -59,20 +59,24 @@ public class Plugin : BaseUnityPlugin
                         {
                             SideQuestInfo sideQuestInfo = new SideQuestInfo();
                             sideQuestInfo.questGiverCharacterName = pigeonQuest.questGiverCharacter.GetName();
-                            sideQuestInfo.name = pigeonQuest.name;
-                            sideQuestInfo.prettyName = pigeonQuest.PrettyName;
+                            sideQuestInfo.name = pigeonQuest.name.Trim();
+                            sideQuestInfo.prettyName = pigeonQuest.PrettyName.Trim();
                             pigeonStories.Add(sideQuestInfo);
                         }
                         dump.sideQuestInfos = pigeonStories;
 
                         List<FabricInfo> allFabrics = new List<FabricInfo>();
-                        foreach (Fabric fabric in Fabric.AllFabrics)
+                        foreach (Fabric fabric in PlayerProgress.Current.unlockedFabrics)
                         {
 
                             FabricInfo fabricInfo = new FabricInfo();
+                                if(fabric.name.Contains("Missing"))
+                {
+                    continue;
+                }
                             var _addTagDict = getTags(fabric);
-                            fabricInfo.name = fabric.name;
-                            fabricInfo.prettyName = fabric.PrettyName;
+                            fabricInfo.name = fabric.name.Trim();
+                            fabricInfo.prettyName = fabric.PrettyName.Trim();
                             fabricInfo.itemTags = _addTagDict;
                             allFabrics.Add(fabricInfo);
                         }
@@ -81,7 +85,7 @@ public class Plugin : BaseUnityPlugin
             
             List<PatternInfo> list = new List<PatternInfo>();
 
-            foreach (CharacterDefinition character in CharacterDefinition.AllCharacterDefinitions) 
+ /*           foreach (CharacterDefinition character in CharacterDefinition.AllCharacterDefinitions) 
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -96,15 +100,21 @@ public class Plugin : BaseUnityPlugin
                             });
                     }
                 }
-            }
+            }*/
             foreach(GarmentComponent garment in PlayerProgress.Current.unlockedPatterns)
             {
+                if (garment.name.Contains("Missing"))
+                {
+                    continue;
+                }
+
                 Dictionary<string, float> _addTagDict = getTags(garment);
                 list.Add(new PatternInfo
                 {
-                    name = garment.name,
-                    prettyName = garment.PrettyName,
-                    PatternType = garment.type.ToString(),
+
+                    name = garment.name.Trim(),
+                    prettyName = garment.PrettyName.Trim(),
+                    PatternType = garment.type.ToString().Trim(),
                     itemTags = _addTagDict,
                 });
             }
