@@ -1,0 +1,251 @@
+DRESSMAKER ARCHIPELAGO - PROJECT PLAN
+======================================
+
+GAME FACTS
+----------
+- Unity 6000.3.4, Mono backend 
+- BepInEx 5 (works; plugins use BaseUnityPlugin, target netstandard2.1)
+- Persistent save (not run-based) -> items apply permanently, never lost
+- Reputation 1-50 gates fabrics/accessories
+- ~10 characters, ~14 events, ~35hr story
+- Pools: 155 patterns, 78 commissions, 50 reputation levels
+
+ARCHITECTURE
+------------
+- Mod = BepInEx plugin, connects DIRECTLY to AP server via
+  Archipelago.MultiClient.Net (netstandard2.0). No Python bridge.
+- Mod repo = separate repo (not inside this Archipelago repo)
+  at C:\Users\lolli\OneDrive\Desktop\DressmakerArchipelago
+  (git initialized 2026-10-28)
+- Apworld (Python) lives in this repo, in worlds/dressmaker/
+- Git: done by the user in GitHub Desktop (git CLI not on PATH)
+
+DEV ENVIRONMENT (set up 2026-10-28)
+------------------------------------
+- PyCharm, Archipelago folder opened as the project
+- Python 3.13.17 venv at Archipelago\.venv (repo requires
+  3.12.10 - 3.13.x, see ModuleUpdate.py; 3.14+ won't run)
+- In PyCharm terminal (Alt+F12, "(.venv)" prompt): plain `python`.
+  Elsewhere: `py -3.13`
+- Removed stale PYTHONHOME / PYTHONPATH env vars (pointed at
+  Python 3.7, broke 3.13 with the "_w_long" error)
+
+PHASE 1: PROVE THE MOD CAN RUN
+-------------------------------
+[ X ] Confirm Mono (check for Assembly-CSharp.dll) - DONE, confirmed Mono
+[ X ] Get BepInEx 5 loading, get ONE log line to appear
+    - check BepInEx.cfg console enabled
+[ X ] Open Assembly-CSharp.dll in dnSpy/ILSpy
+
+PHASE 2: REVERSE ENGINEER HOOK POINTS
+--------------------------------------
+Need ONE clean, patchable method per event (not scattered field writes):
+[ X ] Found: "dress complete" method + model containing list of
+    pattern pieces used in that dress :
+	SingletonBehaviour<GameManager>.Instance.activeDress;
+	CheckAchievements()
+[ ] Find: commission turned in method SubmitCommission()
+[ ] Find: reputation level-up method (each level reached = a check)
+[ ] Find: relationship level-up method (10 characters x 5 levels,
+    each level = a check). User says one exists - record its name.
+[ ] Find: method that unlocks a pattern + ALL its callers (ILSpy
+    Analyze -> Used By). Mod must block every native pattern unlock
+    (friendship levels unlock 1-3 patterns each) but keep the
+    level-up itself; patterns then unlock ONLY via AP items.
+[ X ] Check: does a new save start with fabrics? YES - a couple
+    dozen are in the shop from the start (keep those native).
+[ ] Relationship hook candidate: PlayerProgress.ApplyPatternsFor
+    RelationshipLevel(character, level), called once per level
+    crossed by ModifyCharacterRelationship. Check its body (does it
+    do anything besides unlock patterns?) and Used By (called on
+    load too?) before patching it.
+[ ] Log-patch UnlockPattern (Yarn command "unlock_pattern") to see
+    if any dialogue unlocks patterns during play.
+[ ] Find: where the game gates fabrics by reputation (mod must
+    override this so fabrics unlock ONLY when received from AP)
+[ ] For each: confirm it's a real method w/ useful params, not
+    inlined field mutation (Harmony can't patch raw field writes)
+
+PHASE 3: MOD-SIDE TRACKING (the Archipelago glue)
+---------------------------------------------------
+For "dress complete" hook:
+[ ] Harmony postfix on dress-complete method
+[ ] Pull pattern-piece list out of the dress model
+[ ] Mod keeps its own bool[155] "already sent" array
+      - NOT derived from game's own history (game doesn't track this)
+      - starts all-false; builds up only from here forward
+[ ] On each pattern in the list: if not yet sent -> mark sent,
+    call LocationChecks for that pattern's location id
+[ ] Persist the bool[] to disk, keyed to the save slot
+      - load it back in when that save loads
+      - recommend: require a FRESH save for AP play (avoids
+        retroactive history problem entirely)
+[ ] Repeat same pattern (event -> dedupe check -> LocationChecks)
+    for commissions once that hook is found
+[ ] Track "fabrics used" the same way (second dedupe array, same
+    dress-complete hook) for the fabric_percentage goal
+[ ] Implement ReceivedItems handling - apply fabrics/accessories/
+    unlocks permanently (easy case, nothing is ever lost here)
+
+PHASE 3.5: GAME DATA DUMP  (DONE 2026-10-28)
+---------------------------------------------
+[ X ] Dump plugin writes dressmaker_dump.json (copy in
+    worlds/dressmaker/): 53 story + 24 side + FinalQuest,
+    564 fabrics (name, prettyName, itemTags), 157 patterns
+    (PatternType, name, prettyName, itemTags). No nulls, no
+    modded content, no cut patterns.
+[ ] Open questions from the dump review (see handoff "Dump review"):
+    - name vs prettyName for AP names (they often differ for
+      patterns) -> decide before writing items.py
+    - 70 fabrics have empty itemTags -> check ILSpy
+    - _CottonVictorianPattern: real shop fabric or template?
+    - 3 duplicate fabric prettyNames -> use name or add suffix
+[ ] Later dump additions (needed for the pinned logic): fabric
+    reputation requirement + fabric type, quest requirements /
+    completionRequirements, characters, giftingUnlockRequirement,
+    which patterns are native starters
+
+PHASE 4: APWORLD (generation side, Python, this repo)
+--------------------------------------------------------
+User is new to Python and apworlds -> go slowly, explain Python.
+Getting started:
+[ X ] Python 3.13 + PyCharm venv working
+[ ] `python Launcher.py` opens the Launcher (modules installed)
+[ ] Generate a test seed with APQuest (Generate Template Options ->
+    YAML into Players\ -> python Generate.py -> look at output\)
+[ ] Read APQuest together (order below)
+[ ] Decide data location (worlds/dressmaker/data/*.json via
+    pkgutil.get_data) and write the smallest possible world first:
+    patterns as items, one location type, no rules,
+    pattern_percentage goal. Then grow it.
+Reading order first: worlds/apquest/!READ_FIRST!.txt -> __init__.py
+-> world.py -> test/__init__.py
+Reference docs: docs/apworld specification.md, docs/world api.md,
+docs/options api.md, docs/adding games.md, docs/apworld_dev_faq.md,
+docs/running from source.md
+
+[ ] archipelago.json (see worlds/ror2/archipelago.json for format)
+[ ] options.py
+      - goal: Choice = pattern_percentage (default) |
+        fabric_percentage | main_story | all_commissions
+        (implement one at a time in that order; story + commissions
+        wait on Phase 2 research)
+      - pattern_goal_percentage: Range 1-100 (used only if goal=
+        pattern_percentage)
+      - fabric_goal_percentage: Range 1-100 (used only if goal=
+        fabric_percentage)
+      - commissions_in_pool: Range 1-78 (min 1 enforced)
+[ ] items.py - fabrics = received items (freely usable once received)
+      - patterns (except starter patterns) = received items
+      - accessories stay native (still gated by reputation in-game)
+[ ] locations.py - 155 pattern-use locations + N commission locations
+      + reputation level locations
+      + 50 relationship locations (10 characters x 5 levels)
+      - pattern = a collar/skirt/bodice/sleeve definition, used in a
+        completed dress (from GameManager.Instance.activeDress)
+      (model each like worlds/cccharles/Locations.py style - big
+      enumerated list is normal)
+[ ] regions.py / rules.py
+      - access rules gate fabrics/patterns by reputation level
+      - one "Victory" event location + locked "Victory" item
+        (copy worlds/ror2/__init__.py:291-293 pattern)
+      - multiworld.completion_condition = state.has("Victory", player)
+      - Victory location's rule depends on goal option:
+          pattern_percentage -> enough pattern locations reachable
+          fabric_percentage  -> has >= N fabric items
+          main_story         -> all 53 story commissions completable
+          all_commissions    -> all 78 commissions completable
+[ ] test/ - copy structure from worlds/apquest/test/
+
+PHASE 5: INTEGRATION
+---------------------
+[ ] Mod connects, sends checks, applies items, sets CLIENT_GOAL
+    status on Victory
+[ ] Full playtest: new save, generate, connect, verify checks fire
+    once each, items persist across reload
+
+OPEN DESIGN DECISIONS (revisit before Phase 4 locks in)
+---------------------------------------------------------
+- DECIDED: Reputation levels are checks (locations), not items.
+- Exact commission subset selection method (random vs fixed list)
+- DECIDED: Goals = X% patterns used | X% fabrics used | main story
+  complete | every commission complete.
+- DECIDED: all_commissions = all 78 (regardless of
+  commissions_in_pool).
+- DECIDED: main_story = the 53 story commissions (all except the
+  pigeon commissions).
+
+RESEARCH FINDINGS (from ILSpy)
+-------------------------------
+- Campaign: GameManager.Instance.ActiveCampaign (CampaignDefinition,
+  a plain ScriptableObject - no static "all campaigns" list)
+    .quests     = story commissions
+    .sideQuests = pigeon commissions
+    VERIFIED: 53 story + 24 side + FinalQuest = 78 commissions
+    .pigeonUnlockRequirement / .giftingUnlockRequirement /
+    .nonCommissionRequirement = QuestOutcomeRequirement (logic gates)
+- QuestDefinition is a ScriptableEnum:
+    - QuestDefinition.AllQuestDefinitions = every quest (96 total,
+      incl. junk: ExampleQuest, RepeatingQuest, Quest0?, *Demo)
+    - .name = stable internal id (use for AP ids)
+    - .PrettyNameUnlocalizedEnglishDefault = display name
+    - .questGiverCharacter, .budget
+    - .requirements (StoryletRequirement) = what unlocks the quest
+    - .completionRequirements (QuestRequirement) = what finishes it;
+      some are FabricCompositionRequirement / FabricTypeRequirement
+      -> commission logic must require those fabric ITEMS
+    - QuestOutcome enum: NotCompleted, Failed, Succeeded, Excelled
+- Other static lists: FabricType.AllFabricTypes,
+  CharacterDefinition.AllCharacterDefinitions
+- Each character has a gift quest (CharacterDefinition.giftQuest,
+  QuestDefinition.IsGiftQuest())
+- TODO: are gift quests part of the 78? What's QuestOutcomeRequirement?
+- Adora = the princess (PrincessGiftQuest is hers). 10 characters.
+- Patterns = GarmentComponent (ScriptableEnum, looked up by name).
+  Unlocked set = PlayerProgress.Current.unlockedPatterns.
+  Public static UnlockPattern(string patternName) [YarnCommand
+  "unlock_pattern"] adds one + shows a notification -> mod can use
+  it to grant received pattern items. Callers may be in Yarn
+  dialogue files (not visible in ILSpy "Used By").
+- Relationship = float per character in
+  PlayerProgress.characterRelationships; level = floor, clamp 0-5.
+  Changed via PlayerProgress.ModifyCharacterRelationship(char, delta).
+- Patterns natively unlock only from friendship levels (per user;
+  Yarn dialogue unverified).
+- Fabrics are bought in a shop. DECIDED: AP fabric item = unlocks
+  that fabric in the shop ONLY (still costs gold, nothing given).
+
+MORE DECISIONS
+---------------
+- FRESH SAVE REQUIRED for AP play.
+- Starting patterns: random, set by apworld options (defaults
+  6 bodices / 6 skirts / 4 sleeves / 2 collars), given as starting
+  items. Mod removes the game's native starter patterns on a fresh
+  save. TODO: dump a new save's unlockedPatterns to see natives;
+  check whether the tutorial quest needs a specific pattern.
+- Commission check = dress ACCEPTED (any outcome). Failed dresses
+  get redone, so nothing is missable.
+- Reputation comes from every finished dress (commission, gift,
+  rack sale) -> reputation checks need ~no logic.
+- Characters unlock through story as you meet them (relationship
+  logic depends on story progress - work out in Phase 4).
+- Gift quests are NOT commissions (they enable gifting).
+- Filler: gold, reputation boosts.
+- commissions_in_pool: recommended DROP (all 78 = checks).
+- Mod sends checks by location NAME (MultiClient.Net can look up
+  ids by name) -> decide naming format before Phase 5.
+- Relationship hook: one Prefix on ApplyPatternsForRelationship
+  Level -> send check (character + level) AND return false to skip
+  the native pattern unlock.
+
+RELATIONSHIPS (from gameplay)
+------------------------------
+- Raised by commissions AND gifts. A gift = a dress you make.
+- Gifting is unlimited; unlocked after a few commissions
+  (CampaignDefinition.giftingUnlockRequirement).
+- A gift matching all the recipient's likes = a full level.
+- Each level natively unlocks 1-3 patterns (to be replaced by AP).
+- Logic: level N of character C = C unlocked + gifting unlocked.
+- Later logic problem: commissions need tag scores/colors from
+  pattern+fabric combos (TagScoreRequirement etc). Dump each
+  pattern's/fabric's tags so the generator can compute access.
