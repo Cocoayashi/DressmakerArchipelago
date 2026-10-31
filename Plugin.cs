@@ -1,12 +1,12 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
 using Framework;
+using HarmonyLib;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
-using System.IO;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using HarmonyLib;
 
 namespace DressmakerArchipelago;
 
@@ -34,74 +34,78 @@ public class Plugin : BaseUnityPlugin
             count = SingletonBehaviour<GameManager>.Instance.ActiveCampaign.quests.Count();
             Logger.LogInfo(count + " Story Quests");
             count = SingletonBehaviour<GameManager>.Instance.ActiveCampaign.sideQuests.Count();
-
+            List<string> characters = new List<string>();
             DressmakerDump dump = new DressmakerDump();
             List<StoryQuestInfo> mainStory = new List<StoryQuestInfo>();
-                       foreach (QuestDefinition storyQuest in SingletonBehaviour<GameManager>.Instance.ActiveCampaign.quests)
-                        {
-                            StoryQuestInfo storyQuestInfo = new StoryQuestInfo();
-                            storyQuestInfo.questGiverCharacterName = storyQuest.questGiverCharacter.GetName();
-                            storyQuestInfo.name = storyQuest.name.Trim();
-                            storyQuestInfo.prettyName = storyQuest.PrettyName.Trim();
-                            mainStory.Add(storyQuestInfo);
-                        }
+            foreach (QuestDefinition storyQuest in SingletonBehaviour<GameManager>.Instance.ActiveCampaign.quests)
+            {
+                StoryQuestInfo storyQuestInfo = new StoryQuestInfo();
+                storyQuestInfo.questGiverCharacterName = storyQuest.questGiverCharacter.GetName();
+                if (!characters.Contains(storyQuestInfo.questGiverCharacterName))
+                {
+                    characters.Add(storyQuestInfo.questGiverCharacterName);
+                }
+                storyQuestInfo.name = storyQuest.name.Trim();
+                storyQuestInfo.prettyName = storyQuest.PrettyName.Trim();
+                mainStory.Add(storyQuestInfo);
+            }
+            dump.characterNames = characters;
+            FinalQuestInfo finalQuestInfo = new FinalQuestInfo();
+            finalQuestInfo.name = QuestDefinition.FinalQuest.name.Trim();
+            finalQuestInfo.prettyName = QuestDefinition.FinalQuest.PrettyName.Trim();
+            finalQuestInfo.questGiverCharacterName = QuestDefinition.FinalQuest.questGiverCharacter.GetName().Trim();
 
-                        FinalQuestInfo finalQuestInfo = new FinalQuestInfo();
-                        finalQuestInfo.name = QuestDefinition.FinalQuest.name.Trim();
-                        finalQuestInfo.prettyName = QuestDefinition.FinalQuest.PrettyName.Trim();
-                        finalQuestInfo.questGiverCharacterName = QuestDefinition.FinalQuest.questGiverCharacter.GetName().Trim();
+            dump.finalQuestInfo = finalQuestInfo;
+            dump.storyQuestInfos = mainStory;
 
-                        dump.finalQuestInfo = finalQuestInfo;
-                        dump.storyQuestInfos = mainStory;
+            List<SideQuestInfo> pigeonStories = new List<SideQuestInfo>();
+            foreach (QuestDefinition pigeonQuest in SingletonBehaviour<GameManager>.Instance.ActiveCampaign.sideQuests)
+            {
+                SideQuestInfo sideQuestInfo = new SideQuestInfo();
+                sideQuestInfo.questGiverCharacterName = pigeonQuest.questGiverCharacter.GetName();
+                sideQuestInfo.name = pigeonQuest.name.Trim();
+                sideQuestInfo.prettyName = pigeonQuest.PrettyName.Trim();
+                pigeonStories.Add(sideQuestInfo);
+            }
+            dump.sideQuestInfos = pigeonStories;
 
-                        List<SideQuestInfo> pigeonStories = new List<SideQuestInfo>();
-                        foreach (QuestDefinition pigeonQuest in SingletonBehaviour<GameManager>.Instance.ActiveCampaign.sideQuests)
-                        {
-                            SideQuestInfo sideQuestInfo = new SideQuestInfo();
-                            sideQuestInfo.questGiverCharacterName = pigeonQuest.questGiverCharacter.GetName();
-                            sideQuestInfo.name = pigeonQuest.name.Trim();
-                            sideQuestInfo.prettyName = pigeonQuest.PrettyName.Trim();
-                            pigeonStories.Add(sideQuestInfo);
-                        }
-                        dump.sideQuestInfos = pigeonStories;
+            List<FabricInfo> allFabrics = new List<FabricInfo>();
+            foreach (Fabric fabric in PlayerProgress.Current.unlockedFabrics)
+            {
 
-                        List<FabricInfo> allFabrics = new List<FabricInfo>();
-                        foreach (Fabric fabric in PlayerProgress.Current.unlockedFabrics)
-                        {
-
-                            FabricInfo fabricInfo = new FabricInfo();
-                                if(fabric.name.Contains("Missing"))
+                FabricInfo fabricInfo = new FabricInfo();
+                if (fabric.name.Contains("Missing"))
                 {
                     continue;
                 }
-                            var _addTagDict = getTags(fabric);
-                            fabricInfo.name = fabric.name.Trim();
-                            fabricInfo.prettyName = fabric.PrettyName.Trim();
-                            fabricInfo.itemTags = _addTagDict;
-                            allFabrics.Add(fabricInfo);
-                        }
-                        dump.fabricInfos = allFabrics;
+                var _addTagDict = getTags(fabric);
+                fabricInfo.name = fabric.name.Trim();
+                fabricInfo.prettyName = fabric.PrettyName.Trim();
+                fabricInfo.itemTags = _addTagDict;
+                allFabrics.Add(fabricInfo);
+            }
+            dump.fabricInfos = allFabrics;
 
-            
+
             List<PatternInfo> list = new List<PatternInfo>();
 
- /*           foreach (CharacterDefinition character in CharacterDefinition.AllCharacterDefinitions) 
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    foreach (GarmentComponent garment in character.GetPatternsUnlockedAtLevel(i))
-                    {
-                        var _addTagDict = getTags(garment);
-                        list.Add(new PatternInfo{
-                            name = garment.name,
-                            prettyName = garment.PrettyName,
-                            PatternType = garment.type.ToString(),    
-                            itemTags = _addTagDict,
-                            });
-                    }
-                }
-            }*/
-            foreach(GarmentComponent garment in PlayerProgress.Current.unlockedPatterns)
+            /*           foreach (CharacterDefinition character in CharacterDefinition.AllCharacterDefinitions) 
+                       {
+                           for (int i = 0; i < 6; i++)
+                           {
+                               foreach (GarmentComponent garment in character.GetPatternsUnlockedAtLevel(i))
+                               {
+                                   var _addTagDict = getTags(garment);
+                                   list.Add(new PatternInfo{
+                                       name = garment.name,
+                                       prettyName = garment.PrettyName,
+                                       PatternType = garment.type.ToString(),    
+                                       itemTags = _addTagDict,
+                                       });
+                               }
+                           }
+                       }*/
+            foreach (GarmentComponent garment in PlayerProgress.Current.unlockedPatterns)
             {
                 if (garment.name.Contains("Missing"))
                 {
@@ -161,5 +165,5 @@ public class Plugin : BaseUnityPlugin
     }
 }
 
-    
+
 

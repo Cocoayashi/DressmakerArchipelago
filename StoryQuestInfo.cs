@@ -8,9 +8,11 @@ namespace DressmakerArchipelago
     {
         public List<StoryQuestInfo> storyQuestInfos;
         public List<SideQuestInfo> sideQuestInfos;
-        public List<FabricInfo> fabricInfos;
-        public List<PatternInfo> patternInfos;
         public FinalQuestInfo finalQuestInfo;
+        public List<PatternInfo> patternInfos;
+        public List<FabricInfo> fabricInfos;
+        public List<string> characterNames;
+
     }
     public class StoryQuestInfo
     {
