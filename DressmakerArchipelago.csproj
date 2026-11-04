@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	 <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>DressmakerArchipelago</AssemblyName>
     <Product>Dressmaker Archipelago</Product>
@@ -18,14 +19,18 @@
 	<PropertyGroup>
 		<DressmakerFolder>C:\Program Files (x86)\Steam\steamapps\common\Dressmaker</DressmakerFolder>
 	</PropertyGroup>
-	
+
 	<Target Name="DressmakerArchipelago" AfterTargets="Build">
-		<Copy SourceFiles="$(ProjectDir)\bin\Debug\netstandard2.1\DressmakerArchipelago.dll"
-			  DestinationFolder="$(DressmakerFolder)\BepInEx\plugins" />
+		<Copy SourceFiles="$(ProjectDir)\bin\Debug\netstandard2.1\DressmakerArchipelago.dll" DestinationFolder="$(DressmakerFolder)\BepInEx\plugins" />
+	</Target>
+
+	<Target Name="ArchipelagoClient" AfterTargets="Build">
+		<Copy SourceFiles="$(ProjectDir)\bin\Debug\netstandard2.1\Archipelago.MultiClient.Net.dll" DestinationFolder="$(DressmakerFolder)\BepInEx\plugins" />
 	</Target>
 
 
 	<ItemGroup>
+    <PackageReference Include="Archipelago.MultiClient.Net" Version="6.7.1" />
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
