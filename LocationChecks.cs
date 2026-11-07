@@ -1,9 +1,5 @@
-﻿using Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine.TextCore.Text;
 
 namespace DressmakerArchipelago
 {
@@ -31,7 +27,14 @@ namespace DressmakerArchipelago
 
             if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))
             {
-                await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                try
+                {
+                    await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                }
+                catch (System.Exception)
+                {
+
+                }
             }
 
         }
@@ -43,7 +46,13 @@ namespace DressmakerArchipelago
 
             if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))
             {
-                await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                try
+                {
+                    await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                }
+                catch (System.Exception)
+                {
+                }
             }
         }
 
@@ -63,7 +72,13 @@ namespace DressmakerArchipelago
 
                     if (allLocations.TryGetValue(fabricName, out long locationID))
                     {
-                        await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                        try
+                        {
+                            await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                        }
+                        catch (System.Exception)
+                        {
+                        }
                     }
                 }
             }
@@ -79,7 +94,7 @@ namespace DressmakerArchipelago
             {
                 collarName = dress.collarDefinition.name.Trim();
             }
-            if(dress.sleeveDefinition != null)
+            if (dress.sleeveDefinition != null)
             {
                 sleeveName = dress.sleeveDefinition.name.Trim();
             }
@@ -104,7 +119,14 @@ namespace DressmakerArchipelago
             RememberCheck(bodiceName);
 
 
-            await Plugin.session.Locations.CompleteLocationChecksAsync(patternLocations);
+            try
+            {
+                await Plugin.session.Locations.CompleteLocationChecksAsync(patternLocations);
+
+            }
+            catch (System.Exception)
+            {
+            }
         }
         internal static void RememberCheck(string locationName)
         {

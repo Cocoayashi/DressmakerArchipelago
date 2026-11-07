@@ -21,8 +21,9 @@ public class Plugin : BaseUnityPlugin
     internal static string seed;
     internal static bool isCorrectServer = true;
     internal static PlayerJson playerJson;
+    internal static bool openingConnection;
     private bool isConnected = false;
-    internal float timeSinceLastConnectionAttempt = Time.realtimeSinceStartup;
+    internal float timeSinceLastConnectionAttempt = -999f;
 
 
 
@@ -39,8 +40,6 @@ public class Plugin : BaseUnityPlugin
     }
     private void Update()
     {
-        if (!UnlockItems.isLoaded) return;
-
         if (SceneManager.GetActiveScene().name.Equals("TitleScreen"))
         {
             if (isConnected)
@@ -53,93 +52,130 @@ public class Plugin : BaseUnityPlugin
             isCorrectServer = true;
             return;
         }
+
+        // This might be useless since title screen already does the return, but it doesn't hurt to
+        // keep it here just in case. isLoaded is set to true when the FrontDesk is the current scene.
+        if (!UnlockItems.isLoaded) return;
+
+        // Resets on title screen if this happens
         if (!isCorrectServer) return;
 
         if (!isConnected) Login();
 
+        // as long as all those other ifs don't pass, these will be called every frame.
+
         UnlockItems.UnlockQueue();
         LocationChecks.DressLocationCheck();
-
 
     }
 
     private async void Login()
     {
         var timeDif = Time.realtimeSinceStartup - timeSinceLastConnectionAttempt;
-        if (timeDif < 5f)
+        if (timeDif < 2f || openingConnection == true)
         {
             return;
         }
         timeSinceLastConnectionAttempt = Time.realtimeSinceStartup;
+        openingConnection = true;
+
         session = ArchipelagoSessionFactory.CreateSession("localhost", 38281);
-
-        session.Items.ItemReceived += unlocker.ItemReceived;
-        session.ConnectAsync();
-        LoginResult login = session.TryConnectAndLogin("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
-        if (login.Successful)
+        UnlockItems.EmptyList();
+        LoginResult login;
+        try
         {
-            if (playerJson.seed != session.RoomState.Seed && !playerJson.seed.IsNullOrEmpty())
-            {
-                SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Wrong archipelago server. Archipelago progress will not be saved.");
-                Logger.LogError("playerJson.seed does not match the server's seed");
-                isCorrectServer = false;
-                return;
-            }
-            playerJson.seed = session.RoomState.Seed;
-            playerJson.SaveFile();
-            Logger.LogInfo("Connection Success!");
-            SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Connected to archipelago");
+            await session.ConnectAsync();
+            login = await session.LoginAsync("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
 
-
-            isConnected = true;
-            foreach (long id in Plugin.session.Locations.AllLocations)
-            {
-                string itemName = "";
-
-                string fullName = Plugin.session.Locations.GetLocationNameFromId(id, "Dressmaker");
-                if (fullName.Contains("/"))
-                {
-                    itemName = fullName.Substring(fullName.LastIndexOf('/') + 1);
-                }
-                else
-                {
-                    itemName = fullName;
-                }
-                LocationChecks.allLocations[itemName] = id;
-            }
-            List<long> locations = new List<long>();
-            foreach (string locationCheck in playerJson.allLocationsReached)
-            {
-                if (LocationChecks.allLocations.TryGetValue(locationCheck, out long locationID))
-                {
-                    locations.Add(locationID);
-                }
-                Plugin.Logger.LogInfo("Added check for " + locationCheck);
-            }
-            if (locations.Count > 0)
-            {
-                await Plugin.session.Locations.CompleteLocationChecksAsync(locations.ToArray());
-            }
-            Plugin.Logger.LogInfo(LocationChecks.allLocations.Count + " Locations");
         }
-        else
+        catch (System.Exception ex)
+        {
+            Plugin.Logger.LogError(ex.Message);
+            SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
+
+            Logger.LogError("Connection failed, loser");
+            isConnected = false;
+            openingConnection = false;
+
+            return;
+        }
+        finally
+        {
+            openingConnection = false;
+        }
+        // Bad log in
+        if (!login.Successful)
         {
             SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
 
-            Logger.LogError("Failed, loser");
+            Logger.LogError("Connection failed, loser");
             isConnected = false;
+            openingConnection = false;
+
+            return;
         }
+        //Good login
+        session.Items.ItemReceived += unlocker.ItemReceived;
+        session.Socket.SocketClosed += closedConnection;
+        // Bad seed, currently means it doesnt try reconnecting until you go to title screen and open another save
+        if (playerJson.seed != session.RoomState.Seed && !playerJson.seed.IsNullOrEmpty())
+        {
+            SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Wrong archipelago server. Archipelago progress will not be saved.");
+            Logger.LogError("playerJson.seed does not match the server's seed");
+            isCorrectServer = false;
+            return;
+        }
+        playerJson.seed = session.RoomState.Seed;
+        playerJson.SaveFile();
+        Logger.LogInfo("Connection Success!");
+        SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Connected to archipelago");
+        isConnected = true;
+        foreach (long id in Plugin.session.Locations.AllLocations)
+        {
+            string itemName = "";
+
+            string fullName = Plugin.session.Locations.GetLocationNameFromId(id, "Dressmaker");
+            if (fullName.Contains("/"))
+            {
+                itemName = fullName.Substring(fullName.LastIndexOf('/') + 1);
+            }
+            else
+            {
+                itemName = fullName;
+            }
+            LocationChecks.allLocations[itemName] = id;
+        }
+        List<long> locations = new List<long>();
+        foreach (string locationCheck in playerJson.allLocationsReached)
+        {
+            if (LocationChecks.allLocations.TryGetValue(locationCheck, out long locationID))
+            {
+                locations.Add(locationID);
+            }
+            Plugin.Logger.LogInfo("Added check for " + locationCheck);
+        }
+        if (locations.Count > 0)
+        {
+            await Plugin.session.Locations.CompleteLocationChecksAsync(locations.ToArray());
+        }
+        Plugin.Logger.LogInfo(LocationChecks.allLocations.Count + " Locations");
     }
 
-    private void OnGUI()
+    private void closedConnection(string reason)
     {
-        /*        if (GUI.Button(new Rect(10, 100, 150, 30), "Connect to server"))
-                {
-
-                }*/
-
+        SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Connection lost.");
+        isConnected = false;
     }
 
+    /* private void OnGUI()
+{
+            if (GUI.Button(new Rect(10, 100, 150, 30), "Connect to server"))
+            {
+
+            }
+
+}
+    */
 
     internal static Dictionary<string, float> getTags(GarmentComponent garment)
     {

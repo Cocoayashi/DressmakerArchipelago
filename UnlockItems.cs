@@ -120,5 +120,10 @@ namespace DressmakerArchipelago
             Plugin.Logger.LogInfo(internalName + " unlocked");
             return true;
         }
+
+        internal static void EmptyList()
+        {
+            allItemsReceivedList.Clear();
+        }
     }
 }
