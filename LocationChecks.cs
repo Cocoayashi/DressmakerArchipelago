@@ -50,7 +50,7 @@ namespace DressmakerArchipelago
         private async static Task CheckFabrics()
         {
 
-            DressState dress = SingletonBehaviour<GameManager>.Instance.activeDress.state;
+            DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
 
             List<PanelState> panelStates = dress.panelStates;
 
@@ -71,7 +71,7 @@ namespace DressmakerArchipelago
 
         private static async Task CheckPatterns()
         {
-            DressState dress = SingletonBehaviour<GameManager>.Instance.activeDress.state;
+            DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
             string collarName = "";
             string sleeveName = "";
 
@@ -85,7 +85,6 @@ namespace DressmakerArchipelago
             }
             string bodiceName = dress.bodiceDefinition.name.Trim();
             string skirtName = dress.skirtDefinition.name.Trim();
-
             long[] patternLocations = [0, 0, 0, 0];
             if (!collarName.Equals("No Collar") && !collarName.Equals(""))
             {

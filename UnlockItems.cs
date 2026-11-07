@@ -16,7 +16,6 @@ namespace DressmakerArchipelago
     {
         private static ConcurrentQueue<string> itemsAddQueue = new ConcurrentQueue<string>();
         private static List<string> allItemsReceivedList = new List<string>();
-        private static int givenGoldCount = 0;
         internal static bool isLoaded = false;
 
         public void ItemReceived(ReceivedItemsHelper helper)
@@ -64,7 +63,7 @@ namespace DressmakerArchipelago
         private static void TryAddGold()
         {
 
-            int unlockedGoldCount = allItemsReceivedList.Where(x => x == "Gold").Count();
+            int unlockedGoldCount = Plugin.session.Items.AllItemsReceived.Where(x => x.ItemName == "Gold").Count();
             if (unlockedGoldCount > Plugin.playerJson.goldCount)
             {
                 Plugin.playerJson.goldCount++;

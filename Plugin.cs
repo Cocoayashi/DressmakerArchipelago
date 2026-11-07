@@ -5,6 +5,7 @@ using BepInEx.Logging;
 using Framework;
 using HarmonyLib;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace DressmakerArchipelago;
@@ -21,6 +22,8 @@ public class Plugin : BaseUnityPlugin
     internal static bool isCorrectServer = true;
     internal static PlayerJson playerJson;
     private bool isConnected = false;
+    internal float timeSinceLastConnectionAttempt = Time.realtimeSinceStartup;
+
 
 
     //NOTE: ApplyStartingUnlocks() Hijack that for beginning
@@ -40,6 +43,11 @@ public class Plugin : BaseUnityPlugin
 
         if (SceneManager.GetActiveScene().name.Equals("TitleScreen"))
         {
+            if (isConnected)
+            {
+                session.Socket.DisconnectAsync();
+                isConnected = false;
+            }
             UnlockItems.isLoaded = false;
             Plugin.saveSlot = -1;
             isCorrectServer = true;
@@ -57,9 +65,16 @@ public class Plugin : BaseUnityPlugin
 
     private async void Login()
     {
+        var timeDif = Time.realtimeSinceStartup - timeSinceLastConnectionAttempt;
+        if (timeDif < 5f)
+        {
+            return;
+        }
+        timeSinceLastConnectionAttempt = Time.realtimeSinceStartup;
         session = ArchipelagoSessionFactory.CreateSession("localhost", 38281);
 
         session.Items.ItemReceived += unlocker.ItemReceived;
+        session.ConnectAsync();
         LoginResult login = session.TryConnectAndLogin("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
         if (login.Successful)
         {
@@ -109,6 +124,8 @@ public class Plugin : BaseUnityPlugin
         }
         else
         {
+            SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
+
             Logger.LogError("Failed, loser");
             isConnected = false;
         }

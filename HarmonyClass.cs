@@ -12,6 +12,7 @@ namespace DressmakerArchipelago
     [HarmonyPatch(typeof(GameManager), "SetScene")]
     public class HarmonyClass
     {
+
         [HarmonyPostfix]
         public static void LogArea(GameManager.Scene newScene)
         {
@@ -24,11 +25,15 @@ namespace DressmakerArchipelago
         }
     }
     [HarmonyPatch(typeof(Dress), "CheckAchievements")]
-    public class OverrideCheckSteamAchievements
+    public static class OverrideCheckSteamAchievements
     {
+        public static Dress finishedDress;
+
         [HarmonyPostfix]
-        public static void CheckDress()
+        public static void CheckDress(Dress __instance)
         {
+
+            finishedDress = __instance;
             LocationChecks.locationNeedsChecked = true;
         }
     }
