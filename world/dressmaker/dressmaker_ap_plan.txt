@@ -44,62 +44,144 @@ Need ONE clean, patchable method per event (not scattered field writes):
     pattern pieces used in that dress :
 	SingletonBehaviour<GameManager>.Instance.activeDress;
 	CheckAchievements()
-[ ] Find: commission turned in method SubmitCommission()
-[ ] Find: reputation level-up method (each level reached = a check)
-[ ] Find: relationship level-up method (10 characters x 5 levels,
-    each level = a check). User says one exists - record its name.
-[ ] Find: method that unlocks a pattern + ALL its callers (ILSpy
+    CONFIRMED 2026-11-04: Dress.CheckAchievements fires on a finished
+    dress; pieces are activeDress.state.{collar,sleeve,bodice,skirt}
+    Definition.
+[ X ] Native unlock hooks patched and firing (StopUnlockItems.cs):
+    PlayerProgress.ApplyStartingUnlocks,
+    ApplyUnlocksForPrestigeLevel, ApplyPatternsForRelationshipLevel,
+    DressmakerMods.FabricAvailability.RestoreEarnedUnlocks.
+[ X ] Save-loaded signal: GameManager.SetScene postfix (FrontDesk).
+[ X ] Found 2026-11-04: commission finished =
+    PlayerProgress.RecordCompletedQuest(QuestState qs). Not hooked
+    yet; see handoff "Commission hook".
+[ X ] Found: reputation level-up =
+    PlayerProgress.ApplyUnlocksForPrestigeLevel(level). Also runs
+    during save load, so the check send is guarded by isLoaded.
+[ X ] Found: relationship level-up =
+    PlayerProgress.ApplyPatternsForRelationshipLevel(character,
+    level). Also guarded by isLoaded.
+[~] Find: method that unlocks a pattern + ALL its callers (ILSpy
     Analyze -> Used By). Mod must block every native pattern unlock
     (friendship levels unlock 1-3 patterns each) but keep the
     level-up itself; patterns then unlock ONLY via AP items.
+    FOUND 2026-11-07 (Cecil scan of Assembly-CSharp.dll): only 6
+    methods add to unlockedPatterns / unlockedFabrics:
+      ApplyStartingUnlocks (patterns)       -> BLOCKED (Prefix)
+      ApplyPatternsForRelationshipLevel (p.) -> BLOCKED (Prefix)
+      ApplyUnlocksForPrestigeLevel (fabrics) -> BLOCKED (Prefix)
+      UnlockHiddenItems (fabrics)            -> NOT blocked
+      YarnBridge.UnlockFabric (dialogue)     -> NOT blocked
+      YarnBridge.UnlockPattern (dialogue)    -> NOT blocked
+    TODO: find when the last 3 are called, then block or allow.
 [ X ] Check: does a new save start with fabrics? YES - a couple
-    dozen are in the shop from the start (keep those native).
-[ ] Relationship hook candidate: PlayerProgress.ApplyPatternsFor
-    RelationshipLevel(character, level), called once per level
-    crossed by ModifyCharacterRelationship. Check its body (does it
-    do anything besides unlock patterns?) and Used By (called on
-    load too?) before patching it.
+    dozen are in the shop from the start.
+    CHANGED 2026-10-31: natives are NOT kept. Apworld gives 20
+    random fabrics as starting items (push_precollected); the
+    mod must lock the native starter fabrics on a fresh save.
+    2026-11-07: starter fabrics come from
+    ApplyUnlocksForPrestigeLevel (prestigeUnlockLevel 0), which
+    the StopUnlockFabrics Prefix skips entirely -> locked in code.
+    Not yet confirmed in the shop on a fresh save.
 [ ] Log-patch UnlockPattern (Yarn command "unlock_pattern") to see
     if any dialogue unlocks patterns during play.
-[ ] Find: where the game gates fabrics by reputation (mod must
+[~] Find: where the game gates fabrics by reputation (mod must
     override this so fabrics unlock ONLY when received from AP)
+    FOUND 2026-11-07: PlayerProgress.ApplyUnlocksForPrestigeLevel
+    (Fabric.prestigeUnlockLevel). Already skipped by the Prefix.
+    Not yet confirmed in the shop.
 [ ] For each: confirm it's a real method w/ useful params, not
     inlined field mutation (Harmony can't patch raw field writes)
 
 PHASE 3: MOD-SIDE TRACKING (the Archipelago glue)
 ---------------------------------------------------
+STATUS 2026-11-07: items and Gold confirmed working. Pattern
+checks (server log 2026-11-04) and friendship checks (server log
+2026-11-05, "Reach friendship: 1 with Prudence") confirmed.
+Fabric and reputation checks are written but have never reached
+the server. Commissions and the goal are not started. Full status
+table and task order: handoff, "Next step when resuming".
 For "dress complete" hook:
-[ ] Harmony postfix on dress-complete method
-[ ] Pull pattern-piece list out of the dress model
-[ ] Mod keeps its own bool[155] "already sent" array
-      - NOT derived from game's own history (game doesn't track this)
-      - starts all-false; builds up only from here forward
-[ ] On each pattern in the list: if not yet sent -> mark sent,
-    call LocationChecks for that pattern's location id
-[ ] Persist the bool[] to disk, keyed to the save slot
-      - load it back in when that save loads
-      - recommend: require a FRESH save for AP play (avoids
-        retroactive history problem entirely)
-[ ] Repeat same pattern (event -> dedupe check -> LocationChecks)
-    for commissions once that hook is found
-[ ] Track "fabrics used" the same way (second dedupe array, same
-    dress-complete hook) for the fabric_percentage goal
-[ ] Implement ReceivedItems handling - apply fabrics/accessories/
-    unlocks permanently (easy case, nothing is ever lost here)
+[ X ] Harmony postfix on dress-complete method
+[ X ] Pull pattern-piece list out of the dress model
+[ X ] Send each pattern's location id (LocationChecks.cs)
+[~] Send each fabric's location id from panelStates (written, not
+    confirmed; two-dress test for leftover panels still to run)
+CHANGED 2026-11-04: no bool[] "already sent" array for checks. The
+server ignores repeats (MultiServer.py:1221), so the mod just
+resends. The "used X%" goals will still need a count of what has
+been used; decide how when the goal is built.
+[ X ] Friendship checks (confirmed 2026-11-05)
+[~] Reputation checks (written, never reached the server)
+[~] All checks through one path: every check calls RememberCheck
+    (saved list), but dress checks still also send directly, and
+    CheckPatterns still uses allLocations[...] (throws on an
+    unknown name) with no null check on bodice/skirt.
+[ ] Commission checks: story, pigeon, final (hook found)
+[ X ] ReceivedItems handling: fabrics, patterns, Gold. Accessories
+    are decided separately (see OPEN DESIGN DECISIONS)
+[ X ] Gold repeat protection, CHANGED 2026-11-06/07: one file per
+    game save slot, BepInEx\plugins\playerArchipelago_<slot>.json
+    (PlayerJson.cs), holding goldCount, seed and
+    allLocationsReached. Slot = PlayerProgress.CurrentSlot (public
+    static int, set when a save slot is clicked; slot 0 =
+    player.json, slot N = playerN.json). Loaded in the
+    GameManager.SetScene postfix. Owed Gold = received - goldCount.
+    Old playerGold.json / playerArchipelago.json are retired.
+[ ] Gold double-count on a new session: allItemsReceivedList is
+    never emptied, so every reconnect counts all Gold again and
+    pays it twice (paid 132 extra Gold on 2026-11-07). Empty it
+    when a session is created (or count session.Items.
+    AllItemsReceived instead).
+
+PHASE 3b: CONNECTION HANDLING (started 2026-11-06)
+----------------------------------------------------
+Goal: losing the connection (wifi drop, server down) never
+freezes or crashes the game and never loses a check. Design
+(decided 2026-11-06, same as Archipelago's CommonClient):
+- The server keeps all items; a new session resends them all.
+- The mod keeps every check it reaches in the slot's JSON file
+  (names, not IDs, so it works before login) and resends the
+  whole list as ONE CompleteLocationChecksAsync call after each
+  login. The server ignores repeats.
+- File named by slot (always known, even offline); the seed is
+  stored INSIDE the file on first login.
+- Seed mismatch = treated as a mistake (wrong server): show a
+  notification, stop, don't save, don't apply items. Deleting a
+  save deletes its JSON file (DeleteSlot postfix), so a mismatch
+  should only ever mean "wrong server".
+Status 2026-11-07:
+[ X ] Per-slot JSON file, loaded on save load (PlayerJson.Loadfile)
+[ X ] Checks saved by name (RememberCheck -> allLocationsReached)
+[ X ] Seed check after login (wrong-seed test passed 2026-11-07)
+[~] Send all saved checks after login (Plugin.cs, not tested)
+[~] DeleteSlot postfix deletes the slot's JSON (not tested)
+[ ] Empty allItemsReceivedList per session (see Phase 3)
+[ ] Switching saves: returning to the title screen doesn't
+    disconnect or reset isConnected
+[ ] No freezing: connect in the background with a retry delay
+[ ] Reconnect after a drop (Socket.SocketClosed)
+[ ] Connection settings (host, port, slot, password)
+Detailed steps for each: handoff, "Connection plan".
 
 PHASE 3.5: GAME DATA DUMP  (DONE 2026-10-28)
 ---------------------------------------------
 [ X ] Dump plugin writes dressmaker_dump.json (copy in
-    worlds/dressmaker/): 53 story + 24 side + FinalQuest,
-    564 fabrics (name, prettyName, itemTags), 157 patterns
-    (PatternType, name, prettyName, itemTags). No nulls, no
-    modded content, no cut patterns.
+    worlds/dressmaker/data/): 53 story + 24 side + FinalQuest,
+    363 fabrics (name, prettyName, itemTags), 157 patterns
+    (PatternType, name, prettyName, itemTags), 10 characterNames.
+    No nulls, no modded content, no cut patterns.
+[ X ] 2026-10-31: unreleased fabrics removed: 564 -> 363
+    (201 unreleased).
 [ ] Open questions from the dump review (see handoff "Dump review"):
-    - name vs prettyName for AP names (they often differ for
-      patterns) -> decide before writing items.py
-    - 70 fabrics have empty itemTags -> check ILSpy
-    - _CottonVictorianPattern: real shop fabric or template?
-    - 3 duplicate fabric prettyNames -> use name or add suffix
+    - DECIDED: AP names = "prettyName/name"
+    - empty itemTags: now only 1 fabric (Velvet Crushed Rouge)
+      -> check ILSpy / in-game
+    - RESOLVED: _CottonVictorianPattern was unreleased (gone)
+    - RESOLVED: duplicate fabric prettyNames were unreleased (gone)
+[ ] Dump fabric COLOUR (first test seed 2026-11-01 had no black
+    fabric among 23 random starters; early commissions may need
+    specific colours -> softlock risk). See handoff pinned list.
 [ ] Later dump additions (needed for the pinned logic): fabric
     reputation requirement + fabric type, quest requirements /
     completionRequirements, characters, giftingUnlockRequirement,
@@ -110,11 +192,12 @@ PHASE 4: APWORLD (generation side, Python, this repo)
 User is new to Python and apworlds -> go slowly, explain Python.
 Getting started:
 [ X ] Python 3.13 + PyCharm venv working
-[ ] `python Launcher.py` opens the Launcher (modules installed)
-[ ] Generate a test seed with APQuest (Generate Template Options ->
-    YAML into Players\ -> python Generate.py -> look at output\)
-[ ] Read APQuest together (order below)
-[ ] Decide data location (worlds/dressmaker/data/*.json via
+[ X ] `python Launcher.py` opens the Launcher (modules installed)
+[ X ] 2026-11-01: FIRST DRESSMAKER SEED GENERATED (template YAML
+    from Launcher -> Players\ -> python Generate.py). Open bugs and
+    the black-fabric task: see handoff "Next step when resuming".
+[ X ] Read APQuest together (done while writing each file)
+[ X ] Decide data location (worlds/dressmaker/data/*.json via
     pkgutil.get_data) and write the smallest possible world first:
     patterns as items, one location type, no rules,
     pattern_percentage goal. Then grow it.
@@ -124,8 +207,20 @@ Reference docs: docs/apworld specification.md, docs/world api.md,
 docs/options api.md, docs/adding games.md, docs/apworld_dev_faq.md,
 docs/running from source.md
 
-[ ] archipelago.json (see worlds/ror2/archipelago.json for format)
-[ ] options.py
+[ X ] archipelago.json (see worlds/ror2/archipelago.json for format)
+[~] options.py (classes written 2026-11-01): GoalChoice (pattern |
+      fabric | story | all_commissions), PatternGoalPercentage and
+      FabricGoalPercentage (0-100, default 50), StartingBodices
+      (3-30, 6), StartingSkirts (3-30, 7), StartingSleeves (3-15,
+      4), StartingCollars (3-10, 3), StartingFabrics (23-100, 23).
+      DECIDED: patterns/fabrics are NOT toggleable (no
+      patternsanity/fabricsanity). commissions_in_pool dropped.
+      Dataclass done; starting options used in items.py.
+      2026-11-07: percentage math in rules.py line 28 FIXED
+      (155 x pct / 100). TODO: use goal_choice and the fabric
+      percentage in rules.py. Decide if 0% should be allowed
+      (it now means an instant win).
+    Original plan:
       - goal: Choice = pattern_percentage (default) |
         fabric_percentage | main_story | all_commissions
         (implement one at a time in that order; story + commissions
@@ -135,16 +230,37 @@ docs/running from source.md
       - fabric_goal_percentage: Range 1-100 (used only if goal=
         fabric_percentage)
       - commissions_in_pool: Range 1-78 (min 1 enforced)
-[ ] items.py - fabrics = received items (freely usable once received)
+[ X ] items.py (done 2026-11-01): 155 pattern + 363 fabric + "Gold"
+      filler. Patterns/fabrics = progression, Gold = filler.
+      Start: 20 patterns (6/7/4/3) + 23 fabrics precollected.
+      Pool = 135 patterns + 340 fabrics + 221 Gold = 696.
+    Original plan:
+    - fabrics = received items (freely usable once received)
       - patterns (except starter patterns) = received items
       - accessories stay native (still gated by reputation in-game)
-[ ] locations.py - 155 pattern-use locations + N commission locations
+[ X ] archipelago.json, regions.py (one region "workshop")
+[~] locations.py - tables done (2026-10-31), 696 total:
+      53 story + 24 pigeon + 155 patterns + 50 reputation
+      + 50 friendship + 363 fabric-use + 1 final commission.
+      Victory event still needs the item class from items.py.
+    Original plan:
+    - 155 pattern-use locations + N commission locations
       + reputation level locations
       + 50 relationship locations (10 characters x 5 levels)
       - pattern = a collar/skirt/bodice/sleeve definition, used in a
         completed dress (from GameManager.Instance.activeDress)
       (model each like worlds/cccharles/Locations.py style - big
       enumerated list is normal)
+[~] rules.py (started 2026-11-01): first version = Victory event
+      "Dressmaker goal reached" needs HasFromList(*PATTERN_ITEMS,
+      count=X% of 155), hard-coded % for testing; completion rule
+      = Has("Victory"). Later: use pattern_goal_percentage option.
+      Goal means "USED X% of patterns": the MOD checks actual use
+      and sends the goal; the apworld only needs "has X% pattern
+      items" (you can't use what you don't own).
+      Also needed now: each "Use pattern: P" location requires item
+      "Pattern: P", each "Use fabric: F" requires "Fabric: F"
+      (otherwise AP can place an item on its own use-location).
 [ ] regions.py / rules.py
       - access rules gate fabrics/patterns by reputation level
       - one "Victory" event location + locked "Victory" item
@@ -164,10 +280,23 @@ PHASE 5: INTEGRATION
 [ ] Full playtest: new save, generate, connect, verify checks fire
     once each, items persist across reload
 
+NICE TO HAVE (not needed for release)
+--------------------------------------
+[ ] Reputation boost as a second filler item (added 2026-10-31).
+    Apworld: add it to the filler dict in items.py and to
+    get_random_filler_item_name. Mod: find in ILSpy how the game
+    adds reputation (a method like AddGold, so the UI refreshes)
+    and call it when the item is received. Check that it doesn't
+    break reputation-level checks (it could skip levels, so each
+    level crossed must still send its check).
+
 OPEN DESIGN DECISIONS (revisit before Phase 4 locks in)
 ---------------------------------------------------------
 - DECIDED: Reputation levels are checks (locations), not items.
 - Exact commission subset selection method (random vs fixed list)
+- OPEN (2026-11-04): accessories. The plan says they stay gated by
+  reputation, but StopUnlockFabrics unlocks them all (level = 50).
+- OPEN (2026-11-04): should Dressmaker Mods be a required dependency?
 - DECIDED: Goals = X% patterns used | X% fabrics used | main story
   complete | every commission complete.
 - DECIDED: all_commissions = all 78 (regardless of
@@ -221,22 +350,32 @@ MORE DECISIONS
 - Starting patterns: random, set by apworld options (defaults
   6 bodices / 6 skirts / 4 sleeves / 2 collars), given as starting
   items. Mod removes the game's native starter patterns on a fresh
-  save. TODO: dump a new save's unlockedPatterns to see natives;
+  save. CHANGED 2026-11-01: defaults are now 6 bodices / 7 skirts
+  / 4 sleeves / 3 collars (20 total), done in items.py via
+  PATTERNS_BY_TYPE. Hard-coded for now -> make options later.
+- Starting fabrics (decided 2026-10-31): 20 random fabrics as
+  starting items, removed from the pool. Hard-coded 20 for now
+  -> option later. Mod locks native starter fabrics. TODO: dump a new save's unlockedPatterns to see natives;
   check whether the tutorial quest needs a specific pattern.
 - Commission check = dress ACCEPTED (any outcome). Failed dresses
-  get redone, so nothing is missable.
+  get redone, so nothing is missable. (2026-11-04: so the mod should
+  not filter on QuestState.outcome. Still to confirm in play that a
+  failed dress behaves this way with RecordCompletedQuest.)
 - Reputation comes from every finished dress (commission, gift,
   rack sale) -> reputation checks need ~no logic.
 - Characters unlock through story as you meet them (relationship
   logic depends on story progress - work out in Phase 4).
 - Gift quests are NOT commissions (they enable gifting).
-- Filler: gold, reputation boosts.
+- Filler: gold only for now (decided 2026-10-31). Reputation boost
+  filler moved to NICE TO HAVE (see below).
 - commissions_in_pool: recommended DROP (all 78 = checks).
-- Mod sends checks by location NAME (MultiClient.Net can look up
-  ids by name) -> decide naming format before Phase 5.
+- Mod sends checks by location ID. On login it builds allLocations
+  (the part of each name after "/" -> id; names with no "/" are kept
+  whole). The final quest needs its own lookup: the game calls it
+  FinalQuest, the location is "Complete Final Commission".
 - Relationship hook: one Prefix on ApplyPatternsForRelationship
   Level -> send check (character + level) AND return false to skip
-  the native pattern unlock.
+  the native pattern unlock. Written 2026-11-04, not confirmed yet.
 
 RELATIONSHIPS (from gameplay)
 ------------------------------

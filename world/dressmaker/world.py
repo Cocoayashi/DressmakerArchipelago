@@ -62,7 +62,7 @@ class DressmakerWorld(World):
 
     # Our world class must also have a create_item function that can create any one of our items by name at any time.
     # We also put this in a different file, the same one that create_items is in.
-    def create_item(self, name: str) -> items.APQuestItem:
+    def create_item(self, name: str) -> items.DressmakerItem:
         return items.create_item_with_correct_classification(self, name)
 
     # For features such as item links and panic-method start inventory, AP may ask your world to create extra filler.
@@ -79,5 +79,5 @@ class DressmakerWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
         return self.options.as_dict(
-            "hard_mode", "hammer", "extra_starting_chest", "confetti_explosiveness", "player_sprite"
+            "goal_choice", "fabric_goal_percentage", "pattern_goal_percentage"
         )

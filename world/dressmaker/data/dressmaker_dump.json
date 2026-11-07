@@ -388,6 +388,2629 @@
       "questGiverCharacterName": "Rose"
     }
   ],
+  "finalQuestInfo": {
+    "name": "FinalQuest",
+    "prettyName": "Peerless Dressmaker",
+    "questGiverCharacterName": "Blank"
+  },
+  "patternInfos": [
+    {
+      "PatternType": "Bodice",
+      "name": "Princess Bodice",
+      "prettyName": "Princess Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Warm": 15.0,
+        "Workwear": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Cap Sleeve",
+      "prettyName": "Cap Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 5.0,
+        "Simple": 5.0,
+        "Workwear": 5.0,
+        "Professional": 5.0,
+        "Warm": 3.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Long Sleeve",
+      "prettyName": "Long Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Formal": 5.0,
+        "Professional": 5.0,
+        "Warm": 10.0,
+        "Workwear": 5.0,
+        "Simple": 5.0,
+        "Daywear": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "No Collar",
+      "prettyName": "No Collar",
+      "itemTags": {
+        "Cool": 5.0,
+        "Simple": 5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "No Sleeves",
+      "prettyName": "No Sleeves",
+      "itemTags": {
+        "Cool": 10.0,
+        "Simple": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Peter Pan Collar",
+      "prettyName": "Peter Pan Collar",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Professional": 5.0,
+        "Warm": 3.0,
+        "Workwear": 3.0,
+        "Simple": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "V collar notched shirt",
+      "prettyName": "Notched Shirt Collar",
+      "itemTags": {
+        "Casual": 5.0,
+        "Professional": 5.0,
+        "Simple": 3.0,
+        "Daywear": 3.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Bracelet Sleeve",
+      "prettyName": "Bracelet Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 5.0,
+        "Professional": 5.0,
+        "Simple": 5.0,
+        "Workwear": 5.0,
+        "Warm": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Princess Skirt",
+      "prettyName": "Princess Skirt",
+      "itemTags": {
+        "Casual": 15.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Elegant": 10.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 25.0,
+        "Workwear": 10.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Square Bodice",
+      "prettyName": "Square Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Warm": 15.0,
+        "Workwear": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess Scoop Bodice",
+      "prettyName": "Princess Scoop Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Workwear": 10.0,
+        "Daywear": 20.0,
+        "Warm": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Milkmaid Bodice",
+      "prettyName": "Milkmaid Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Cute": 20.0,
+        "Elegant": 10.0,
+        "Eveningwear": 15.0,
+        "Formal": 5.0,
+        "Romantic": 25.0,
+        "Simple": 10.0,
+        "Casual": 10.0,
+        "Daywear": 10.0,
+        "Playful": 20.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Butterfly Sleeve",
+      "prettyName": "Butterfly Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cool": 10.0,
+        "Cute": 10.0,
+        "Daywear": 5.0,
+        "Elegant": 10.0,
+        "Eveningwear": 5.0,
+        "Formal": 5.0,
+        "Playful": 3.0,
+        "Romantic": 10.0,
+        "Simple": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Circle Skirt",
+      "prettyName": "Circle Skirt",
+      "itemTags": {
+        "Casual": 15.0,
+        "Cute": 15.0,
+        "Daywear": 20.0,
+        "Elegant": 20.0,
+        "Formal": 15.0,
+        "Professional": 10.0,
+        "Romantic": 15.0,
+        "Simple": 20.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Gathered Ballgown Skirt",
+      "prettyName": "Gathered Ballgown Skirt",
+      "itemTags": {
+        "Cute": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Eveningwear": 25.0,
+        "Glamour": 10.0,
+        "Romantic": 15.0,
+        "Warm": 10.0,
+        "Casual": -5.0,
+        "Daywear": -5.0,
+        "Professional": -5.0,
+        "Simple": -5.0,
+        "Workwear": -5.0,
+        "Formal": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Sweetheart Bodice",
+      "prettyName": "Sweetheart Bodice",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cool": 15.0,
+        "Cute": 25.0,
+        "Daywear": 15.0,
+        "Elegant": 20.0,
+        "Eveningwear": 25.0,
+        "Formal": 15.0,
+        "Glamour": 10.0,
+        "Playful": 5.0,
+        "Romantic": 25.0,
+        "Simple": 20.0,
+        "Warm": -5.0,
+        "Professional": -5.0,
+        "Risque": 5.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Strapless Bodice",
+      "prettyName": "Strapless Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Daywear": 10.0,
+        "Eveningwear": 25.0,
+        "Formal": 15.0,
+        "Glamour": 10.0,
+        "Romantic": 20.0,
+        "Simple": 25.0,
+        "Workwear": -5.0,
+        "Warm": -5.0,
+        "Elegant": 20.0,
+        "Professional": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess V Bodice",
+      "prettyName": "Princess V Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Workwear": 10.0,
+        "Warm": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "One Shoulder Bodice",
+      "prettyName": "One Shoulder Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Elegant": 15.0,
+        "Formal": 20.0,
+        "Glamour": 5.0,
+        "Simple": 10.0,
+        "Workwear": -5.0,
+        "Professional": -5.0,
+        "Warm": -5.0,
+        "Eveningwear": 20.0,
+        "Romantic": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Pencil Skirt",
+      "prettyName": "Pencil Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Elegant": 15.0,
+        "Formal": 20.0,
+        "Goth": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Uncomfortable": 10.0,
+        "Workwear": -5.0,
+        "Risque": 15.0,
+        "Eveningwear": -5.0,
+        "Playful": -5.0,
+        "Eclectic": -5.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "V collar open shirt",
+      "prettyName": "Open Shirt Collar",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 3.0,
+        "Professional": 5.0,
+        "Simple": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Single Keyhole Bodice",
+      "prettyName": "Single Keyhole Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Warm": 15.0,
+        "Daywear": 20.0,
+        "Simple": 20.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Mermaid Skirt",
+      "prettyName": "Mermaid Skirt",
+      "itemTags": {
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Formal": 20.0,
+        "Glamour": 25.0,
+        "Goth": 25.0,
+        "Uncomfortable": 15.0,
+        "Risque": 25.0,
+        "Casual": -5.0,
+        "Daywear": -5.0,
+        "Playful": -5.0,
+        "Workwear": -5.0,
+        "Eveningwear": 25.0,
+        "Professional": -5.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Plunging Neckline Bodice",
+      "prettyName": "Plunging Neckline Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Elaborate": 5.0,
+        "Eveningwear": 25.0,
+        "Formal": 15.0,
+        "Glamour": 10.0,
+        "Romantic": 5.0,
+        "Simple": 10.0,
+        "Risque": 25.0,
+        "Professional": -5.0,
+        "Eclectic": 15.0,
+        "Elegant": 20.0,
+        "Warm": -5.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Peasant Sleeve",
+      "prettyName": "Peasant Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Professional": 10.0,
+        "Romantic": 5.0,
+        "Simple": 5.0,
+        "Warm": 10.0,
+        "Workwear": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Pointed Collar",
+      "prettyName": "Pointed Collar",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Professional": 5.0,
+        "Simple": 5.0,
+        "Warm": 3.0,
+        "Workwear": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Straight Long Skirt",
+      "prettyName": "Straight Long Skirt",
+      "itemTags": {
+        "Elegant": 10.0,
+        "Eveningwear": -5.0,
+        "Formal": -5.0,
+        "Professional": 25.0,
+        "Simple": 25.0,
+        "Workwear": 10.0,
+        "Daywear": 20.0,
+        "Warm": 5.0,
+        "Casual": 10.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Flounce Sleeve",
+      "prettyName": "Flounce Sleeve",
+      "itemTags": {
+        "Daywear": 5.0,
+        "Elegant": 10.0,
+        "Eveningwear": 5.0,
+        "Formal": 10.0,
+        "Goth": 5.0,
+        "Warm": 10.0,
+        "Elaborate": 5.0,
+        "Professional": 5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Short Puffed Sleeve",
+      "prettyName": "Short Puffed Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 10.0,
+        "Daywear": 10.0,
+        "Playful": 10.0,
+        "Professional": 5.0,
+        "Romantic": 5.0,
+        "Simple": 5.0,
+        "Workwear": 5.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Mutton Sleeve",
+      "prettyName": "Mutton Sleeve",
+      "itemTags": {
+        "Daywear": 5.0,
+        "Goth": 10.0,
+        "Warm": 10.0,
+        "Professional": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Flare Skirt",
+      "prettyName": "Flare Skirt",
+      "itemTags": {
+        "Casual": 15.0,
+        "Cute": 15.0,
+        "Daywear": 20.0,
+        "Elegant": 15.0,
+        "Formal": 15.0,
+        "Professional": 15.0,
+        "Simple": 20.0,
+        "Workwear": 15.0,
+        "Romantic": 15.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Bias Cut Skirt",
+      "prettyName": "Bias Cut Skirt",
+      "itemTags": {
+        "Eveningwear": 25.0,
+        "Elegant": 25.0,
+        "Formal": 20.0,
+        "Glamour": 15.0,
+        "Simple": 20.0,
+        "Warm": 10.0,
+        "Professional": -5.0,
+        "Risque": 10.0,
+        "Eclectic": 10.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Oversized Wing Collar",
+      "prettyName": "Oversized Wing Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Daywear": 5.0,
+        "Elegant": 5.0,
+        "Glamour": 5.0,
+        "Goth": 5.0,
+        "Professional": 5.0,
+        "Simple": 3.0,
+        "Risque": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Gathered Tiered Skirt",
+      "prettyName": "Puffy Gathered Tiered Skirt",
+      "itemTags": {
+        "Daywear": 15.0,
+        "Elaborate": 10.0,
+        "Elegant": 10.0,
+        "Romantic": 15.0,
+        "Warm": 10.0,
+        "Eclectic": 25.0,
+        "Casual": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Pussybow Collar",
+      "prettyName": "Pussybow Collar",
+      "itemTags": {
+        "Cute": 5.0,
+        "Elaborate": 3.0,
+        "Elegant": 3.0,
+        "Formal": 3.0,
+        "Playful": 3.0,
+        "Casual": 3.0,
+        "Daywear": 5.0,
+        "Professional": 5.0,
+        "Romantic": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Single Tiered Skirt",
+      "prettyName": "Single Tiered Skirt",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 20.0,
+        "Daywear": 20.0,
+        "Elaborate": 5.0,
+        "Elegant": 10.0,
+        "Glamour": -5.0,
+        "Playful": 20.0,
+        "Romantic": 20.0,
+        "Casual": 15.0,
+        "Simple": 5.0,
+        "Workwear": 10.0,
+        "Eveningwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Elevated Scoop Ruffle Bodice",
+      "prettyName": "Elevated Scoop Ruffle Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Daywear": 20.0,
+        "Elaborate": 10.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Playful": 10.0,
+        "Professional": 15.0,
+        "Romantic": 20.0,
+        "Warm": 15.0,
+        "Workwear": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess Scoop Ruffle Bodice",
+      "prettyName": "Scoop Ruffle Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 25.0,
+        "Daywear": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 15.0,
+        "Formal": 10.0,
+        "Playful": 10.0,
+        "Romantic": 25.0,
+        "Warm": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Cinched Keyhole Blouse",
+      "prettyName": "Cinched Keyhole Blouse",
+      "itemTags": {
+        "Daywear": 10.0,
+        "Eclectic": 20.0,
+        "Elegant": 20.0,
+        "Eveningwear": 10.0,
+        "Formal": 15.0,
+        "Glamour": 25.0,
+        "Goth": 20.0,
+        "Risque": 25.0,
+        "Professional": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Kimono Bodice",
+      "prettyName": "Kimono Bodice",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elaborate": 5.0,
+        "Elegant": 15.0,
+        "Simple": 10.0,
+        "Workwear": -5.0,
+        "Daywear": 15.0,
+        "Professional": -5.0,
+        "Casual": 10.0,
+        "Eveningwear": 20.0,
+        "Glamour": 10.0,
+        "Risque": 10.0,
+        "Eclectic": 25.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Short Sleeve",
+      "prettyName": "Short Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 10.0,
+        "Professional": 10.0,
+        "Workwear": 5.0,
+        "Cute": 5.0,
+        "Cool": 10.0,
+        "Simple": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Waistcoat Skirt",
+      "prettyName": "Waistcoat Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cool": 10.0,
+        "Cute": 15.0,
+        "Daywear": 20.0,
+        "Eclectic": 15.0,
+        "Elegant": 20.0,
+        "Goth": 10.0,
+        "Professional": 25.0,
+        "Simple": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Waistcoat Bodice",
+      "prettyName": "Waistcoat Bodice",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 10.0,
+        "Daywear": 10.0,
+        "Elegant": 15.0,
+        "Goth": 10.0,
+        "Professional": 25.0,
+        "Simple": 10.0,
+        "Warm": 10.0,
+        "Eclectic": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess Heart Bodice",
+      "prettyName": "Heart Princess Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Casual": 5.0,
+        "Cute": 15.0,
+        "Daywear": 10.0,
+        "Elegant": 25.0,
+        "Eveningwear": 20.0,
+        "Glamour": 10.0,
+        "Romantic": 5.0,
+        "Simple": 10.0,
+        "Warm": -5.0,
+        "Workwear": -5.0,
+        "Formal": 20.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Middle Panel Skirt",
+      "prettyName": "Yoke Gathered Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cool": 10.0,
+        "Cute": 10.0,
+        "Elegant": 20.0,
+        "Formal": 15.0,
+        "Romantic": 15.0,
+        "Elaborate": 5.0,
+        "Daywear": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Sweetheart Bodice Elevated",
+      "prettyName": "Elevated Sweetheart Bodice",
+      "itemTags": {
+        "Cute": 15.0,
+        "Daywear": 20.0,
+        "Elegant": 25.0,
+        "Eveningwear": -5.0,
+        "Formal": 20.0,
+        "Playful": 5.0,
+        "Romantic": 20.0,
+        "Warm": 10.0,
+        "Casual": 5.0,
+        "Professional": 10.0,
+        "Workwear": -5.0,
+        "Elaborate": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Apron Skirt",
+      "prettyName": "Apron Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Elegant": -5.0,
+        "Eveningwear": -10.0,
+        "Glamour": -10.0,
+        "Playful": 20.0,
+        "Risque": -10.0,
+        "Workwear": 25.0,
+        "Daywear": 15.0,
+        "Romantic": 15.0,
+        "Simple": 10.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Apron Bodice",
+      "prettyName": "Apron Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -10.0,
+        "Elegant": -5.0,
+        "Formal": -5.0,
+        "Glamour": -10.0,
+        "Playful": 5.0,
+        "Risque": -10.0,
+        "Simple": 20.0,
+        "Warm": 10.0,
+        "Workwear": 25.0,
+        "Elaborate": -5.0,
+        "Romantic": 5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Juliette-Bishop Sleeve",
+      "prettyName": "Juliette-Bishop Sleeve",
+      "itemTags": {
+        "Daywear": 5.0,
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Warm": 10.0,
+        "Cute": 10.0,
+        "Romantic": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Ruffle Apron Bodice",
+      "prettyName": "Ruffle Apron Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Daywear": 20.0,
+        "Elegant": -5.0,
+        "Eveningwear": -10.0,
+        "Formal": -5.0,
+        "Glamour": -10.0,
+        "Playful": 10.0,
+        "Risque": -10.0,
+        "Simple": 10.0,
+        "Warm": 10.0,
+        "Workwear": 25.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Long Cuffed Sleeve",
+      "prettyName": "Long Cuffed Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 10.0,
+        "Professional": 5.0,
+        "Warm": 10.0,
+        "Eclectic": 5.0,
+        "Elegant": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Coat Dress Bodice",
+      "prettyName": "Coat Dress Bodice",
+      "itemTags": {
+        "Cool": -10.0,
+        "Elaborate": 10.0,
+        "Elegant": 10.0,
+        "Glamour": 10.0,
+        "Risque": -10.0,
+        "Professional": 5.0,
+        "Simple": 10.0,
+        "Warm": 25.0,
+        "Eclectic": 20.0,
+        "Daywear": 15.0,
+        "Eveningwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Coat Dress Skirt",
+      "prettyName": "Coat Dress Skirt",
+      "itemTags": {
+        "Cool": -10.0,
+        "Daywear": 15.0,
+        "Elegant": 10.0,
+        "Eveningwear": -5.0,
+        "Professional": 5.0,
+        "Simple": 10.0,
+        "Warm": 25.0,
+        "Risque": -10.0,
+        "Eclectic": 20.0,
+        "Elaborate": 10.0,
+        "Glamour": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Mandarin Collar",
+      "prettyName": "Mandarin Collar",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 5.0,
+        "Professional": 3.0,
+        "Warm": 3.0,
+        "Eclectic": 5.0,
+        "Simple": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Corset Bodice",
+      "prettyName": "Corset Bodice",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 15.0,
+        "Glamour": 25.0,
+        "Goth": 25.0,
+        "Romantic": 10.0,
+        "Risque": 25.0,
+        "Professional": -10.0,
+        "Uncomfortable": 15.0,
+        "Warm": -5.0,
+        "Workwear": -10.0,
+        "Casual": -5.0,
+        "Daywear": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Corset Skirt",
+      "prettyName": "Corset Skirt",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 10.0,
+        "Formal": 20.0,
+        "Glamour": 25.0,
+        "Risque": 25.0,
+        "Uncomfortable": 10.0,
+        "Goth": 25.0,
+        "Professional": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Slit Sleeve",
+      "prettyName": "Slit Sleeve",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Risque": 5.0,
+        "Elaborate": 5.0,
+        "Eclectic": 10.0,
+        "Goth": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Front Lace Stay",
+      "prettyName": "Front Lace Stays",
+      "itemTags": {
+        "Cute": 25.0,
+        "Elaborate": 20.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 10.0,
+        "Goth": 25.0,
+        "Romantic": 20.0,
+        "Playful": 10.0,
+        "Daywear": 10.0,
+        "Uncomfortable": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Fae Sleeve",
+      "prettyName": "Fae Sleeve",
+      "itemTags": {
+        "Cute": 15.0,
+        "Daywear": 5.0,
+        "Elaborate": 5.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Playful": 10.0,
+        "Romantic": 5.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Double Ruffle Collar",
+      "prettyName": "Double Ruffle and Bow Collar",
+      "itemTags": {
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Professional": 5.0,
+        "Uncomfortable": 5.0,
+        "Warm": 3.0,
+        "Formal": 3.0,
+        "Elegant": 3.0,
+        "Goth": 3.0,
+        "Elaborate": 5.0,
+        "Playful": 3.0,
+        "Romantic": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Elevated Scoop Bodice",
+      "prettyName": "Elevated Scoop Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Workwear": 10.0,
+        "Warm": 15.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Mother of Pearl Skirt",
+      "prettyName": "Mother of Pearl Skirt",
+      "itemTags": {
+        "Cute": 20.0,
+        "Elaborate": 15.0,
+        "Eveningwear": 20.0,
+        "Elegant": 10.0,
+        "Goth": 15.0,
+        "Playful": 20.0,
+        "Romantic": 15.0,
+        "Professional": -5.0,
+        "Workwear": -5.0,
+        "Simple": -5.0,
+        "Warm": 10.0,
+        "Casual": -5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Hecate Sleeve",
+      "prettyName": "Hecate Sleeve",
+      "itemTags": {
+        "Elaborate": 10.0,
+        "Elegant": 5.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Professional": 5.0,
+        "Cute": 10.0,
+        "Goth": 10.0,
+        "Romantic": 10.0,
+        "Warm": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Rebecca Frill Collar",
+      "prettyName": "Upright Frill Collar",
+      "itemTags": {
+        "Cute": 3.0,
+        "Daywear": 3.0,
+        "Formal": 3.0,
+        "Professional": 3.0,
+        "Romantic": 3.0,
+        "Elaborate": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Yoked Shirt V Neck Bodice",
+      "prettyName": "V Neck Yoked Shirt",
+      "itemTags": {
+        "Daywear": 15.0,
+        "Professional": 25.0,
+        "Simple": 10.0,
+        "Warm": 10.0,
+        "Casual": 10.0,
+        "Elegant": 10.0,
+        "Eveningwear": -10.0,
+        "Glamour": -10.0,
+        "Risque": -10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Yoked Shirt Bodice",
+      "prettyName": "Yoked Shirt",
+      "itemTags": {
+        "Daywear": 15.0,
+        "Professional": 25.0,
+        "Simple": 10.0,
+        "Warm": 10.0,
+        "Casual": 10.0,
+        "Elegant": 10.0,
+        "Eveningwear": -10.0,
+        "Risque": -10.0,
+        "Glamour": -10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Twilight Hour Bodice",
+      "prettyName": "Twilight Hour Bodice",
+      "itemTags": {
+        "Casual": -5.0,
+        "Cool": 25.0,
+        "Cute": -5.0,
+        "Elaborate": 15.0,
+        "Glamour": 15.0,
+        "Goth": 25.0,
+        "Playful": -5.0,
+        "Professional": -10.0,
+        "Risque": 25.0,
+        "Romantic": 15.0,
+        "Warm": -10.0,
+        "Workwear": -10.0,
+        "Eclectic": 15.0,
+        "Daywear": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Twilight Hour Skirt",
+      "prettyName": "Twilight Hour Skirt",
+      "itemTags": {
+        "Casual": -10.0,
+        "Cool": 20.0,
+        "Cute": -5.0,
+        "Daywear": -10.0,
+        "Elaborate": 10.0,
+        "Glamour": 15.0,
+        "Goth": 25.0,
+        "Playful": -5.0,
+        "Professional": -10.0,
+        "Risque": 25.0,
+        "Uncomfortable": 10.0,
+        "Warm": -10.0,
+        "Workwear": -10.0,
+        "Eclectic": 20.0,
+        "Elegant": 15.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Widow's Peak Collar",
+      "prettyName": "Widow's Peak Collar",
+      "itemTags": {
+        "Casual": -5.0,
+        "Cute": -5.0,
+        "Daywear": -5.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 15.0,
+        "Warm": 5.0,
+        "Uncomfortable": 10.0,
+        "Goth": 15.0,
+        "Risque": 5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Bell Sleeve",
+      "prettyName": "Bell Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Glamour": 5.0,
+        "Goth": 5.0,
+        "Romantic": 3.0,
+        "Warm": 5.0,
+        "Daywear": 3.0,
+        "Eclectic": 10.0,
+        "Elaborate": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Katarina Bodice",
+      "prettyName": "Katarina Bodice",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 5.0,
+        "Formal": 10.0,
+        "Romantic": 10.0,
+        "Simple": 5.0,
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Eveningwear": 15.0,
+        "Workwear": -5.0,
+        "Elegant": 10.0,
+        "Risque": 5.0,
+        "Eclectic": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Godet Skirt",
+      "prettyName": "Godet Skirt",
+      "itemTags": {
+        "Eclectic": 25.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Daywear": 10.0,
+        "Glamour": 15.0,
+        "Goth": 10.0,
+        "Romantic": 10.0,
+        "Warm": 10.0,
+        "Eveningwear": 20.0,
+        "Formal": 15.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Petal Peplum Skirt",
+      "prettyName": "Petal Peplum Skirt",
+      "itemTags": {
+        "Casual": -5.0,
+        "Cute": 20.0,
+        "Daywear": -5.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Professional": -5.0,
+        "Romantic": 25.0,
+        "Warm": 10.0,
+        "Elaborate": 10.0,
+        "Playful": 15.0,
+        "Flowers": 15.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Ruched Sweetheart Bodice",
+      "prettyName": "Ruched Sweetheart Bodice",
+      "itemTags": {
+        "Cool": 20.0,
+        "Cute": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 25.0,
+        "Eveningwear": 25.0,
+        "Formal": 25.0,
+        "Glamour": 20.0,
+        "Risque": 5.0,
+        "Romantic": 20.0,
+        "Warm": -5.0,
+        "Workwear": -5.0,
+        "Professional": -5.0,
+        "Uncomfortable": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Split Skirt",
+      "prettyName": "Split Skirt",
+      "itemTags": {
+        "Elegant": 25.0,
+        "Eveningwear": 25.0,
+        "Formal": 25.0,
+        "Glamour": 25.0,
+        "Professional": -5.0,
+        "Simple": -5.0,
+        "Workwear": -5.0,
+        "Elaborate": 20.0,
+        "Warm": 10.0,
+        "Uncomfortable": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Bow Skirt",
+      "prettyName": "Bow Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Daywear": 15.0,
+        "Elaborate": 5.0,
+        "Eveningwear": 15.0,
+        "Elegant": 15.0,
+        "Formal": 10.0,
+        "Glamour": 10.0,
+        "Playful": 20.0,
+        "Romantic": 20.0,
+        "Eclectic": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Front Lace Bodice",
+      "prettyName": "Front Lace Bodice",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cool": 10.0,
+        "Cute": 20.0,
+        "Daywear": 15.0,
+        "Eclectic": 20.0,
+        "Elaborate": 5.0,
+        "Elegant": 20.0,
+        "Eveningwear": 15.0,
+        "Formal": 15.0,
+        "Goth": 10.0,
+        "Playful": 10.0,
+        "Romantic": 25.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Godiva Sleeve",
+      "prettyName": "Godiva Sleeve",
+      "itemTags": {
+        "Eclectic": 20.0,
+        "Elegant": 15.0,
+        "Eveningwear": 10.0,
+        "Formal": 10.0,
+        "Glamour": 15.0,
+        "Goth": 20.0,
+        "Risque": 5.0,
+        "Simple": 10.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Delilah Bodice",
+      "prettyName": "Delilah Bodice",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 20.0,
+        "Daywear": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Formal": 10.0,
+        "Playful": 10.0,
+        "Romantic": 20.0,
+        "Warm": 10.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Wavecrest Skirt",
+      "prettyName": "Wavecrest Skirt",
+      "itemTags": {
+        "Casual": -5.0,
+        "Elaborate": 15.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Playful": 15.0,
+        "Romantic": 20.0,
+        "Warm": 10.0,
+        "Workwear": -5.0,
+        "Eclectic": 15.0,
+        "Cute": 10.0,
+        "Daywear": 10.0,
+        "Professional": -5.0,
+        "Simple": -5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Qipao Collar",
+      "prettyName": "Qipao Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Elegant": 3.0,
+        "Formal": 3.0,
+        "Professional": 3.0,
+        "Romantic": 3.0,
+        "Simple": 3.0,
+        "Warm": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess V Ruffle Bodice",
+      "prettyName": "Princess V Ruffle Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 25.0,
+        "Daywear": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 15.0,
+        "Formal": 10.0,
+        "Playful": 10.0,
+        "Romantic": 25.0,
+        "Warm": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Gathered Tiered Ruffle Skirt",
+      "prettyName": "Gathered Tiered Ruffle Skirt",
+      "itemTags": {
+        "Cute": 25.0,
+        "Daywear": 10.0,
+        "Elaborate": 20.0,
+        "Playful": 25.0,
+        "Romantic": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess V Elevated Bodice",
+      "prettyName": "Elevated Princess V Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Workwear": 10.0,
+        "Warm": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Princess V Elevated Ruffle Bodice",
+      "prettyName": "Princess V Elevated Ruffle Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 20.0,
+        "Daywear": 20.0,
+        "Elaborate": 10.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0,
+        "Playful": 10.0,
+        "Professional": 15.0,
+        "Romantic": 20.0,
+        "Workwear": 5.0,
+        "Warm": 15.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Juliette Sleeve",
+      "prettyName": "Juliette Sleeve",
+      "itemTags": {
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Goth": 5.0,
+        "Professional": 5.0,
+        "Romantic": 5.0,
+        "Warm": 10.0,
+        "Cute": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Split Crew Neck Bodice",
+      "prettyName": "Split Crew Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 20.0,
+        "Professional": 20.0,
+        "Simple": 20.0,
+        "Warm": 15.0,
+        "Eveningwear": -5.0,
+        "Formal": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Curved Peplum Skirt",
+      "prettyName": "Curved Peplum Skirt",
+      "itemTags": {
+        "Cool": 10.0,
+        "Daywear": 20.0,
+        "Elegant": 20.0,
+        "Formal": 15.0,
+        "Professional": 25.0,
+        "Simple": 5.0,
+        "Casual": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "V collar scalloped",
+      "prettyName": "Scalloped Collar",
+      "itemTags": {
+        "Cute": 5.0,
+        "Playful": 3.0,
+        "Professional": 5.0,
+        "Casual": 5.0,
+        "Daywear": 3.0,
+        "Romantic": 1.0,
+        "Simple": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Gatsby Bodice",
+      "prettyName": "Gatsby Bodice",
+      "itemTags": {
+        "Casual": -5.0,
+        "Cool": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 10.0,
+        "Glamour": 25.0,
+        "Professional": -5.0,
+        "Risque": 25.0,
+        "Romantic": 10.0,
+        "Simple": 10.0,
+        "Warm": -5.0,
+        "Workwear": -10.0,
+        "Eclectic": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Gatsby Skirt",
+      "prettyName": "Gatsby Skirt",
+      "itemTags": {
+        "Elaborate": 20.0,
+        "Elegant": 10.0,
+        "Eveningwear": 15.0,
+        "Formal": 15.0,
+        "Glamour": 20.0,
+        "Risque": 10.0,
+        "Eclectic": 15.0,
+        "Workwear": -5.0,
+        "Professional": -5.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Tiered Sleeves",
+      "prettyName": "Tiered Sleeves",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elaborate": 5.0,
+        "Formal": 5.0,
+        "Playful": 10.0,
+        "Eclectic": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Ruched Bodice",
+      "prettyName": "Ruched Bodice",
+      "itemTags": {
+        "Elegant": 10.0,
+        "Formal": 15.0,
+        "Simple": 10.0,
+        "Daywear": 15.0,
+        "Professional": 25.0,
+        "Warm": 15.0,
+        "Eveningwear": -5.0,
+        "Casual": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "V Yoked Bodice",
+      "prettyName": "Upturned Yoked Bodice",
+      "itemTags": {
+        "Cute": 10.0,
+        "Elaborate": 5.0,
+        "Glamour": -10.0,
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Professional": 25.0,
+        "Warm": 10.0,
+        "Playful": 5.0,
+        "Simple": 5.0,
+        "Elegant": 10.0,
+        "Eveningwear": -10.0,
+        "Risque": -10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Bustier Bodice",
+      "prettyName": "Bustier Bodice",
+      "itemTags": {
+        "Cool": 20.0,
+        "Cute": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 15.0,
+        "Glamour": 10.0,
+        "Goth": 10.0,
+        "Romantic": 25.0,
+        "Simple": -5.0,
+        "Warm": -5.0,
+        "Risque": 25.0,
+        "Casual": -10.0,
+        "Uncomfortable": 5.0,
+        "Professional": -10.0,
+        "Workwear": -10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Straight Gathered Tiered Skirt",
+      "prettyName": "Straight Gathered Tiered Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Elaborate": 10.0,
+        "Elegant": 10.0,
+        "Romantic": 15.0,
+        "Warm": 10.0,
+        "Eclectic": 20.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Pleated Drop Sleeve",
+      "prettyName": "Pleated Drop Sleeve",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 5.0,
+        "Eveningwear": 15.0,
+        "Formal": 10.0,
+        "Elaborate": 5.0,
+        "Elegant": 10.0,
+        "Romantic": 15.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Tiered Skirt",
+      "prettyName": "Basque Tiered Skirt",
+      "itemTags": {
+        "Cute": 20.0,
+        "Daywear": -10.0,
+        "Elaborate": 25.0,
+        "Elegant": 25.0,
+        "Eveningwear": 25.0,
+        "Formal": 25.0,
+        "Glamour": 15.0,
+        "Romantic": 20.0,
+        "Warm": 10.0,
+        "Workwear": -10.0,
+        "Professional": -10.0,
+        "Simple": -5.0,
+        "Casual": -10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Flutter Sleeve",
+      "prettyName": "Flutter Sleeve",
+      "itemTags": {
+        "Cute": 20.0,
+        "Elaborate": 10.0,
+        "Playful": 15.0,
+        "Romantic": 10.0,
+        "Eveningwear": 10.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Sailor Collar",
+      "prettyName": "Sailor Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Playful": 5.0,
+        "Elegant": 5.0,
+        "Workwear": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Viper Bodice",
+      "prettyName": "Viper Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Elaborate": 10.0,
+        "Elegant": 10.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Glamour": 25.0,
+        "Goth": 25.0,
+        "Risque": 25.0,
+        "Romantic": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Viper Skirt",
+      "prettyName": "Viper Skirt",
+      "itemTags": {
+        "Cool": 20.0,
+        "Elaborate": 20.0,
+        "Elegant": 15.0,
+        "Glamour": 20.0,
+        "Goth": 25.0,
+        "Risque": 25.0,
+        "Casual": -10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Viper Collar",
+      "prettyName": "Viper Collar",
+      "itemTags": {
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Formal": 5.0,
+        "Goth": 20.0,
+        "Risque": 5.0,
+        "Warm": 5.0,
+        "Glamour": 15.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Handkerchief Godet Skirt",
+      "prettyName": "Handkerchief Godet Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cool": 10.0,
+        "Daywear": 15.0,
+        "Eclectic": 25.0,
+        "Elaborate": 15.0,
+        "Glamour": 20.0,
+        "Romantic": 10.0,
+        "Elegant": 10.0,
+        "Eveningwear": 15.0,
+        "Formal": 15.0,
+        "Goth": 12.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Halter Neck Bodice",
+      "prettyName": "Halter Neck Bodice",
+      "itemTags": {
+        "Cool": 20.0,
+        "Cute": 10.0,
+        "Romantic": 15.0,
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Warm": -10.0,
+        "Professional": -10.0,
+        "Workwear": -5.0,
+        "Elegant": 10.0,
+        "Risque": 10.0,
+        "Eclectic": 15.0,
+        "Simple": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Ruffle Bodice Straight",
+      "prettyName": "Straight Begonia Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Cute": 20.0,
+        "Elaborate": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Glamour": 10.0,
+        "Romantic": 25.0,
+        "Workwear": -5.0,
+        "Casual": 5.0,
+        "Professional": -5.0,
+        "Simple": -5.0,
+        "Warm": -5.0,
+        "Daywear": 10.0,
+        "Formal": 20.0,
+        "Playful": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Frill Skirt",
+      "prettyName": "Frill Skirt",
+      "itemTags": {
+        "Cute": 20.0,
+        "Daywear": 10.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 10.0,
+        "Playful": 20.0,
+        "Romantic": 20.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Chanterelle Sleeve",
+      "prettyName": "Chanterelle Sleeve",
+      "itemTags": {
+        "Cool": 5.0,
+        "Cute": 20.0,
+        "Daywear": 5.0,
+        "Eclectic": 5.0,
+        "Elegant": 10.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Goth": 5.0,
+        "Playful": 10.0,
+        "Romantic": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Fable Collar",
+      "prettyName": "Fable Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Cute": 10.0,
+        "Daywear": 5.0,
+        "Elaborate": 3.0,
+        "Playful": 5.0,
+        "Professional": 5.0,
+        "Romantic": 3.0,
+        "Warm": 5.0,
+        "Workwear": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Aurora Bodice",
+      "prettyName": "Aurora Bodice",
+      "itemTags": {
+        "Cool": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 25.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Glamour": 10.0,
+        "Romantic": 25.0,
+        "Uncomfortable": 5.0,
+        "Workwear": -10.0,
+        "Casual": -5.0,
+        "Simple": -5.0,
+        "Professional": -5.0,
+        "Warm": -5.0,
+        "Cute": 15.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Tulip Hip Skirt",
+      "prettyName": "Tulip Hip Skirt",
+      "itemTags": {
+        "Elaborate": 10.0,
+        "Elegant": 25.0,
+        "Eveningwear": 25.0,
+        "Formal": 20.0,
+        "Glamour": 25.0,
+        "Romantic": 15.0,
+        "Uncomfortable": 10.0,
+        "Warm": 10.0,
+        "Daywear": -5.0,
+        "Risque": 10.0,
+        "Workwear": -5.0,
+        "Casual": -5.0,
+        "Professional": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Circle Peplum Skirt",
+      "prettyName": "Circle Peplum Skirt",
+      "itemTags": {
+        "Daywear": 20.0,
+        "Elegant": 20.0,
+        "Eveningwear": -5.0,
+        "Formal": 15.0,
+        "Professional": 15.0,
+        "Simple": 5.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Koi Skirt",
+      "prettyName": "Koi Skirt",
+      "itemTags": {
+        "Cool": 10.0,
+        "Daywear": 10.0,
+        "Eclectic": 15.0,
+        "Elaborate": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 15.0,
+        "Formal": 10.0,
+        "Glamour": 25.0,
+        "Risque": 20.0,
+        "Goth": 20.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Queen Anne Bodice",
+      "prettyName": "Queen Anne Bodice",
+      "itemTags": {
+        "Daywear": 10.0,
+        "Elaborate": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Formal": 15.0,
+        "Glamour": 15.0,
+        "Goth": 10.0,
+        "Warm": 5.0,
+        "Simple": 5.0,
+        "Workwear": -5.0,
+        "Eclectic": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Whirlpool Collar",
+      "prettyName": "Whirlpool Collar",
+      "itemTags": {
+        "Daywear": 3.0,
+        "Eclectic": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Formal": 5.0,
+        "Glamour": 5.0,
+        "Goth": 3.0,
+        "Professional": 5.0,
+        "Risque": 3.0,
+        "Romantic": 3.0,
+        "Warm": 5.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Serafuku",
+      "prettyName": "Serafuku Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Playful": 10.0,
+        "Workwear": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Bustle Skirt",
+      "prettyName": "Bustle Skirt",
+      "itemTags": {
+        "Cute": 15.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 25.0,
+        "Formal": 20.0,
+        "Goth": 20.0,
+        "Playful": 20.0,
+        "Romantic": 20.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Poinsetta Skirt",
+      "prettyName": "Poinsetta Skirt",
+      "itemTags": {
+        "Cute": 10.0,
+        "Elaborate": 15.0,
+        "Eveningwear": 25.0,
+        "Elegant": 10.0,
+        "Formal": 15.0,
+        "Goth": 20.0,
+        "Romantic": 20.0,
+        "Warm": 10.0,
+        "Professional": -5.0,
+        "Casual": -5.0,
+        "Workwear": -5.0,
+        "Simple": -5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Peasant Sleeve with Ruffle Cuff",
+      "prettyName": "Peasant Sleeve with Ruffle Cuff",
+      "itemTags": {
+        "Casual": 5.0,
+        "Daywear": 5.0,
+        "Cute": 10.0,
+        "Elaborate": 5.0,
+        "Professional": 10.0,
+        "Romantic": 10.0,
+        "Warm": 10.0,
+        "Workwear": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Ruffle Skirt",
+      "prettyName": "Ruffle Skirt",
+      "itemTags": {
+        "Casual": -10.0,
+        "Daywear": -10.0,
+        "Elaborate": 25.0,
+        "Eveningwear": 25.0,
+        "Elegant": 15.0,
+        "Formal": 25.0,
+        "Playful": 25.0,
+        "Professional": -10.0,
+        "Romantic": 25.0,
+        "Simple": -10.0,
+        "Warm": 10.0,
+        "Workwear": -10.0,
+        "Cute": 25.0,
+        "Glamour": 15.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Gabriel Sleeve",
+      "prettyName": "Gabriel Sleeve",
+      "itemTags": {
+        "Cute": 5.0,
+        "Elaborate": 10.0,
+        "Elegant": 5.0,
+        "Eveningwear": 10.0,
+        "Playful": 5.0,
+        "Romantic": 10.0,
+        "Cool": 5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Ruffle Bodice",
+      "prettyName": "Off-Shoulder Begonia Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Cute": 20.0,
+        "Elaborate": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Glamour": 10.0,
+        "Playful": 10.0,
+        "Romantic": 25.0,
+        "Simple": -5.0,
+        "Professional": -5.0,
+        "Warm": -5.0,
+        "Workwear": -5.0,
+        "Casual": 5.0,
+        "Daywear": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Train Skirt",
+      "prettyName": "Train Skirt",
+      "itemTags": {
+        "Casual": -5.0,
+        "Daywear": -5.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Goth": 20.0,
+        "Professional": -5.0,
+        "Romantic": 20.0,
+        "Workwear": -5.0,
+        "Risque": -5.0,
+        "Elaborate": 10.0,
+        "Formal": 20.0,
+        "Uncomfortable": 10.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Elbow Length Juliet Sleeve",
+      "prettyName": "Elbow Length Juliet Sleeve",
+      "itemTags": {
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Formal": 5.0,
+        "Goth": 5.0,
+        "Romantic": 3.0,
+        "Warm": 10.0,
+        "Cute": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Belladonna Skirt",
+      "prettyName": "Belladonna Skirt",
+      "itemTags": {
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Glamour": 20.0,
+        "Goth": 25.0,
+        "Risque": 25.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Belladonna Bodice",
+      "prettyName": "Belladonna Bodice",
+      "itemTags": {
+        "Elaborate": 15.0,
+        "Elegant": 20.0,
+        "Eveningwear": 25.0,
+        "Formal": 10.0,
+        "Glamour": 20.0,
+        "Goth": 25.0,
+        "Risque": 25.0,
+        "Warm": 10.0,
+        "Uncomfortable": 10.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Belladonna Collar",
+      "prettyName": "Belladonna Collar",
+      "itemTags": {
+        "Eclectic": 3.0,
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Goth": 10.0,
+        "Risque": 5.0,
+        "Uncomfortable": 3.0,
+        "Warm": 5.0,
+        "Cute": 3.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Scalloped Skirt",
+      "prettyName": "Scallop Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 10.0,
+        "Daywear": 25.0,
+        "Elegant": 10.0,
+        "Glamour": 10.0,
+        "Elaborate": 10.0,
+        "Eclectic": 25.0,
+        "Cool": 10.0,
+        "Playful": 15.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Three Quarter Poet Sleeve",
+      "prettyName": "Poet Sleeve",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Elaborate": 5.0,
+        "Elegant": 5.0,
+        "Eveningwear": 5.0,
+        "Romantic": 5.0,
+        "Eclectic": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Jacket V Bodice",
+      "prettyName": "Jacket Bodice",
+      "itemTags": {
+        "Eveningwear": -5.0,
+        "Warm": 25.0,
+        "Risque": -5.0,
+        "Daywear": 15.0,
+        "Elaborate": 10.0,
+        "Eclectic": 25.0,
+        "Cool": -5.0,
+        "Elegant": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Dirndl",
+      "prettyName": "Dirndl",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 20.0,
+        "Daywear": 15.0,
+        "Elaborate": 5.0,
+        "Elegant": 15.0,
+        "Goth": 10.0,
+        "Playful": 15.0,
+        "Professional": 15.0,
+        "Romantic": 15.0,
+        "Workwear": 20.0,
+        "Warm": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Chrysanthemum Skirt",
+      "prettyName": "Chrysanthemum Skirt",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 25.0,
+        "Daywear": 20.0,
+        "Elaborate": 10.0,
+        "Elegant": 15.0,
+        "Eveningwear": 10.0,
+        "Formal": 15.0,
+        "Playful": 25.0,
+        "Romantic": 20.0,
+        "Flowers": 25.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Petal Sleeve",
+      "prettyName": "Petal Sleeve",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cool": 5.0,
+        "Cute": 15.0,
+        "Daywear": 5.0,
+        "Elegant": 5.0,
+        "Formal": 5.0,
+        "Playful": 5.0,
+        "Romantic": 10.0,
+        "Simple": 5.0,
+        "Workwear": 5.0,
+        "Eveningwear": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Bow Ballgown Skirt",
+      "prettyName": "Bow Ballgown Skirt",
+      "itemTags": {
+        "Cute": 15.0,
+        "Elaborate": 15.0,
+        "Elegant": 15.0,
+        "Eveningwear": 25.0,
+        "Formal": 20.0,
+        "Glamour": 10.0,
+        "Playful": 10.0,
+        "Romantic": 15.0,
+        "Warm": 10.0,
+        "Daywear": -5.0,
+        "Casual": -5.0,
+        "Simple": -5.0,
+        "Professional": -5.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Bolero Bodice",
+      "prettyName": "Bolero Bodice",
+      "itemTags": {
+        "Cute": 5.0,
+        "Formal": 10.0,
+        "Romantic": 10.0,
+        "Casual": 5.0,
+        "Daywear": 20.0,
+        "Warm": 10.0,
+        "Elaborate": 10.0,
+        "Professional": 5.0,
+        "Workwear": -5.0,
+        "Elegant": 20.0,
+        "Eveningwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Kaftan Wrap Bodice",
+      "prettyName": "Kaftan Wrap Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Elegant": 15.0,
+        "Formal": 10.0,
+        "Simple": 10.0,
+        "Workwear": -5.0,
+        "Daywear": 10.0,
+        "Professional": -5.0,
+        "Casual": 10.0,
+        "Eveningwear": 15.0,
+        "Glamour": 10.0,
+        "Risque": 10.0,
+        "Eclectic": 20.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Kaftan Skirt",
+      "prettyName": "Kaftan Skirt",
+      "itemTags": {
+        "Elegant": 20.0,
+        "Formal": 15.0,
+        "Warm": 10.0,
+        "Eveningwear": 20.0,
+        "Eclectic": 25.0,
+        "Glamour": 10.0,
+        "Risque": 10.0,
+        "Simple": 10.0,
+        "Workwear": -5.0,
+        "Professional": -5.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Waterfall Bodice",
+      "prettyName": "Waterfall Bodice",
+      "itemTags": {
+        "Cool": -5.0,
+        "Elegant": 15.0,
+        "Simple": 10.0,
+        "Workwear": -5.0,
+        "Daywear": 10.0,
+        "Warm": 10.0,
+        "Casual": 5.0,
+        "Eveningwear": 10.0,
+        "Glamour": 10.0,
+        "Eclectic": 20.0,
+        "Formal": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Waterfall Skirt",
+      "prettyName": "Waterfall Skirt",
+      "itemTags": {
+        "Daywear": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Formal": 15.0,
+        "Simple": 10.0,
+        "Eclectic": 25.0,
+        "Warm": 10.0,
+        "Glamour": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Capulet Sleeve",
+      "prettyName": "Capulet Sleeve",
+      "itemTags": {
+        "Cute": 5.0,
+        "Daywear": 5.0,
+        "Eclectic": 10.0,
+        "Elegant": 10.0,
+        "Eveningwear": 10.0,
+        "Formal": 5.0,
+        "Glamour": 5.0,
+        "Goth": 5.0,
+        "Professional": 3.0,
+        "Romantic": 10.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Dita Pencil Skirt",
+      "prettyName": "Dita Pencil Skirt",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cool": 10.0,
+        "Daywear": 20.0,
+        "Elegant": 15.0,
+        "Formal": 20.0,
+        "Goth": 5.0,
+        "Professional": 25.0,
+        "Risque": 20.0,
+        "Simple": 20.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Dagger Collar",
+      "prettyName": "Dagger Collar",
+      "itemTags": {
+        "Casual": 3.0,
+        "Goth": 5.0,
+        "Professional": 3.0,
+        "Simple": 3.0,
+        "Warm": 3.0,
+        "Daywear": 3.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Elevated Dirndl",
+      "prettyName": "Elevated Dirndl",
+      "itemTags": {
+        "Casual": 5.0,
+        "Cute": 20.0,
+        "Daywear": 15.0,
+        "Elaborate": 5.0,
+        "Elegant": 15.0,
+        "Goth": 10.0,
+        "Playful": 15.0,
+        "Professional": 15.0,
+        "Romantic": 15.0,
+        "Workwear": 20.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Elevated Stays",
+      "prettyName": "Elevated Stays",
+      "itemTags": {
+        "Cute": 25.0,
+        "Daywear": 10.0,
+        "Elaborate": 20.0,
+        "Elegant": 15.0,
+        "Formal": 10.0,
+        "Goth": 20.0,
+        "Playful": 10.0,
+        "Romantic": 20.0,
+        "Uncomfortable": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Land Girl Bodice",
+      "prettyName": "Land Girl Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Cute": 15.0,
+        "Daywear": 10.0,
+        "Eveningwear": -10.0,
+        "Playful": 15.0,
+        "Professional": 5.0,
+        "Simple": 10.0,
+        "Workwear": 25.0,
+        "Warm": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Wrap Bodice",
+      "prettyName": "Wrap Bodice",
+      "itemTags": {
+        "Cool": 10.0,
+        "Cute": 15.0,
+        "Elegant": 15.0,
+        "Formal": 15.0,
+        "Romantic": 20.0,
+        "Simple": 20.0,
+        "Casual": 20.0,
+        "Daywear": 20.0,
+        "Warm": -5.0,
+        "Playful": 10.0,
+        "Eveningwear": 10.0,
+        "Workwear": -5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Wrap Skirt",
+      "prettyName": "Wrap Skirt",
+      "itemTags": {
+        "Cute": 15.0,
+        "Eveningwear": -5.0,
+        "Elegant": 20.0,
+        "Romantic": 20.0,
+        "Simple": 10.0,
+        "Daywear": 20.0,
+        "Casual": 15.0,
+        "Formal": 10.0,
+        "Eclectic": 10.0,
+        "Cool": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Sax Bodice",
+      "prettyName": "Sax Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Cute": 10.0,
+        "Elaborate": 5.0,
+        "Elegant": 15.0,
+        "Formal": 10.0,
+        "Romantic": 20.0,
+        "Simple": 5.0,
+        "Workwear": -5.0,
+        "Daywear": 20.0,
+        "Casual": 10.0,
+        "Eveningwear": 15.0,
+        "Eclectic": 20.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Flared Bugonia Bodice",
+      "prettyName": "Flared Begonia Bodice",
+      "itemTags": {
+        "Cool": 15.0,
+        "Cute": 20.0,
+        "Elaborate": 10.0,
+        "Elegant": 20.0,
+        "Eveningwear": 20.0,
+        "Formal": 20.0,
+        "Glamour": 10.0,
+        "Playful": 10.0,
+        "Romantic": 25.0,
+        "Simple": -5.0,
+        "Professional": -5.0,
+        "Warm": -5.0,
+        "Workwear": -5.0,
+        "Casual": 5.0,
+        "Daywear": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Jacket Yoked Bodice",
+      "prettyName": "Yoked Jacket Bodice",
+      "itemTags": {
+        "Daywear": 15.0,
+        "Elaborate": 10.0,
+        "Eveningwear": -5.0,
+        "Warm": 25.0,
+        "Risque": -5.0,
+        "Eclectic": 25.0,
+        "Cool": -5.0,
+        "Elegant": 10.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Double Breasted Bodice",
+      "prettyName": "Double Breasted Bodice",
+      "itemTags": {
+        "Daywear": 10.0,
+        "Elegant": 10.0,
+        "Formal": 10.0,
+        "Professional": 20.0,
+        "Simple": 15.0,
+        "Warm": 15.0,
+        "Casual": 10.0,
+        "Eclectic": 15.0
+      }
+    },
+    {
+      "PatternType": "Bodice",
+      "name": "Belted Jacket Bodice",
+      "prettyName": "Belted Jacket Bodice",
+      "itemTags": {
+        "Casual": 10.0,
+        "Daywear": 15.0,
+        "Formal": 10.0,
+        "Professional": 15.0,
+        "Simple": 10.0,
+        "Warm": 20.0,
+        "Eclectic": 20.0,
+        "Cool": -5.0,
+        "Elegant": 20.0
+      }
+    },
+    {
+      "PatternType": "Collar",
+      "name": "Gothic Collar",
+      "prettyName": "Gothic Collar",
+      "itemTags": {
+        "Goth": 20.0,
+        "Uncomfortable": 10.0,
+        "Elegant": 5.0,
+        "Casual": -5.0,
+        "Cute": -5.0,
+        "Daywear": -5.0,
+        "Elaborate": 15.0,
+        "Professional": -10.0,
+        "Simple": -5.0,
+        "Workwear": -10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Angel's Trumpet Sleeve",
+      "prettyName": "Angel's Trumpet Sleeve",
+      "itemTags": {
+        "Cool": 5.0,
+        "Eclectic": 5.0,
+        "Eveningwear": 15.0,
+        "Formal": 5.0,
+        "Glamour": 5.0,
+        "Goth": 25.0,
+        "Risque": 15.0,
+        "Romantic": 10.0,
+        "Elegant": 10.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Arwen Sleeve",
+      "prettyName": "Arwen Sleeve",
+      "itemTags": {
+        "Cool": 5.0,
+        "Elaborate": 5.0,
+        "Elegant": 10.0,
+        "Eveningwear": 10.0,
+        "Formal": 10.0,
+        "Goth": 5.0,
+        "Romantic": 5.0
+      }
+    },
+    {
+      "PatternType": "Sleeve",
+      "name": "Angel Sleeve",
+      "prettyName": "Angel Sleeve",
+      "itemTags": {
+        "Cool": 5.0,
+        "Cute": 10.0,
+        "Elaborate": 5.0,
+        "Elegant": 15.0,
+        "Eveningwear": 20.0,
+        "Glamour": 5.0,
+        "Goth": 10.0,
+        "Romantic": 20.0,
+        "Formal": 5.0
+      }
+    },
+    {
+      "PatternType": "Skirt",
+      "name": "Odette Skirt",
+      "prettyName": "Odette Skirt",
+      "itemTags": {
+        "Casual": -10.0,
+        "Cute": 25.0,
+        "Elaborate": 20.0,
+        "Elegant": 20.0,
+        "Eveningwear": 25.0,
+        "Formal": 20.0,
+        "Goth": 20.0,
+        "Playful": 20.0,
+        "Romantic": 25.0,
+        "Warm": 10.0
+      }
+    }
+  ],
   "fabricInfos": [
     {
       "name": "Burlap",
@@ -5740,2627 +8363,16 @@
       }
     }
   ],
-  "patternInfos": [
-    {
-      "PatternType": "Bodice",
-      "name": "Princess Bodice",
-      "prettyName": "Princess Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Warm": 15.0,
-        "Workwear": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Cap Sleeve",
-      "prettyName": "Cap Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 5.0,
-        "Simple": 5.0,
-        "Workwear": 5.0,
-        "Professional": 5.0,
-        "Warm": 3.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Long Sleeve",
-      "prettyName": "Long Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Formal": 5.0,
-        "Professional": 5.0,
-        "Warm": 10.0,
-        "Workwear": 5.0,
-        "Simple": 5.0,
-        "Daywear": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "No Collar",
-      "prettyName": "No Collar",
-      "itemTags": {
-        "Cool": 5.0,
-        "Simple": 5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "No Sleeves",
-      "prettyName": "No Sleeves",
-      "itemTags": {
-        "Cool": 10.0,
-        "Simple": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Peter Pan Collar",
-      "prettyName": "Peter Pan Collar",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Professional": 5.0,
-        "Warm": 3.0,
-        "Workwear": 3.0,
-        "Simple": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "V collar notched shirt",
-      "prettyName": "Notched Shirt Collar",
-      "itemTags": {
-        "Casual": 5.0,
-        "Professional": 5.0,
-        "Simple": 3.0,
-        "Daywear": 3.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Bracelet Sleeve",
-      "prettyName": "Bracelet Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 5.0,
-        "Professional": 5.0,
-        "Simple": 5.0,
-        "Workwear": 5.0,
-        "Warm": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Princess Skirt",
-      "prettyName": "Princess Skirt",
-      "itemTags": {
-        "Casual": 15.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Elegant": 10.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 25.0,
-        "Workwear": 10.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Square Bodice",
-      "prettyName": "Square Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Warm": 15.0,
-        "Workwear": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess Scoop Bodice",
-      "prettyName": "Princess Scoop Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Workwear": 10.0,
-        "Daywear": 20.0,
-        "Warm": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Milkmaid Bodice",
-      "prettyName": "Milkmaid Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Cute": 20.0,
-        "Elegant": 10.0,
-        "Eveningwear": 15.0,
-        "Formal": 5.0,
-        "Romantic": 25.0,
-        "Simple": 10.0,
-        "Casual": 10.0,
-        "Daywear": 10.0,
-        "Playful": 20.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Butterfly Sleeve",
-      "prettyName": "Butterfly Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cool": 10.0,
-        "Cute": 10.0,
-        "Daywear": 5.0,
-        "Elegant": 10.0,
-        "Eveningwear": 5.0,
-        "Formal": 5.0,
-        "Playful": 3.0,
-        "Romantic": 10.0,
-        "Simple": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Circle Skirt",
-      "prettyName": "Circle Skirt",
-      "itemTags": {
-        "Casual": 15.0,
-        "Cute": 15.0,
-        "Daywear": 20.0,
-        "Elegant": 20.0,
-        "Formal": 15.0,
-        "Professional": 10.0,
-        "Romantic": 15.0,
-        "Simple": 20.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Gathered Ballgown Skirt",
-      "prettyName": "Gathered Ballgown Skirt",
-      "itemTags": {
-        "Cute": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Eveningwear": 25.0,
-        "Glamour": 10.0,
-        "Romantic": 15.0,
-        "Warm": 10.0,
-        "Casual": -5.0,
-        "Daywear": -5.0,
-        "Professional": -5.0,
-        "Simple": -5.0,
-        "Workwear": -5.0,
-        "Formal": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Sweetheart Bodice",
-      "prettyName": "Sweetheart Bodice",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cool": 15.0,
-        "Cute": 25.0,
-        "Daywear": 15.0,
-        "Elegant": 20.0,
-        "Eveningwear": 25.0,
-        "Formal": 15.0,
-        "Glamour": 10.0,
-        "Playful": 5.0,
-        "Romantic": 25.0,
-        "Simple": 20.0,
-        "Warm": -5.0,
-        "Professional": -5.0,
-        "Risque": 5.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Strapless Bodice",
-      "prettyName": "Strapless Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Daywear": 10.0,
-        "Eveningwear": 25.0,
-        "Formal": 15.0,
-        "Glamour": 10.0,
-        "Romantic": 20.0,
-        "Simple": 25.0,
-        "Workwear": -5.0,
-        "Warm": -5.0,
-        "Elegant": 20.0,
-        "Professional": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess V Bodice",
-      "prettyName": "Princess V Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Workwear": 10.0,
-        "Warm": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "One Shoulder Bodice",
-      "prettyName": "One Shoulder Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Elegant": 15.0,
-        "Formal": 20.0,
-        "Glamour": 5.0,
-        "Simple": 10.0,
-        "Workwear": -5.0,
-        "Professional": -5.0,
-        "Warm": -5.0,
-        "Eveningwear": 20.0,
-        "Romantic": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Pencil Skirt",
-      "prettyName": "Pencil Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Elegant": 15.0,
-        "Formal": 20.0,
-        "Goth": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Uncomfortable": 10.0,
-        "Workwear": -5.0,
-        "Risque": 15.0,
-        "Eveningwear": -5.0,
-        "Playful": -5.0,
-        "Eclectic": -5.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "V collar open shirt",
-      "prettyName": "Open Shirt Collar",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 3.0,
-        "Professional": 5.0,
-        "Simple": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Single Keyhole Bodice",
-      "prettyName": "Single Keyhole Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Warm": 15.0,
-        "Daywear": 20.0,
-        "Simple": 20.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Mermaid Skirt",
-      "prettyName": "Mermaid Skirt",
-      "itemTags": {
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Formal": 20.0,
-        "Glamour": 25.0,
-        "Goth": 25.0,
-        "Uncomfortable": 15.0,
-        "Risque": 25.0,
-        "Casual": -5.0,
-        "Daywear": -5.0,
-        "Playful": -5.0,
-        "Workwear": -5.0,
-        "Eveningwear": 25.0,
-        "Professional": -5.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Plunging Neckline Bodice",
-      "prettyName": "Plunging Neckline Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Elaborate": 5.0,
-        "Eveningwear": 25.0,
-        "Formal": 15.0,
-        "Glamour": 10.0,
-        "Romantic": 5.0,
-        "Simple": 10.0,
-        "Risque": 25.0,
-        "Professional": -5.0,
-        "Eclectic": 15.0,
-        "Elegant": 20.0,
-        "Warm": -5.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Peasant Sleeve",
-      "prettyName": "Peasant Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Professional": 10.0,
-        "Romantic": 5.0,
-        "Simple": 5.0,
-        "Warm": 10.0,
-        "Workwear": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Pointed Collar",
-      "prettyName": "Pointed Collar",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Professional": 5.0,
-        "Simple": 5.0,
-        "Warm": 3.0,
-        "Workwear": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Straight Long Skirt",
-      "prettyName": "Straight Long Skirt",
-      "itemTags": {
-        "Elegant": 10.0,
-        "Eveningwear": -5.0,
-        "Formal": -5.0,
-        "Professional": 25.0,
-        "Simple": 25.0,
-        "Workwear": 10.0,
-        "Daywear": 20.0,
-        "Warm": 5.0,
-        "Casual": 10.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Flounce Sleeve",
-      "prettyName": "Flounce Sleeve",
-      "itemTags": {
-        "Daywear": 5.0,
-        "Elegant": 10.0,
-        "Eveningwear": 5.0,
-        "Formal": 10.0,
-        "Goth": 5.0,
-        "Warm": 10.0,
-        "Elaborate": 5.0,
-        "Professional": 5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Short Puffed Sleeve",
-      "prettyName": "Short Puffed Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 10.0,
-        "Daywear": 10.0,
-        "Playful": 10.0,
-        "Professional": 5.0,
-        "Romantic": 5.0,
-        "Simple": 5.0,
-        "Workwear": 5.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Mutton Sleeve",
-      "prettyName": "Mutton Sleeve",
-      "itemTags": {
-        "Daywear": 5.0,
-        "Goth": 10.0,
-        "Warm": 10.0,
-        "Professional": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Flare Skirt",
-      "prettyName": "Flare Skirt",
-      "itemTags": {
-        "Casual": 15.0,
-        "Cute": 15.0,
-        "Daywear": 20.0,
-        "Elegant": 15.0,
-        "Formal": 15.0,
-        "Professional": 15.0,
-        "Simple": 20.0,
-        "Workwear": 15.0,
-        "Romantic": 15.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Bias Cut Skirt",
-      "prettyName": "Bias Cut Skirt",
-      "itemTags": {
-        "Eveningwear": 25.0,
-        "Elegant": 25.0,
-        "Formal": 20.0,
-        "Glamour": 15.0,
-        "Simple": 20.0,
-        "Warm": 10.0,
-        "Professional": -5.0,
-        "Risque": 10.0,
-        "Eclectic": 10.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Oversized Wing Collar",
-      "prettyName": "Oversized Wing Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Daywear": 5.0,
-        "Elegant": 5.0,
-        "Glamour": 5.0,
-        "Goth": 5.0,
-        "Professional": 5.0,
-        "Simple": 3.0,
-        "Risque": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Gathered Tiered Skirt",
-      "prettyName": "Puffy Gathered Tiered Skirt",
-      "itemTags": {
-        "Daywear": 15.0,
-        "Elaborate": 10.0,
-        "Elegant": 10.0,
-        "Romantic": 15.0,
-        "Warm": 10.0,
-        "Eclectic": 25.0,
-        "Casual": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Pussybow Collar",
-      "prettyName": "Pussybow Collar",
-      "itemTags": {
-        "Cute": 5.0,
-        "Elaborate": 3.0,
-        "Elegant": 3.0,
-        "Formal": 3.0,
-        "Playful": 3.0,
-        "Casual": 3.0,
-        "Daywear": 5.0,
-        "Professional": 5.0,
-        "Romantic": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Single Tiered Skirt",
-      "prettyName": "Single Tiered Skirt",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 20.0,
-        "Daywear": 20.0,
-        "Elaborate": 5.0,
-        "Elegant": 10.0,
-        "Glamour": -5.0,
-        "Playful": 20.0,
-        "Romantic": 20.0,
-        "Casual": 15.0,
-        "Simple": 5.0,
-        "Workwear": 10.0,
-        "Eveningwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Elevated Scoop Ruffle Bodice",
-      "prettyName": "Elevated Scoop Ruffle Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Daywear": 20.0,
-        "Elaborate": 10.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Playful": 10.0,
-        "Professional": 15.0,
-        "Romantic": 20.0,
-        "Warm": 15.0,
-        "Workwear": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess Scoop Ruffle Bodice",
-      "prettyName": "Scoop Ruffle Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 25.0,
-        "Daywear": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 15.0,
-        "Formal": 10.0,
-        "Playful": 10.0,
-        "Romantic": 25.0,
-        "Warm": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Cinched Keyhole Blouse",
-      "prettyName": "Cinched Keyhole Blouse",
-      "itemTags": {
-        "Daywear": 10.0,
-        "Eclectic": 20.0,
-        "Elegant": 20.0,
-        "Eveningwear": 10.0,
-        "Formal": 15.0,
-        "Glamour": 25.0,
-        "Goth": 20.0,
-        "Risque": 25.0,
-        "Professional": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Kimono Bodice",
-      "prettyName": "Kimono Bodice",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elaborate": 5.0,
-        "Elegant": 15.0,
-        "Simple": 10.0,
-        "Workwear": -5.0,
-        "Daywear": 15.0,
-        "Professional": -5.0,
-        "Casual": 10.0,
-        "Eveningwear": 20.0,
-        "Glamour": 10.0,
-        "Risque": 10.0,
-        "Eclectic": 25.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Short Sleeve",
-      "prettyName": "Short Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 10.0,
-        "Professional": 10.0,
-        "Workwear": 5.0,
-        "Cute": 5.0,
-        "Cool": 10.0,
-        "Simple": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Waistcoat Skirt",
-      "prettyName": "Waistcoat Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cool": 10.0,
-        "Cute": 15.0,
-        "Daywear": 20.0,
-        "Eclectic": 15.0,
-        "Elegant": 20.0,
-        "Goth": 10.0,
-        "Professional": 25.0,
-        "Simple": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Waistcoat Bodice",
-      "prettyName": "Waistcoat Bodice",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 10.0,
-        "Daywear": 10.0,
-        "Elegant": 15.0,
-        "Goth": 10.0,
-        "Professional": 25.0,
-        "Simple": 10.0,
-        "Warm": 10.0,
-        "Eclectic": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess Heart Bodice",
-      "prettyName": "Heart Princess Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Casual": 5.0,
-        "Cute": 15.0,
-        "Daywear": 10.0,
-        "Elegant": 25.0,
-        "Eveningwear": 20.0,
-        "Glamour": 10.0,
-        "Romantic": 5.0,
-        "Simple": 10.0,
-        "Warm": -5.0,
-        "Workwear": -5.0,
-        "Formal": 20.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Middle Panel Skirt",
-      "prettyName": "Yoke Gathered Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cool": 10.0,
-        "Cute": 10.0,
-        "Elegant": 20.0,
-        "Formal": 15.0,
-        "Romantic": 15.0,
-        "Elaborate": 5.0,
-        "Daywear": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Sweetheart Bodice Elevated",
-      "prettyName": "Elevated Sweetheart Bodice",
-      "itemTags": {
-        "Cute": 15.0,
-        "Daywear": 20.0,
-        "Elegant": 25.0,
-        "Eveningwear": -5.0,
-        "Formal": 20.0,
-        "Playful": 5.0,
-        "Romantic": 20.0,
-        "Warm": 10.0,
-        "Casual": 5.0,
-        "Professional": 10.0,
-        "Workwear": -5.0,
-        "Elaborate": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Apron Skirt",
-      "prettyName": "Apron Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Elegant": -5.0,
-        "Eveningwear": -10.0,
-        "Glamour": -10.0,
-        "Playful": 20.0,
-        "Risque": -10.0,
-        "Workwear": 25.0,
-        "Daywear": 15.0,
-        "Romantic": 15.0,
-        "Simple": 10.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Apron Bodice",
-      "prettyName": "Apron Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -10.0,
-        "Elegant": -5.0,
-        "Formal": -5.0,
-        "Glamour": -10.0,
-        "Playful": 5.0,
-        "Risque": -10.0,
-        "Simple": 20.0,
-        "Warm": 10.0,
-        "Workwear": 25.0,
-        "Elaborate": -5.0,
-        "Romantic": 5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Juliette-Bishop Sleeve",
-      "prettyName": "Juliette-Bishop Sleeve",
-      "itemTags": {
-        "Daywear": 5.0,
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Warm": 10.0,
-        "Cute": 10.0,
-        "Romantic": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Ruffle Apron Bodice",
-      "prettyName": "Ruffle Apron Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Daywear": 20.0,
-        "Elegant": -5.0,
-        "Eveningwear": -10.0,
-        "Formal": -5.0,
-        "Glamour": -10.0,
-        "Playful": 10.0,
-        "Risque": -10.0,
-        "Simple": 10.0,
-        "Warm": 10.0,
-        "Workwear": 25.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Long Cuffed Sleeve",
-      "prettyName": "Long Cuffed Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 10.0,
-        "Professional": 5.0,
-        "Warm": 10.0,
-        "Eclectic": 5.0,
-        "Elegant": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Coat Dress Bodice",
-      "prettyName": "Coat Dress Bodice",
-      "itemTags": {
-        "Cool": -10.0,
-        "Elaborate": 10.0,
-        "Elegant": 10.0,
-        "Glamour": 10.0,
-        "Risque": -10.0,
-        "Professional": 5.0,
-        "Simple": 10.0,
-        "Warm": 25.0,
-        "Eclectic": 20.0,
-        "Daywear": 15.0,
-        "Eveningwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Coat Dress Skirt",
-      "prettyName": "Coat Dress Skirt",
-      "itemTags": {
-        "Cool": -10.0,
-        "Daywear": 15.0,
-        "Elegant": 10.0,
-        "Eveningwear": -5.0,
-        "Professional": 5.0,
-        "Simple": 10.0,
-        "Warm": 25.0,
-        "Risque": -10.0,
-        "Eclectic": 20.0,
-        "Elaborate": 10.0,
-        "Glamour": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Mandarin Collar",
-      "prettyName": "Mandarin Collar",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 5.0,
-        "Professional": 3.0,
-        "Warm": 3.0,
-        "Eclectic": 5.0,
-        "Simple": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Corset Bodice",
-      "prettyName": "Corset Bodice",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 15.0,
-        "Glamour": 25.0,
-        "Goth": 25.0,
-        "Romantic": 10.0,
-        "Risque": 25.0,
-        "Professional": -10.0,
-        "Uncomfortable": 15.0,
-        "Warm": -5.0,
-        "Workwear": -10.0,
-        "Casual": -5.0,
-        "Daywear": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Corset Skirt",
-      "prettyName": "Corset Skirt",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 10.0,
-        "Formal": 20.0,
-        "Glamour": 25.0,
-        "Risque": 25.0,
-        "Uncomfortable": 10.0,
-        "Goth": 25.0,
-        "Professional": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Slit Sleeve",
-      "prettyName": "Slit Sleeve",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Risque": 5.0,
-        "Elaborate": 5.0,
-        "Eclectic": 10.0,
-        "Goth": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Front Lace Stay",
-      "prettyName": "Front Lace Stays",
-      "itemTags": {
-        "Cute": 25.0,
-        "Elaborate": 20.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 10.0,
-        "Goth": 25.0,
-        "Romantic": 20.0,
-        "Playful": 10.0,
-        "Daywear": 10.0,
-        "Uncomfortable": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Fae Sleeve",
-      "prettyName": "Fae Sleeve",
-      "itemTags": {
-        "Cute": 15.0,
-        "Daywear": 5.0,
-        "Elaborate": 5.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Playful": 10.0,
-        "Romantic": 5.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Double Ruffle Collar",
-      "prettyName": "Double Ruffle and Bow Collar",
-      "itemTags": {
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Professional": 5.0,
-        "Uncomfortable": 5.0,
-        "Warm": 3.0,
-        "Formal": 3.0,
-        "Elegant": 3.0,
-        "Goth": 3.0,
-        "Elaborate": 5.0,
-        "Playful": 3.0,
-        "Romantic": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Elevated Scoop Bodice",
-      "prettyName": "Elevated Scoop Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Workwear": 10.0,
-        "Warm": 15.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Mother of Pearl Skirt",
-      "prettyName": "Mother of Pearl Skirt",
-      "itemTags": {
-        "Cute": 20.0,
-        "Elaborate": 15.0,
-        "Eveningwear": 20.0,
-        "Elegant": 10.0,
-        "Goth": 15.0,
-        "Playful": 20.0,
-        "Romantic": 15.0,
-        "Professional": -5.0,
-        "Workwear": -5.0,
-        "Simple": -5.0,
-        "Warm": 10.0,
-        "Casual": -5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Hecate Sleeve",
-      "prettyName": "Hecate Sleeve",
-      "itemTags": {
-        "Elaborate": 10.0,
-        "Elegant": 5.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Professional": 5.0,
-        "Cute": 10.0,
-        "Goth": 10.0,
-        "Romantic": 10.0,
-        "Warm": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Rebecca Frill Collar",
-      "prettyName": "Upright Frill Collar",
-      "itemTags": {
-        "Cute": 3.0,
-        "Daywear": 3.0,
-        "Formal": 3.0,
-        "Professional": 3.0,
-        "Romantic": 3.0,
-        "Elaborate": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Yoked Shirt V Neck Bodice",
-      "prettyName": "V Neck Yoked Shirt",
-      "itemTags": {
-        "Daywear": 15.0,
-        "Professional": 25.0,
-        "Simple": 10.0,
-        "Warm": 10.0,
-        "Casual": 10.0,
-        "Elegant": 10.0,
-        "Eveningwear": -10.0,
-        "Glamour": -10.0,
-        "Risque": -10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Yoked Shirt Bodice",
-      "prettyName": "Yoked Shirt",
-      "itemTags": {
-        "Daywear": 15.0,
-        "Professional": 25.0,
-        "Simple": 10.0,
-        "Warm": 10.0,
-        "Casual": 10.0,
-        "Elegant": 10.0,
-        "Eveningwear": -10.0,
-        "Risque": -10.0,
-        "Glamour": -10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Twilight Hour Bodice",
-      "prettyName": "Twilight Hour Bodice",
-      "itemTags": {
-        "Casual": -5.0,
-        "Cool": 25.0,
-        "Cute": -5.0,
-        "Elaborate": 15.0,
-        "Glamour": 15.0,
-        "Goth": 25.0,
-        "Playful": -5.0,
-        "Professional": -10.0,
-        "Risque": 25.0,
-        "Romantic": 15.0,
-        "Warm": -10.0,
-        "Workwear": -10.0,
-        "Eclectic": 15.0,
-        "Daywear": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Twilight Hour Skirt",
-      "prettyName": "Twilight Hour Skirt",
-      "itemTags": {
-        "Casual": -10.0,
-        "Cool": 20.0,
-        "Cute": -5.0,
-        "Daywear": -10.0,
-        "Elaborate": 10.0,
-        "Glamour": 15.0,
-        "Goth": 25.0,
-        "Playful": -5.0,
-        "Professional": -10.0,
-        "Risque": 25.0,
-        "Uncomfortable": 10.0,
-        "Warm": -10.0,
-        "Workwear": -10.0,
-        "Eclectic": 20.0,
-        "Elegant": 15.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Widow's Peak Collar",
-      "prettyName": "Widow's Peak Collar",
-      "itemTags": {
-        "Casual": -5.0,
-        "Cute": -5.0,
-        "Daywear": -5.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 15.0,
-        "Warm": 5.0,
-        "Uncomfortable": 10.0,
-        "Goth": 15.0,
-        "Risque": 5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Bell Sleeve",
-      "prettyName": "Bell Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Glamour": 5.0,
-        "Goth": 5.0,
-        "Romantic": 3.0,
-        "Warm": 5.0,
-        "Daywear": 3.0,
-        "Eclectic": 10.0,
-        "Elaborate": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Katarina Bodice",
-      "prettyName": "Katarina Bodice",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 5.0,
-        "Formal": 10.0,
-        "Romantic": 10.0,
-        "Simple": 5.0,
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Eveningwear": 15.0,
-        "Workwear": -5.0,
-        "Elegant": 10.0,
-        "Risque": 5.0,
-        "Eclectic": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Godet Skirt",
-      "prettyName": "Godet Skirt",
-      "itemTags": {
-        "Eclectic": 25.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Daywear": 10.0,
-        "Glamour": 15.0,
-        "Goth": 10.0,
-        "Romantic": 10.0,
-        "Warm": 10.0,
-        "Eveningwear": 20.0,
-        "Formal": 15.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Petal Peplum Skirt",
-      "prettyName": "Petal Peplum Skirt",
-      "itemTags": {
-        "Casual": -5.0,
-        "Cute": 20.0,
-        "Daywear": -5.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Professional": -5.0,
-        "Romantic": 25.0,
-        "Warm": 10.0,
-        "Elaborate": 10.0,
-        "Playful": 15.0,
-        "Flowers": 15.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Ruched Sweetheart Bodice",
-      "prettyName": "Ruched Sweetheart Bodice",
-      "itemTags": {
-        "Cool": 20.0,
-        "Cute": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 25.0,
-        "Eveningwear": 25.0,
-        "Formal": 25.0,
-        "Glamour": 20.0,
-        "Risque": 5.0,
-        "Romantic": 20.0,
-        "Warm": -5.0,
-        "Workwear": -5.0,
-        "Professional": -5.0,
-        "Uncomfortable": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Split Skirt",
-      "prettyName": "Split Skirt",
-      "itemTags": {
-        "Elegant": 25.0,
-        "Eveningwear": 25.0,
-        "Formal": 25.0,
-        "Glamour": 25.0,
-        "Professional": -5.0,
-        "Simple": -5.0,
-        "Workwear": -5.0,
-        "Elaborate": 20.0,
-        "Warm": 10.0,
-        "Uncomfortable": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Bow Skirt",
-      "prettyName": "Bow Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Daywear": 15.0,
-        "Elaborate": 5.0,
-        "Eveningwear": 15.0,
-        "Elegant": 15.0,
-        "Formal": 10.0,
-        "Glamour": 10.0,
-        "Playful": 20.0,
-        "Romantic": 20.0,
-        "Eclectic": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Front Lace Bodice",
-      "prettyName": "Front Lace Bodice",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cool": 10.0,
-        "Cute": 20.0,
-        "Daywear": 15.0,
-        "Eclectic": 20.0,
-        "Elaborate": 5.0,
-        "Elegant": 20.0,
-        "Eveningwear": 15.0,
-        "Formal": 15.0,
-        "Goth": 10.0,
-        "Playful": 10.0,
-        "Romantic": 25.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Godiva Sleeve",
-      "prettyName": "Godiva Sleeve",
-      "itemTags": {
-        "Eclectic": 20.0,
-        "Elegant": 15.0,
-        "Eveningwear": 10.0,
-        "Formal": 10.0,
-        "Glamour": 15.0,
-        "Goth": 20.0,
-        "Risque": 5.0,
-        "Simple": 10.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Delilah Bodice",
-      "prettyName": "Delilah Bodice",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 20.0,
-        "Daywear": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Formal": 10.0,
-        "Playful": 10.0,
-        "Romantic": 20.0,
-        "Warm": 10.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Wavecrest Skirt",
-      "prettyName": "Wavecrest Skirt",
-      "itemTags": {
-        "Casual": -5.0,
-        "Elaborate": 15.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Playful": 15.0,
-        "Romantic": 20.0,
-        "Warm": 10.0,
-        "Workwear": -5.0,
-        "Eclectic": 15.0,
-        "Cute": 10.0,
-        "Daywear": 10.0,
-        "Professional": -5.0,
-        "Simple": -5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Qipao Collar",
-      "prettyName": "Qipao Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Elegant": 3.0,
-        "Formal": 3.0,
-        "Professional": 3.0,
-        "Romantic": 3.0,
-        "Simple": 3.0,
-        "Warm": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess V Ruffle Bodice",
-      "prettyName": "Princess V Ruffle Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 25.0,
-        "Daywear": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 15.0,
-        "Formal": 10.0,
-        "Playful": 10.0,
-        "Romantic": 25.0,
-        "Warm": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Gathered Tiered Ruffle Skirt",
-      "prettyName": "Gathered Tiered Ruffle Skirt",
-      "itemTags": {
-        "Cute": 25.0,
-        "Daywear": 10.0,
-        "Elaborate": 20.0,
-        "Playful": 25.0,
-        "Romantic": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess V Elevated Bodice",
-      "prettyName": "Elevated Princess V Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Workwear": 10.0,
-        "Warm": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Princess V Elevated Ruffle Bodice",
-      "prettyName": "Princess V Elevated Ruffle Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 20.0,
-        "Daywear": 20.0,
-        "Elaborate": 10.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0,
-        "Playful": 10.0,
-        "Professional": 15.0,
-        "Romantic": 20.0,
-        "Workwear": 5.0,
-        "Warm": 15.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Juliette Sleeve",
-      "prettyName": "Juliette Sleeve",
-      "itemTags": {
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Goth": 5.0,
-        "Professional": 5.0,
-        "Romantic": 5.0,
-        "Warm": 10.0,
-        "Cute": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Split Crew Neck Bodice",
-      "prettyName": "Split Crew Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 20.0,
-        "Professional": 20.0,
-        "Simple": 20.0,
-        "Warm": 15.0,
-        "Eveningwear": -5.0,
-        "Formal": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Curved Peplum Skirt",
-      "prettyName": "Curved Peplum Skirt",
-      "itemTags": {
-        "Cool": 10.0,
-        "Daywear": 20.0,
-        "Elegant": 20.0,
-        "Formal": 15.0,
-        "Professional": 25.0,
-        "Simple": 5.0,
-        "Casual": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "V collar scalloped",
-      "prettyName": "Scalloped Collar",
-      "itemTags": {
-        "Cute": 5.0,
-        "Playful": 3.0,
-        "Professional": 5.0,
-        "Casual": 5.0,
-        "Daywear": 3.0,
-        "Romantic": 1.0,
-        "Simple": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Gatsby Bodice",
-      "prettyName": "Gatsby Bodice",
-      "itemTags": {
-        "Casual": -5.0,
-        "Cool": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 10.0,
-        "Glamour": 25.0,
-        "Professional": -5.0,
-        "Risque": 25.0,
-        "Romantic": 10.0,
-        "Simple": 10.0,
-        "Warm": -5.0,
-        "Workwear": -10.0,
-        "Eclectic": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Gatsby Skirt",
-      "prettyName": "Gatsby Skirt",
-      "itemTags": {
-        "Elaborate": 20.0,
-        "Elegant": 10.0,
-        "Eveningwear": 15.0,
-        "Formal": 15.0,
-        "Glamour": 20.0,
-        "Risque": 10.0,
-        "Eclectic": 15.0,
-        "Workwear": -5.0,
-        "Professional": -5.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Tiered Sleeves",
-      "prettyName": "Tiered Sleeves",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elaborate": 5.0,
-        "Formal": 5.0,
-        "Playful": 10.0,
-        "Eclectic": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Ruched Bodice",
-      "prettyName": "Ruched Bodice",
-      "itemTags": {
-        "Elegant": 10.0,
-        "Formal": 15.0,
-        "Simple": 10.0,
-        "Daywear": 15.0,
-        "Professional": 25.0,
-        "Warm": 15.0,
-        "Eveningwear": -5.0,
-        "Casual": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "V Yoked Bodice",
-      "prettyName": "Upturned Yoked Bodice",
-      "itemTags": {
-        "Cute": 10.0,
-        "Elaborate": 5.0,
-        "Glamour": -10.0,
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Professional": 25.0,
-        "Warm": 10.0,
-        "Playful": 5.0,
-        "Simple": 5.0,
-        "Elegant": 10.0,
-        "Eveningwear": -10.0,
-        "Risque": -10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Bustier Bodice",
-      "prettyName": "Bustier Bodice",
-      "itemTags": {
-        "Cool": 20.0,
-        "Cute": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 15.0,
-        "Glamour": 10.0,
-        "Goth": 10.0,
-        "Romantic": 25.0,
-        "Simple": -5.0,
-        "Warm": -5.0,
-        "Risque": 25.0,
-        "Casual": -10.0,
-        "Uncomfortable": 5.0,
-        "Professional": -10.0,
-        "Workwear": -10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Straight Gathered Tiered Skirt",
-      "prettyName": "Straight Gathered Tiered Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Elaborate": 10.0,
-        "Elegant": 10.0,
-        "Romantic": 15.0,
-        "Warm": 10.0,
-        "Eclectic": 20.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Pleated Drop Sleeve",
-      "prettyName": "Pleated Drop Sleeve",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 5.0,
-        "Eveningwear": 15.0,
-        "Formal": 10.0,
-        "Elaborate": 5.0,
-        "Elegant": 10.0,
-        "Romantic": 15.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Tiered Skirt",
-      "prettyName": "Basque Tiered Skirt",
-      "itemTags": {
-        "Cute": 20.0,
-        "Daywear": -10.0,
-        "Elaborate": 25.0,
-        "Elegant": 25.0,
-        "Eveningwear": 25.0,
-        "Formal": 25.0,
-        "Glamour": 15.0,
-        "Romantic": 20.0,
-        "Warm": 10.0,
-        "Workwear": -10.0,
-        "Professional": -10.0,
-        "Simple": -5.0,
-        "Casual": -10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Flutter Sleeve",
-      "prettyName": "Flutter Sleeve",
-      "itemTags": {
-        "Cute": 20.0,
-        "Elaborate": 10.0,
-        "Playful": 15.0,
-        "Romantic": 10.0,
-        "Eveningwear": 10.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Sailor Collar",
-      "prettyName": "Sailor Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Playful": 5.0,
-        "Elegant": 5.0,
-        "Workwear": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Viper Bodice",
-      "prettyName": "Viper Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Elaborate": 10.0,
-        "Elegant": 10.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Glamour": 25.0,
-        "Goth": 25.0,
-        "Risque": 25.0,
-        "Romantic": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Viper Skirt",
-      "prettyName": "Viper Skirt",
-      "itemTags": {
-        "Cool": 20.0,
-        "Elaborate": 20.0,
-        "Elegant": 15.0,
-        "Glamour": 20.0,
-        "Goth": 25.0,
-        "Risque": 25.0,
-        "Casual": -10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Viper Collar",
-      "prettyName": "Viper Collar",
-      "itemTags": {
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Formal": 5.0,
-        "Goth": 20.0,
-        "Risque": 5.0,
-        "Warm": 5.0,
-        "Glamour": 15.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Handkerchief Godet Skirt",
-      "prettyName": "Handkerchief Godet Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cool": 10.0,
-        "Daywear": 15.0,
-        "Eclectic": 25.0,
-        "Elaborate": 15.0,
-        "Glamour": 20.0,
-        "Romantic": 10.0,
-        "Elegant": 10.0,
-        "Eveningwear": 15.0,
-        "Formal": 15.0,
-        "Goth": 12.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Halter Neck Bodice",
-      "prettyName": "Halter Neck Bodice",
-      "itemTags": {
-        "Cool": 20.0,
-        "Cute": 10.0,
-        "Romantic": 15.0,
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Warm": -10.0,
-        "Professional": -10.0,
-        "Workwear": -5.0,
-        "Elegant": 10.0,
-        "Risque": 10.0,
-        "Eclectic": 15.0,
-        "Simple": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Ruffle Bodice Straight",
-      "prettyName": "Straight Begonia Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Cute": 20.0,
-        "Elaborate": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Glamour": 10.0,
-        "Romantic": 25.0,
-        "Workwear": -5.0,
-        "Casual": 5.0,
-        "Professional": -5.0,
-        "Simple": -5.0,
-        "Warm": -5.0,
-        "Daywear": 10.0,
-        "Formal": 20.0,
-        "Playful": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Frill Skirt",
-      "prettyName": "Frill Skirt",
-      "itemTags": {
-        "Cute": 20.0,
-        "Daywear": 10.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 10.0,
-        "Playful": 20.0,
-        "Romantic": 20.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Chanterelle Sleeve",
-      "prettyName": "Chanterelle Sleeve",
-      "itemTags": {
-        "Cool": 5.0,
-        "Cute": 20.0,
-        "Daywear": 5.0,
-        "Eclectic": 5.0,
-        "Elegant": 10.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Goth": 5.0,
-        "Playful": 10.0,
-        "Romantic": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Fable Collar",
-      "prettyName": "Fable Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Cute": 10.0,
-        "Daywear": 5.0,
-        "Elaborate": 3.0,
-        "Playful": 5.0,
-        "Professional": 5.0,
-        "Romantic": 3.0,
-        "Warm": 5.0,
-        "Workwear": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Aurora Bodice",
-      "prettyName": "Aurora Bodice",
-      "itemTags": {
-        "Cool": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 25.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Glamour": 10.0,
-        "Romantic": 25.0,
-        "Uncomfortable": 5.0,
-        "Workwear": -10.0,
-        "Casual": -5.0,
-        "Simple": -5.0,
-        "Professional": -5.0,
-        "Warm": -5.0,
-        "Cute": 15.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Tulip Hip Skirt",
-      "prettyName": "Tulip Hip Skirt",
-      "itemTags": {
-        "Elaborate": 10.0,
-        "Elegant": 25.0,
-        "Eveningwear": 25.0,
-        "Formal": 20.0,
-        "Glamour": 25.0,
-        "Romantic": 15.0,
-        "Uncomfortable": 10.0,
-        "Warm": 10.0,
-        "Daywear": -5.0,
-        "Risque": 10.0,
-        "Workwear": -5.0,
-        "Casual": -5.0,
-        "Professional": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Circle Peplum Skirt",
-      "prettyName": "Circle Peplum Skirt",
-      "itemTags": {
-        "Daywear": 20.0,
-        "Elegant": 20.0,
-        "Eveningwear": -5.0,
-        "Formal": 15.0,
-        "Professional": 15.0,
-        "Simple": 5.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Koi Skirt",
-      "prettyName": "Koi Skirt",
-      "itemTags": {
-        "Cool": 10.0,
-        "Daywear": 10.0,
-        "Eclectic": 15.0,
-        "Elaborate": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 15.0,
-        "Formal": 10.0,
-        "Glamour": 25.0,
-        "Risque": 20.0,
-        "Goth": 20.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Queen Anne Bodice",
-      "prettyName": "Queen Anne Bodice",
-      "itemTags": {
-        "Daywear": 10.0,
-        "Elaborate": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Formal": 15.0,
-        "Glamour": 15.0,
-        "Goth": 10.0,
-        "Warm": 5.0,
-        "Simple": 5.0,
-        "Workwear": -5.0,
-        "Eclectic": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Whirlpool Collar",
-      "prettyName": "Whirlpool Collar",
-      "itemTags": {
-        "Daywear": 3.0,
-        "Eclectic": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Formal": 5.0,
-        "Glamour": 5.0,
-        "Goth": 3.0,
-        "Professional": 5.0,
-        "Risque": 3.0,
-        "Romantic": 3.0,
-        "Warm": 5.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Serafuku",
-      "prettyName": "Serafuku Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Playful": 10.0,
-        "Workwear": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Bustle Skirt",
-      "prettyName": "Bustle Skirt",
-      "itemTags": {
-        "Cute": 15.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 25.0,
-        "Formal": 20.0,
-        "Goth": 20.0,
-        "Playful": 20.0,
-        "Romantic": 20.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Poinsetta Skirt",
-      "prettyName": "Poinsetta Skirt",
-      "itemTags": {
-        "Cute": 10.0,
-        "Elaborate": 15.0,
-        "Eveningwear": 25.0,
-        "Elegant": 10.0,
-        "Formal": 15.0,
-        "Goth": 20.0,
-        "Romantic": 20.0,
-        "Warm": 10.0,
-        "Professional": -5.0,
-        "Casual": -5.0,
-        "Workwear": -5.0,
-        "Simple": -5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Peasant Sleeve with Ruffle Cuff",
-      "prettyName": "Peasant Sleeve with Ruffle Cuff",
-      "itemTags": {
-        "Casual": 5.0,
-        "Daywear": 5.0,
-        "Cute": 10.0,
-        "Elaborate": 5.0,
-        "Professional": 10.0,
-        "Romantic": 10.0,
-        "Warm": 10.0,
-        "Workwear": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Ruffle Skirt",
-      "prettyName": "Ruffle Skirt",
-      "itemTags": {
-        "Casual": -10.0,
-        "Daywear": -10.0,
-        "Elaborate": 25.0,
-        "Eveningwear": 25.0,
-        "Elegant": 15.0,
-        "Formal": 25.0,
-        "Playful": 25.0,
-        "Professional": -10.0,
-        "Romantic": 25.0,
-        "Simple": -10.0,
-        "Warm": 10.0,
-        "Workwear": -10.0,
-        "Cute": 25.0,
-        "Glamour": 15.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Gabriel Sleeve",
-      "prettyName": "Gabriel Sleeve",
-      "itemTags": {
-        "Cute": 5.0,
-        "Elaborate": 10.0,
-        "Elegant": 5.0,
-        "Eveningwear": 10.0,
-        "Playful": 5.0,
-        "Romantic": 10.0,
-        "Cool": 5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Ruffle Bodice",
-      "prettyName": "Off-Shoulder Begonia Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Cute": 20.0,
-        "Elaborate": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Glamour": 10.0,
-        "Playful": 10.0,
-        "Romantic": 25.0,
-        "Simple": -5.0,
-        "Professional": -5.0,
-        "Warm": -5.0,
-        "Workwear": -5.0,
-        "Casual": 5.0,
-        "Daywear": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Train Skirt",
-      "prettyName": "Train Skirt",
-      "itemTags": {
-        "Casual": -5.0,
-        "Daywear": -5.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Goth": 20.0,
-        "Professional": -5.0,
-        "Romantic": 20.0,
-        "Workwear": -5.0,
-        "Risque": -5.0,
-        "Elaborate": 10.0,
-        "Formal": 20.0,
-        "Uncomfortable": 10.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Elbow Length Juliet Sleeve",
-      "prettyName": "Elbow Length Juliet Sleeve",
-      "itemTags": {
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Formal": 5.0,
-        "Goth": 5.0,
-        "Romantic": 3.0,
-        "Warm": 10.0,
-        "Cute": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Belladonna Skirt",
-      "prettyName": "Belladonna Skirt",
-      "itemTags": {
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Glamour": 20.0,
-        "Goth": 25.0,
-        "Risque": 25.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Belladonna Bodice",
-      "prettyName": "Belladonna Bodice",
-      "itemTags": {
-        "Elaborate": 15.0,
-        "Elegant": 20.0,
-        "Eveningwear": 25.0,
-        "Formal": 10.0,
-        "Glamour": 20.0,
-        "Goth": 25.0,
-        "Risque": 25.0,
-        "Warm": 10.0,
-        "Uncomfortable": 10.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Belladonna Collar",
-      "prettyName": "Belladonna Collar",
-      "itemTags": {
-        "Eclectic": 3.0,
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Goth": 10.0,
-        "Risque": 5.0,
-        "Uncomfortable": 3.0,
-        "Warm": 5.0,
-        "Cute": 3.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Scalloped Skirt",
-      "prettyName": "Scallop Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 10.0,
-        "Daywear": 25.0,
-        "Elegant": 10.0,
-        "Glamour": 10.0,
-        "Elaborate": 10.0,
-        "Eclectic": 25.0,
-        "Cool": 10.0,
-        "Playful": 15.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Three Quarter Poet Sleeve",
-      "prettyName": "Poet Sleeve",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Elaborate": 5.0,
-        "Elegant": 5.0,
-        "Eveningwear": 5.0,
-        "Romantic": 5.0,
-        "Eclectic": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Jacket V Bodice",
-      "prettyName": "Jacket Bodice",
-      "itemTags": {
-        "Eveningwear": -5.0,
-        "Warm": 25.0,
-        "Risque": -5.0,
-        "Daywear": 15.0,
-        "Elaborate": 10.0,
-        "Eclectic": 25.0,
-        "Cool": -5.0,
-        "Elegant": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Dirndl",
-      "prettyName": "Dirndl",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 20.0,
-        "Daywear": 15.0,
-        "Elaborate": 5.0,
-        "Elegant": 15.0,
-        "Goth": 10.0,
-        "Playful": 15.0,
-        "Professional": 15.0,
-        "Romantic": 15.0,
-        "Workwear": 20.0,
-        "Warm": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Chrysanthemum Skirt",
-      "prettyName": "Chrysanthemum Skirt",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 25.0,
-        "Daywear": 20.0,
-        "Elaborate": 10.0,
-        "Elegant": 15.0,
-        "Eveningwear": 10.0,
-        "Formal": 15.0,
-        "Playful": 25.0,
-        "Romantic": 20.0,
-        "Flowers": 25.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Petal Sleeve",
-      "prettyName": "Petal Sleeve",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cool": 5.0,
-        "Cute": 15.0,
-        "Daywear": 5.0,
-        "Elegant": 5.0,
-        "Formal": 5.0,
-        "Playful": 5.0,
-        "Romantic": 10.0,
-        "Simple": 5.0,
-        "Workwear": 5.0,
-        "Eveningwear": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Bow Ballgown Skirt",
-      "prettyName": "Bow Ballgown Skirt",
-      "itemTags": {
-        "Cute": 15.0,
-        "Elaborate": 15.0,
-        "Elegant": 15.0,
-        "Eveningwear": 25.0,
-        "Formal": 20.0,
-        "Glamour": 10.0,
-        "Playful": 10.0,
-        "Romantic": 15.0,
-        "Warm": 10.0,
-        "Daywear": -5.0,
-        "Casual": -5.0,
-        "Simple": -5.0,
-        "Professional": -5.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Bolero Bodice",
-      "prettyName": "Bolero Bodice",
-      "itemTags": {
-        "Cute": 5.0,
-        "Formal": 10.0,
-        "Romantic": 10.0,
-        "Casual": 5.0,
-        "Daywear": 20.0,
-        "Warm": 10.0,
-        "Elaborate": 10.0,
-        "Professional": 5.0,
-        "Workwear": -5.0,
-        "Elegant": 20.0,
-        "Eveningwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Kaftan Wrap Bodice",
-      "prettyName": "Kaftan Wrap Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Elegant": 15.0,
-        "Formal": 10.0,
-        "Simple": 10.0,
-        "Workwear": -5.0,
-        "Daywear": 10.0,
-        "Professional": -5.0,
-        "Casual": 10.0,
-        "Eveningwear": 15.0,
-        "Glamour": 10.0,
-        "Risque": 10.0,
-        "Eclectic": 20.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Kaftan Skirt",
-      "prettyName": "Kaftan Skirt",
-      "itemTags": {
-        "Elegant": 20.0,
-        "Formal": 15.0,
-        "Warm": 10.0,
-        "Eveningwear": 20.0,
-        "Eclectic": 25.0,
-        "Glamour": 10.0,
-        "Risque": 10.0,
-        "Simple": 10.0,
-        "Workwear": -5.0,
-        "Professional": -5.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Waterfall Bodice",
-      "prettyName": "Waterfall Bodice",
-      "itemTags": {
-        "Cool": -5.0,
-        "Elegant": 15.0,
-        "Simple": 10.0,
-        "Workwear": -5.0,
-        "Daywear": 10.0,
-        "Warm": 10.0,
-        "Casual": 5.0,
-        "Eveningwear": 10.0,
-        "Glamour": 10.0,
-        "Eclectic": 20.0,
-        "Formal": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Waterfall Skirt",
-      "prettyName": "Waterfall Skirt",
-      "itemTags": {
-        "Daywear": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Formal": 15.0,
-        "Simple": 10.0,
-        "Eclectic": 25.0,
-        "Warm": 10.0,
-        "Glamour": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Capulet Sleeve",
-      "prettyName": "Capulet Sleeve",
-      "itemTags": {
-        "Cute": 5.0,
-        "Daywear": 5.0,
-        "Eclectic": 10.0,
-        "Elegant": 10.0,
-        "Eveningwear": 10.0,
-        "Formal": 5.0,
-        "Glamour": 5.0,
-        "Goth": 5.0,
-        "Professional": 3.0,
-        "Romantic": 10.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Dita Pencil Skirt",
-      "prettyName": "Dita Pencil Skirt",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cool": 10.0,
-        "Daywear": 20.0,
-        "Elegant": 15.0,
-        "Formal": 20.0,
-        "Goth": 5.0,
-        "Professional": 25.0,
-        "Risque": 20.0,
-        "Simple": 20.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Dagger Collar",
-      "prettyName": "Dagger Collar",
-      "itemTags": {
-        "Casual": 3.0,
-        "Goth": 5.0,
-        "Professional": 3.0,
-        "Simple": 3.0,
-        "Warm": 3.0,
-        "Daywear": 3.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Elevated Dirndl",
-      "prettyName": "Elevated Dirndl",
-      "itemTags": {
-        "Casual": 5.0,
-        "Cute": 20.0,
-        "Daywear": 15.0,
-        "Elaborate": 5.0,
-        "Elegant": 15.0,
-        "Goth": 10.0,
-        "Playful": 15.0,
-        "Professional": 15.0,
-        "Romantic": 15.0,
-        "Workwear": 20.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Elevated Stays",
-      "prettyName": "Elevated Stays",
-      "itemTags": {
-        "Cute": 25.0,
-        "Daywear": 10.0,
-        "Elaborate": 20.0,
-        "Elegant": 15.0,
-        "Formal": 10.0,
-        "Goth": 20.0,
-        "Playful": 10.0,
-        "Romantic": 20.0,
-        "Uncomfortable": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Land Girl Bodice",
-      "prettyName": "Land Girl Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Cute": 15.0,
-        "Daywear": 10.0,
-        "Eveningwear": -10.0,
-        "Playful": 15.0,
-        "Professional": 5.0,
-        "Simple": 10.0,
-        "Workwear": 25.0,
-        "Warm": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Wrap Bodice",
-      "prettyName": "Wrap Bodice",
-      "itemTags": {
-        "Cool": 10.0,
-        "Cute": 15.0,
-        "Elegant": 15.0,
-        "Formal": 15.0,
-        "Romantic": 20.0,
-        "Simple": 20.0,
-        "Casual": 20.0,
-        "Daywear": 20.0,
-        "Warm": -5.0,
-        "Playful": 10.0,
-        "Eveningwear": 10.0,
-        "Workwear": -5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Wrap Skirt",
-      "prettyName": "Wrap Skirt",
-      "itemTags": {
-        "Cute": 15.0,
-        "Eveningwear": -5.0,
-        "Elegant": 20.0,
-        "Romantic": 20.0,
-        "Simple": 10.0,
-        "Daywear": 20.0,
-        "Casual": 15.0,
-        "Formal": 10.0,
-        "Eclectic": 10.0,
-        "Cool": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Sax Bodice",
-      "prettyName": "Sax Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Cute": 10.0,
-        "Elaborate": 5.0,
-        "Elegant": 15.0,
-        "Formal": 10.0,
-        "Romantic": 20.0,
-        "Simple": 5.0,
-        "Workwear": -5.0,
-        "Daywear": 20.0,
-        "Casual": 10.0,
-        "Eveningwear": 15.0,
-        "Eclectic": 20.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Flared Bugonia Bodice",
-      "prettyName": "Flared Begonia Bodice",
-      "itemTags": {
-        "Cool": 15.0,
-        "Cute": 20.0,
-        "Elaborate": 10.0,
-        "Elegant": 20.0,
-        "Eveningwear": 20.0,
-        "Formal": 20.0,
-        "Glamour": 10.0,
-        "Playful": 10.0,
-        "Romantic": 25.0,
-        "Simple": -5.0,
-        "Professional": -5.0,
-        "Warm": -5.0,
-        "Workwear": -5.0,
-        "Casual": 5.0,
-        "Daywear": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Jacket Yoked Bodice",
-      "prettyName": "Yoked Jacket Bodice",
-      "itemTags": {
-        "Daywear": 15.0,
-        "Elaborate": 10.0,
-        "Eveningwear": -5.0,
-        "Warm": 25.0,
-        "Risque": -5.0,
-        "Eclectic": 25.0,
-        "Cool": -5.0,
-        "Elegant": 10.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Double Breasted Bodice",
-      "prettyName": "Double Breasted Bodice",
-      "itemTags": {
-        "Daywear": 10.0,
-        "Elegant": 10.0,
-        "Formal": 10.0,
-        "Professional": 20.0,
-        "Simple": 15.0,
-        "Warm": 15.0,
-        "Casual": 10.0,
-        "Eclectic": 15.0
-      }
-    },
-    {
-      "PatternType": "Bodice",
-      "name": "Belted Jacket Bodice",
-      "prettyName": "Belted Jacket Bodice",
-      "itemTags": {
-        "Casual": 10.0,
-        "Daywear": 15.0,
-        "Formal": 10.0,
-        "Professional": 15.0,
-        "Simple": 10.0,
-        "Warm": 20.0,
-        "Eclectic": 20.0,
-        "Cool": -5.0,
-        "Elegant": 20.0
-      }
-    },
-    {
-      "PatternType": "Collar",
-      "name": "Gothic Collar",
-      "prettyName": "Gothic Collar",
-      "itemTags": {
-        "Goth": 20.0,
-        "Uncomfortable": 10.0,
-        "Elegant": 5.0,
-        "Casual": -5.0,
-        "Cute": -5.0,
-        "Daywear": -5.0,
-        "Elaborate": 15.0,
-        "Professional": -10.0,
-        "Simple": -5.0,
-        "Workwear": -10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Angel's Trumpet Sleeve",
-      "prettyName": "Angel's Trumpet Sleeve",
-      "itemTags": {
-        "Cool": 5.0,
-        "Eclectic": 5.0,
-        "Eveningwear": 15.0,
-        "Formal": 5.0,
-        "Glamour": 5.0,
-        "Goth": 25.0,
-        "Risque": 15.0,
-        "Romantic": 10.0,
-        "Elegant": 10.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Arwen Sleeve",
-      "prettyName": "Arwen Sleeve",
-      "itemTags": {
-        "Cool": 5.0,
-        "Elaborate": 5.0,
-        "Elegant": 10.0,
-        "Eveningwear": 10.0,
-        "Formal": 10.0,
-        "Goth": 5.0,
-        "Romantic": 5.0
-      }
-    },
-    {
-      "PatternType": "Sleeve",
-      "name": "Angel Sleeve",
-      "prettyName": "Angel Sleeve",
-      "itemTags": {
-        "Cool": 5.0,
-        "Cute": 10.0,
-        "Elaborate": 5.0,
-        "Elegant": 15.0,
-        "Eveningwear": 20.0,
-        "Glamour": 5.0,
-        "Goth": 10.0,
-        "Romantic": 20.0,
-        "Formal": 5.0
-      }
-    },
-    {
-      "PatternType": "Skirt",
-      "name": "Odette Skirt",
-      "prettyName": "Odette Skirt",
-      "itemTags": {
-        "Casual": -10.0,
-        "Cute": 25.0,
-        "Elaborate": 20.0,
-        "Elegant": 20.0,
-        "Eveningwear": 25.0,
-        "Formal": 20.0,
-        "Goth": 20.0,
-        "Playful": 20.0,
-        "Romantic": 25.0,
-        "Warm": 10.0
-      }
-    }
-  ],
-  "finalQuestInfo": {
-    "name": "FinalQuest",
-    "prettyName": "Peerless Dressmaker",
-    "questGiverCharacterName": "Blank"
-  }
+  "characterNames": [
+    "Rose",
+    "Prudence",
+    "Priya",
+    "Marie",
+    "Edith",
+    "Fiona",
+    "Alice",
+    "Vivian",
+    "Dorothy",
+    "Adora"
+  ]
 }
