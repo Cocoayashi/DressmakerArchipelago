@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DressmakerArchipelago
@@ -7,7 +8,7 @@ namespace DressmakerArchipelago
     {
         internal static bool locationNeedsChecked = false;
         internal static Dictionary<string, long> allLocations = new Dictionary<string, long>();
-
+        internal static QuestState completedQuest = new QuestState();
         internal async static void DressLocationCheck()
         {
             if (!locationNeedsChecked) return;
@@ -15,7 +16,27 @@ namespace DressmakerArchipelago
 
             await CheckPatterns();
             await CheckFabrics();
+            await CheckQuest();
 
+        }
+
+        private static async Task CheckQuest()
+        {
+            if (completedQuest == null)
+            {
+                return;
+            }
+            string locationName = completedQuest.questDefinition.name;
+            RememberCheck(locationName);
+            allLocations.TryGetValue(locationName, out long locationID);
+            try
+            {
+                await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+            }
+            catch (System.Exception)
+            {
+
+            }
         }
 
         internal static async Task PrestigeLocationCheck(int prestige)
@@ -103,18 +124,18 @@ namespace DressmakerArchipelago
             long[] patternLocations = [0, 0, 0, 0];
             if (!collarName.Equals("No Collar") && !collarName.Equals(""))
             {
-                patternLocations[0] = allLocations[collarName];
+                 allLocations.TryGetValue(collarName, out patternLocations[0]);
                 RememberCheck(collarName);
 
             }
             if (!sleeveName.Equals("No Sleeves") && !sleeveName.Equals(""))
             {
-                patternLocations[1] = allLocations[sleeveName];
+                allLocations.TryGetValue(sleeveName, out patternLocations[1]);
                 RememberCheck(sleeveName);
 
             }
-            patternLocations[2] = allLocations[bodiceName];
-            patternLocations[3] = allLocations[skirtName];
+            allLocations.TryGetValue(bodiceName, out patternLocations[2]);
+            allLocations.TryGetValue(skirtName, out patternLocations[3]);
             RememberCheck(skirtName);
             RememberCheck(bodiceName);
 

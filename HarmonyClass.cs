@@ -1,10 +1,5 @@
-﻿using Framework;
-using HarmonyLib;
-using System;
-using System.Collections.Generic;
+﻿using HarmonyLib;
 using System.IO;
-using System.Text;
-using UnityEngine.SceneManagement;
 
 
 namespace DressmakerArchipelago
@@ -45,6 +40,15 @@ namespace DressmakerArchipelago
         {
             Plugin.saveSlot = slot;
             File.Delete(PlayerJson.filepath);
+        }
+    }
+    [HarmonyPatch(typeof(PlayerProgress), "RecordCompletedQuest")]
+    public class CompleteQuest
+    {
+        [HarmonyPostfix]
+        public static void CompleteQuestCheck(PlayerProgress __instance, QuestState qs)
+        {
+            LocationChecks.completedQuest = qs;
         }
     }
 }

@@ -22,8 +22,10 @@ public class Plugin : BaseUnityPlugin
     internal static bool isCorrectServer = true;
     internal static PlayerJson playerJson;
     internal static bool openingConnection;
+    private bool keepRetrying = true;
     private bool isConnected = false;
     internal float timeSinceLastConnectionAttempt = -999f;
+    private bool isRetry = false;
 
 
 
@@ -60,7 +62,7 @@ public class Plugin : BaseUnityPlugin
         // Resets on title screen if this happens
         if (!isCorrectServer) return;
 
-        if (!isConnected) Login();
+        if (!isConnected && keepRetrying) Login();
 
         // as long as all those other ifs don't pass, these will be called every frame.
 
@@ -80,12 +82,12 @@ public class Plugin : BaseUnityPlugin
         openingConnection = true;
 
         session = ArchipelagoSessionFactory.CreateSession("localhost", 38281);
-        UnlockItems.EmptyList();
         LoginResult login;
         try
         {
             await session.ConnectAsync();
             login = await session.LoginAsync("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
+            session.Items.ItemReceived += unlocker.ItemReceived;
 
         }
         catch (System.Exception ex)
@@ -96,7 +98,7 @@ public class Plugin : BaseUnityPlugin
             Logger.LogError("Connection failed, loser");
             isConnected = false;
             openingConnection = false;
-
+            isRetry = true;
             return;
         }
         finally
@@ -107,7 +109,7 @@ public class Plugin : BaseUnityPlugin
         if (!login.Successful)
         {
             SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
-
+            await session.Socket.DisconnectAsync();
             Logger.LogError("Connection failed, loser");
             isConnected = false;
             openingConnection = false;
@@ -115,7 +117,7 @@ public class Plugin : BaseUnityPlugin
             return;
         }
         //Good login
-        session.Items.ItemReceived += unlocker.ItemReceived;
+        isRetry = false;
         session.Socket.SocketClosed += closedConnection;
         // Bad seed, currently means it doesnt try reconnecting until you go to title screen and open another save
         if (playerJson.seed != session.RoomState.Seed && !playerJson.seed.IsNullOrEmpty())
@@ -163,19 +165,22 @@ public class Plugin : BaseUnityPlugin
 
     private void closedConnection(string reason)
     {
-        SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Connection lost.");
         isConnected = false;
     }
 
-    /* private void OnGUI()
-{
-            if (GUI.Button(new Rect(10, 100, 150, 30), "Connect to server"))
+    private void OnGUI()
+    {
+        if(isRetry && keepRetrying)
+        {
+
+            if (GUI.Button(new Rect(10, 100, 150, 30), "Stop attempting connection"))
             {
-
+                keepRetrying = false;
             }
+        }
 
-}
-    */
+    }
+
 
     internal static Dictionary<string, float> getTags(GarmentComponent garment)
     {

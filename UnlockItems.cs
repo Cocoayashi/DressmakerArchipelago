@@ -1,21 +1,14 @@
 ﻿using Archipelago.MultiClient.Net.Helpers;
 using Archipelago.MultiClient.Net.Models;
-using BepInEx;
 using Framework;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using UnityEngine.UIElements;
 
 namespace DressmakerArchipelago
 {
     public class UnlockItems
     {
         private static ConcurrentQueue<string> itemsAddQueue = new ConcurrentQueue<string>();
-        private static List<string> allItemsReceivedList = new List<string>();
         internal static bool isLoaded = false;
 
         public void ItemReceived(ReceivedItemsHelper helper)
@@ -31,7 +24,6 @@ namespace DressmakerArchipelago
         {
             while (itemsAddQueue.TryDequeue(out string itemName))
             {
-                allItemsReceivedList.Add(itemName);
 
                 try
                 {
@@ -121,9 +113,5 @@ namespace DressmakerArchipelago
             return true;
         }
 
-        internal static void EmptyList()
-        {
-            allItemsReceivedList.Clear();
-        }
     }
 }
