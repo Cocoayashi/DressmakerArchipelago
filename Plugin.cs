@@ -22,7 +22,7 @@ public class Plugin : BaseUnityPlugin
     internal static PlayerJson playerJson;
     internal static bool openingConnection;
     private bool keepRetrying = true;
-    private bool isConnected = false;
+    internal static bool isConnected = false;
     internal float timeSinceLastConnectionAttempt = -999f;
     private bool isRetry = false;
 
@@ -68,7 +68,7 @@ public class Plugin : BaseUnityPlugin
         LocationChecks.DressLocationCheck();
 
     }
-
+    //God this method is such a mess. Makes me want to throw up for real for real
     private async void Login()
     {
         var timeDif = Time.realtimeSinceStartup - timeSinceLastConnectionAttempt;
@@ -130,6 +130,8 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo("Connection Success!");
         SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Connected to archipelago");
         isConnected = true;
+        await LocationChecks.CheckCompletion();
+
         foreach (long id in Plugin.session.Locations.AllLocations)
         {
             string itemName = "";

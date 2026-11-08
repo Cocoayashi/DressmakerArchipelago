@@ -16,6 +16,7 @@ namespace DressmakerArchipelago
         internal static bool locationNeedsChecked = false;
         internal static Dictionary<string, long> allLocations = new Dictionary<string, long>();
         internal static QuestState completedQuest = null;
+        internal static int goalPercentage = 75;
         internal async static void DressLocationCheck()
         {
             if (!locationNeedsChecked) return;
@@ -24,52 +25,116 @@ namespace DressmakerArchipelago
             await CheckPatterns();
             await CheckFabrics();
             await CheckQuest();
-            Dictionary<string, object> dataStorage = await Plugin.session.DataStorage.GetSlotDataAsync();
-            dataStorage.TryGetValue("goal_choice", out object goalChoiceObject);
-            if (goalChoiceObject == null)
+            await CheckCompletion();
+        }
+
+        public static async Task CheckCompletion()
+        {
+            if (!Plugin.isConnected)
             {
                 return;
-                int.TryParse(goalChoiceObject.ToString(), out int goalChoice);
-                switch (goalChoice)
-                {
+            }
+            Dictionary<string, object> dataStorage = await Plugin.session.DataStorage.GetSlotDataAsync();
+            if (!dataStorage.TryGetValue("goal_choice", out object goalChoiceObject))
+            {
+                return;
+            }
+            if (!dataStorage.TryGetValue("goal_percentage", out object goalPercentageObject))
+            {
+                return;
+            }
+            
+            int.TryParse(goalPercentageObject.ToString(), out goalPercentage);
+            int.TryParse(goalChoiceObject.ToString(), out int goalChoice);
+            switch (goalChoice)
+            {
 
-                    case PATTERN_GOAL:
-                        CheckPatternCompletion();
-                        break;
-                    case FABRIC_GOAL:
-                        CheckFabricCompletion();
-                        break;
-                    case MAIN_STORY_GOAL:
-                        // checked in CheckQuest();
-                        break;
-                    case ALL_COMMISSIONS_GOAL:
-                        if (Plugin.playerJson.allLocationsReached.ToList().Where(x => x.Contains("Story:")).Count() >= 77)
-                        {
-                            CompleteFinalQuest();
-                        }
-                        ;
-                        break;
+                case PATTERN_GOAL:
+                    CheckPatternCompletion();
+                    break;
+                case FABRIC_GOAL:
+                    CheckFabricCompletion();
+                    break;
+                case MAIN_STORY_GOAL:
+                    CheckCompletedFinalQuest();
+                    break;
+                case ALL_COMMISSIONS_GOAL:
+                    if (Plugin.playerJson.allLocationsReached.ToList().Where(x => x.Contains("Complete")).Count() >= 77)
+                    {
+                        SendVictoryCheck();
+                    }
+                    break;
 
-                }
+            }
+        }
+
+        private static void CheckCompletedFinalQuest()
+        {
+            if (Plugin.playerJson.allLocationsReached.Contains("finalQuest"))
+            {
+                SendVictoryCheck();
             }
         }
 
         private static void CheckFabricCompletion()
         {
+            int fabricsChecked = 0;
+            int fabricsTotal = 0;
+            foreach (string location in Plugin.playerJson.allLocationsReached)
+            {
+                if (Fabric.AllFabrics.ToList().Select(x => x.name).Contains(location))
+                {
+                    fabricsChecked++;
+                }
+            }
+            foreach (long locationID in Plugin.session.Locations.AllLocations)
+            {
+                string locationName = Plugin.session.Locations.GetLocationNameFromId(locationID);
+                if (locationName.Contains("fabric"))
+                {
+                    fabricsTotal++;
+                }
+            }
+            int patternsNeeded = fabricsTotal * goalPercentage / 100;
+            if (fabricsChecked >= patternsNeeded)
+            {
+                SendVictoryCheck();
+            }
         }
 
         private static void CheckPatternCompletion()
         {
+            int patternsChecked = 0;
+            int patternsTotal = 0;
+            foreach (string location in Plugin.playerJson.allLocationsReached)
+            {
+                if (GarmentComponent.AllGarmentComponents.ToList().Select(x => x.name).Contains(location))
+                {
+                    patternsChecked++;
+                }
+            }
+            foreach (long locationID in Plugin.session.Locations.AllLocations)
+            {
+                string locationName = Plugin.session.Locations.GetLocationNameFromId(locationID);
+                if (locationName.Contains("pattern"))
+                {
+                    patternsTotal++;
+                }
+            }
+            int patternsNeeded = patternsTotal * goalPercentage / 100;
+            if (patternsChecked >= patternsNeeded)
+            {
+                SendVictoryCheck();
+            }
         }
 
-        private static async void CompleteFinalQuest()
+        private static void SendVictoryCheck()
         {
-            allLocations.TryGetValue("Complete Final Commission", out long locationID);
             try
             {
-                await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                Plugin.session.SetGoalAchieved();
             }
-            catch(System.Exception)
+            catch (System.Exception)
             {
 
             }
@@ -82,7 +147,7 @@ namespace DressmakerArchipelago
                 return;
             }
             string locationName = completedQuest.questDefinition.name;
-            RememberCheck("Story: " + locationName);
+            RememberCheck(locationName);
             allLocations.TryGetValue(locationName, out long locationID);
             if (locationName.Equals("finalQuest"))
             {

@@ -29,9 +29,9 @@ def set_location_rules(world: DressmakerWorld) -> None:
 def set_completion_condition(world: DressmakerWorld) -> None:
     goal_location = world.get_location("Dressmaker goal reached")
     if world.options.goal_choice == options.GoalChoice.option_pattern:
-        patterns_needed = len(PATTERN_ITEMS.values())* (world.options.goal_percentage/100)
+        patterns_needed = (int)(len(PATTERN_ITEMS.values()) * (world.options.goal_percentage/100))
         world.set_rule(goal_location, HasFromList(*PATTERN_ITEMS, count=patterns_needed))
     if world.options.goal_choice == options.GoalChoice.option_fabric:
-        fabrics_needed = len(FABRIC_ITEMS.values())* (world.options.goal_percentage/100)
-        world.set_rule(goal_location, HasFromList(*PATTERN_ITEMS, count=fabrics_needed))
+        fabrics_needed = (int)(len(FABRIC_ITEMS.values()) * (world.options.goal_percentage/100))
+        world.set_rule(goal_location, HasFromList(*FABRIC_ITEMS, count=fabrics_needed))
     world.set_completion_rule(Has("Victory"))
