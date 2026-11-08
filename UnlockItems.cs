@@ -13,10 +13,14 @@ namespace DressmakerArchipelago
 
         public void ItemReceived(ReceivedItemsHelper helper)
         {
-            ItemInfo item = helper.DequeueItem();
-            if (item == null) return;
-            string itemName = item.ItemName;
-            itemsAddQueue.Enqueue(itemName);
+            while (helper.Any())
+            {
+                ItemInfo item = helper.DequeueItem();
+                if (item == null) return;
+                string itemName = item.ItemName;
+                itemsAddQueue.Enqueue(itemName); 
+            }
+
         }
 
 

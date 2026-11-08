@@ -79,5 +79,5 @@ class DressmakerWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
         return self.options.as_dict(
-            "goal_choice", "fabric_goal_percentage", "pattern_goal_percentage"
+            "goal_choice", "goal_percentage"
         )

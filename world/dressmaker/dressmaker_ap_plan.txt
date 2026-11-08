@@ -95,12 +95,16 @@ Need ONE clean, patchable method per event (not scattered field writes):
 
 PHASE 3: MOD-SIDE TRACKING (the Archipelago glue)
 ---------------------------------------------------
-STATUS 2026-11-07: items and Gold confirmed working. Pattern
-checks (server log 2026-11-04) and friendship checks (server log
-2026-11-05, "Reach friendship: 1 with Prudence") confirmed.
-Fabric and reputation checks are written but have never reached
-the server. Commissions and the goal are not started. Full status
-table and task order: handoff, "Next step when resuming".
+STATUS 2026-11-07 (evening): Gold confirmed working. Items worked
+on 2026-11-04, but the 21:24 test run logged NO received items
+(possible cause: ItemReceived subscribed after LoginAsync; not
+confirmed). Pattern checks (server log 2026-11-04) and friendship
+checks (server log 2026-11-05, "Reach friendship: 1 with
+Prudence") confirmed. Fabric and reputation checks are written
+but have never reached the server. Commission checks written,
+not tested; the final quest compare is broken ("finalQuest" vs
+FinalQuest). Goal not started. Full status table, known issues
+and task order: handoff, "Next step when resuming".
 For "dress complete" hook:
 [ X ] Harmony postfix on dress-complete method
 [ X ] Pull pattern-piece list out of the dress model
@@ -114,10 +118,14 @@ been used; decide how when the goal is built.
 [ X ] Friendship checks (confirmed 2026-11-05)
 [~] Reputation checks (written, never reached the server)
 [~] All checks through one path: every check calls RememberCheck
-    (saved list), but dress checks still also send directly, and
-    CheckPatterns still uses allLocations[...] (throws on an
-    unknown name) with no null check on bodice/skirt.
-[ ] Commission checks: story, pigeon, final (hook found)
+    (saved list), but dress checks still also send directly.
+    CheckPatterns now uses TryGetValue, but still has no null
+    check on bodice/skirt.
+[~] Commission checks: story, pigeon, final. Written 2026-11-07
+    (RecordCompletedQuest postfix -> LocationChecks.completedQuest
+    -> CheckQuest), not tested. Known problems: final name compare
+    is wrong case, only runs together with a dress check, holds
+    one quest at a time (handoff "Other known mod issues" 2-4).
 [ X ] ReceivedItems handling: fabrics, patterns, Gold. Accessories
     are decided separately (see OPEN DESIGN DECISIONS)
 [ X ] Gold repeat protection, CHANGED 2026-11-06/07: one file per
@@ -128,11 +136,10 @@ been used; decide how when the goal is built.
     player.json, slot N = playerN.json). Loaded in the
     GameManager.SetScene postfix. Owed Gold = received - goldCount.
     Old playerGold.json / playerArchipelago.json are retired.
-[ ] Gold double-count on a new session: allItemsReceivedList is
-    never emptied, so every reconnect counts all Gold again and
-    pays it twice (paid 132 extra Gold on 2026-11-07). Empty it
-    when a session is created (or count session.Items.
-    AllItemsReceived instead).
+[~] Gold double-count on a new session (paid 132 extra Gold on
+    2026-11-07): FIXED IN CODE, not tested. allItemsReceivedList
+    is gone; TryAddGold counts Gold in session.Items.
+    AllItemsReceived, which starts empty with each session.
 
 PHASE 3b: CONNECTION HANDLING (started 2026-11-06)
 ----------------------------------------------------
@@ -150,17 +157,22 @@ freezes or crashes the game and never loses a check. Design
   notification, stop, don't save, don't apply items. Deleting a
   save deletes its JSON file (DeleteSlot postfix), so a mismatch
   should only ever mean "wrong server".
-Status 2026-11-07:
+Status 2026-11-07 (evening; [~] = written, not tested):
 [ X ] Per-slot JSON file, loaded on save load (PlayerJson.Loadfile)
 [ X ] Checks saved by name (RememberCheck -> allLocationsReached)
-[ X ] Seed check after login (wrong-seed test passed 2026-11-07)
+[ X ] Seed check after login (wrong-seed test passed 2026-11-07).
+      BUT the item queue isn't emptied, so wrong-seed items can
+      leak into the next save loaded (handoff issue 1)
 [~] Send all saved checks after login (Plugin.cs, not tested)
 [~] DeleteSlot postfix deletes the slot's JSON (not tested)
-[ ] Empty allItemsReceivedList per session (see Phase 3)
-[ ] Switching saves: returning to the title screen doesn't
-    disconnect or reset isConnected
-[ ] No freezing: connect in the background with a retry delay
-[ ] Reconnect after a drop (Socket.SocketClosed)
+[~] Gold counted per session (see Phase 3)
+[~] Switching saves: title screen now disconnects and resets
+    isLoaded / saveSlot / isCorrectServer (queue not emptied)
+[~] No freezing: ConnectAsync + LoginAsync, 2 s retry delay,
+    "Stop attempting connection" button. Connect itself
+    confirmed 21:24; server-down case not tested
+[~] Reconnect after a drop: SocketClosed sets isConnected = false
+    (sends still swallow errors silently)
 [ ] Connection settings (host, port, slot, password)
 Detailed steps for each: handoff, "Connection plan".
 
@@ -220,6 +232,9 @@ docs/running from source.md
       (155 x pct / 100). TODO: use goal_choice and the fabric
       percentage in rules.py. Decide if 0% should be allowed
       (it now means an instant win).
+      2026-11-07 evening: the goal rule was REMOVED from rules.py
+      (only the completion rule is left), so the goal event is
+      reachable with nothing until goal_choice rules are written.
     Original plan:
       - goal: Choice = pattern_percentage (default) |
         fabric_percentage | main_story | all_commissions

@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DressmakerArchipelago
 {
     internal class LocationChecks
     {
+        public const int PATTERN_GOAL = 0;
+        public const int FABRIC_GOAL = 1;
+        public const int MAIN_STORY_GOAL = 2;
+        public const int ALL_COMMISSIONS_GOAL = 3;
+
+
+
         internal static bool locationNeedsChecked = false;
         internal static Dictionary<string, long> allLocations = new Dictionary<string, long>();
-        internal static QuestState completedQuest = new QuestState();
+        internal static QuestState completedQuest = null;
         internal async static void DressLocationCheck()
         {
             if (!locationNeedsChecked) return;
@@ -17,7 +24,55 @@ namespace DressmakerArchipelago
             await CheckPatterns();
             await CheckFabrics();
             await CheckQuest();
+            Dictionary<string, object> dataStorage = await Plugin.session.DataStorage.GetSlotDataAsync();
+            dataStorage.TryGetValue("goal_choice", out object goalChoiceObject);
+            if (goalChoiceObject == null)
+            {
+                return;
+                int.TryParse(goalChoiceObject.ToString(), out int goalChoice);
+                switch (goalChoice)
+                {
 
+                    case PATTERN_GOAL:
+                        CheckPatternCompletion();
+                        break;
+                    case FABRIC_GOAL:
+                        CheckFabricCompletion();
+                        break;
+                    case MAIN_STORY_GOAL:
+                        // checked in CheckQuest();
+                        break;
+                    case ALL_COMMISSIONS_GOAL:
+                        if (Plugin.playerJson.allLocationsReached.ToList().Where(x => x.Contains("Story:")).Count() >= 77)
+                        {
+                            CompleteFinalQuest();
+                        }
+                        ;
+                        break;
+
+                }
+            }
+        }
+
+        private static void CheckFabricCompletion()
+        {
+        }
+
+        private static void CheckPatternCompletion()
+        {
+        }
+
+        private static async void CompleteFinalQuest()
+        {
+            allLocations.TryGetValue("Complete Final Commission", out long locationID);
+            try
+            {
+                await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+            }
+            catch(System.Exception)
+            {
+
+            }
         }
 
         private static async Task CheckQuest()
@@ -27,8 +82,12 @@ namespace DressmakerArchipelago
                 return;
             }
             string locationName = completedQuest.questDefinition.name;
-            RememberCheck(locationName);
+            RememberCheck("Story: " + locationName);
             allLocations.TryGetValue(locationName, out long locationID);
+            if (locationName.Equals("finalQuest"))
+            {
+                allLocations.TryGetValue("Complete Final Commission", out locationID);
+            }
             try
             {
                 await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
@@ -36,6 +95,10 @@ namespace DressmakerArchipelago
             catch (System.Exception)
             {
 
+            }
+            finally
+            {
+                completedQuest = null;
             }
         }
 
@@ -124,7 +187,7 @@ namespace DressmakerArchipelago
             long[] patternLocations = [0, 0, 0, 0];
             if (!collarName.Equals("No Collar") && !collarName.Equals(""))
             {
-                 allLocations.TryGetValue(collarName, out patternLocations[0]);
+                allLocations.TryGetValue(collarName, out patternLocations[0]);
                 RememberCheck(collarName);
 
             }

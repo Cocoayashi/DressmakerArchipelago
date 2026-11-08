@@ -18,7 +18,6 @@ public class Plugin : BaseUnityPlugin
     internal static ArchipelagoSession session;
     internal static UnlockItems unlocker = new UnlockItems();
     internal static int saveSlot;
-    internal static string seed;
     internal static bool isCorrectServer = true;
     internal static PlayerJson playerJson;
     internal static bool openingConnection;
@@ -38,7 +37,6 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
         Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         harmony.PatchAll();
-
     }
     private void Update()
     {

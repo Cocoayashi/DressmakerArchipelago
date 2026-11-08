@@ -30,12 +30,12 @@ The real goal is a **Dressmaker Archipelago** (multiworld randomizer). The full 
 |---|---|
 | Mod project (BepInEx plugin, own repo) | `C:\Users\lolli\OneDrive\Desktop\DressmakerArchipelago\` (`Plugin.cs`, `DressmakerArchipelago.csproj`, `.sln`) |
 | Mod `.csproj` | Already references `Assembly-CSharp.dll` and `Framework.dll`, and has a post-build copy target to `<game>\BepInEx\plugins` |
-| `Plugin.cs` | Plugin entry point: Harmony setup, `Update` loop, hard-coded `Login()`. `Login()` fills `allLocations`, compares the seed with the slot's file (`isCorrectServer`), and resends every saved check in one call. The "Connect to server" button is commented out. Also holds the `getTags` helpers |
+| `Plugin.cs` | Plugin entry point: Harmony setup, `Update` loop, `async Login()` (host/port/slot still hard-coded). `Login()` uses `ConnectAsync` + `LoginAsync`, waits 2 s between tries (`timeSinceLastConnectionAttempt`, `openingConnection`), subscribes `SocketClosed`, compares the seed with the slot's file (`isCorrectServer`), fills `allLocations`, and resends every saved check in one call. On `TitleScreen`, `Update` disconnects and resets `isLoaded`, `saveSlot`, `isCorrectServer`. `OnGUI` shows a "Stop attempting connection" button (`keepRetrying`) after a failed try. **Dev-only:** the K key toggles the game's `cheatQuestSelector` (remove before release). Also holds the `getTags` helpers |
 | `PlayerJson.cs` | (added 2026-11-06) The per-save-slot file `BepInEx\plugins\playerArchipelago_<slot>.json`: `goldCount`, `seed`, `allLocationsReached` (a `HashSet<string>` of location names). `filepath` is a static `=>` property built from `Plugin.saveSlot`. `Loadfile()` (static) reads the file or makes a new one; `SaveFile()` writes it |
-| `UnlockItems.cs` | Queues received items and applies fabrics, patterns and Gold (`Plugin.playerJson.goldCount` stops repeat Gold payouts) |
-| `LocationChecks.cs` | `allLocations` (internal name → location ID), the dress, reputation and friendship checks, and `RememberCheck` (adds a name to `allLocationsReached` and saves the file) |
+| `UnlockItems.cs` | Queues received items and applies fabrics, patterns and Gold. Gold owed = Gold in `session.Items.AllItemsReceived` minus `Plugin.playerJson.goldCount` (the old `allItemsReceivedList` is gone) |
+| `LocationChecks.cs` | `allLocations` (internal name → location ID), the dress, reputation, friendship and commission (`CheckQuest`) checks, and `RememberCheck` (adds a name to `allLocationsReached` and saves the file). `DressLocationCheck` runs `CheckPatterns` → `CheckFabrics` → `CheckQuest`. The goal/slot_data code is commented out at the top |
 | `StopUnlockItems.cs` | Prefixes that block native unlocks: starting, prestige, relationship, and `DressmakerMods.FabricAvailability.RestoreEarnedUnlocks`. The prestige and relationship ones also send the reputation and friendship checks |
-| `HarmonyClass.cs` | (was `HarmonyTestingClass.cs`) Postfixes: `GameManager.SetScene` (at `FrontDesk`: sets "save loaded", the slot, and loads the slot's file), `Dress.CheckAchievements` (flags a dress for checking), and `PlayerProgress.DeleteSlot` (deletes that slot's file) |
+| `HarmonyClass.cs` | (was `HarmonyTestingClass.cs`) Postfixes: `GameManager.SetScene` (at `FrontDesk`: sets "save loaded", the slot, and loads the slot's file), `Dress.CheckAchievements` (flags a dress for checking), `PlayerProgress.DeleteSlot` (deletes that slot's file), and `PlayerProgress.RecordCompletedQuest` (stores the `QuestState` in `LocationChecks.completedQuest`) |
 | `GetDump.cs`, `StoryQuestInfo.cs` | Data dump code (button commented out in `Plugin.cs`) and its data classes |
 | Archipelago repo (Python, apworld goes here) | `C:\Users\lolli\OneDrive\Desktop\Archipelago`, branch `DressmakerArchipelago`. `worlds\dressmaker\` (lowercase) holds this handoff, the plan, the apworld `.py` files and `data\dressmaker_dump.json` |
 | git for the mod repo | Initialized (`.git` and `.gitignore` exist as of 2026-10-28) |
@@ -133,13 +133,14 @@ The dress-complete hook is `Dress.CheckAchievements` (Postfix in `HarmonyTesting
 - `DressState.GetFabricCost` stops at whichever is shorter, `panelStates` or the current pattern panels (built from the four definitions and their variants). So `panelStates` might hold leftovers from an earlier dress. **Unconfirmed**; see the two-dress test under "Next step when resuming".
 - `PanelState.placedOnMannequin` exists, but it's unconfirmed whether it's still accurate when the dress is submitted. Log it before filtering on it.
 
-### Commission hook (found 2026-11-04 in the compiled game code, not yet used by the mod)
+### Commission hook (found 2026-11-04 in the compiled game code; hooked 2026-11-07, not tested yet)
 - `PlayerProgress.RecordCompletedQuest(QuestState qs)` adds the quest to `PlayerProgress.completedQuests`. It's called from `FrontDesk.StoreCompletedQuest` (used by `FrontDesk.CompleteQuest` and `PlayEnding`) and from `PhotoScene.ConfirmSell`.
 - `qs.questDefinition.name` is the internal name, which is the `allLocations` key for story and pigeon quests (e.g. `RoseWork`).
 - `ConfirmSell` also records quests, and those might not be locations, so the lookup needs `TryGetValue`.
 - **The final quest's name doesn't match:** the game calls it `FinalQuest`, but its location is `Complete Final Commission` (ID 8000). Compare against `QuestDefinition.FinalQuest` and handle it separately.
 - `qs.outcome` can be `NotCompleted`, `Failed`, `Succeeded` or `Excelled`. The plan already decided that any accepted dress counts, so don't filter on it.
 - **Suggested design:** same as the dress check. A Postfix sets a flag, a method called from `Update` loops over the whole `completedQuests` list, and the flag is also set after login so earlier quests get sent. Repeats are harmless because the server ignores them.
+- **What was written instead (2026-11-07):** the Postfix stores one `QuestState` in `LocationChecks.completedQuest`, and `CheckQuest` (run at the end of `DressLocationCheck`) remembers and sends it. Problems found in review, see "Other known mod issues" items 2-4.
 
 ---
 
@@ -271,31 +272,38 @@ What I built:
 | `goldCount` reset to 0 on every load, and Gold got paid again (2026-11-07) | `new PlayerJson()` never read the file, then `SaveFile()` after login wrote the 0 over the real number | Read the file back (`Loadfile`) |
 | `static filepath = ...` would use the wrong slot after switching saves | A static field's initializer runs once, the first time the class is used | Use a `=>` property, which is worked out each time |
 | Checks saved but empty again after restart | `allLocationsReached` was a `=>` property. Newtonsoft writes it but can't load into it (no setter) | Make it a normal field: `public HashSet<string> allLocationsReached = new HashSet<string>();` |
-| 132 extra Gold (13,200) paid in the wrong-seed test (2026-11-07) | On a seed mismatch `Login()` returned without stopping, so it logged in again every frame. Each new session resent all items, `allItemsReceivedList` was never emptied, so the Gold count kept rising, and `UnlockQueue` still ran | `isCorrectServer` stops `Update`. Still to do: empty `allItemsReceivedList` per session. The test save has the extra gold |
+| 132 extra Gold (13,200) paid in the wrong-seed test (2026-11-07) | On a seed mismatch `Login()` returned without stopping, so it logged in again every frame. Each new session resent all items, `allItemsReceivedList` was never emptied, so the Gold count kept rising, and `UnlockQueue` still ran | `isCorrectServer` stops `Update`. Gold is now counted from `session.Items.AllItemsReceived`, which starts empty with each session. The test save has the extra gold |
+| Last test (2026-11-07 21:24) ran older code than `Plugin.cs` | `Plugin.cs` was saved at 21:34, the DLL in `plugins` was built at 21:24 | Same lesson as before: rebuild, and compare timestamps before trusting a test |
 
 ---
 
 ## Next step when resuming
 
-**Status as of 2026-11-07 (checked against the code, the server logs and the game DLL).** Test seed `AP_05499520754356937898`, slot `Coco`, game save slot 1 (`playerArchipelago_1.json`). ✅ = confirmed by a log, 🟡 = written but not confirmed, ❌ = not done. The test save has about 13,200 extra gold from the wrong-seed bug (see "Lessons learned").
+**Status as of 2026-11-07, evening (checked against the code, `LogOutput.log`, `Player.log`, the server log `Server_2026_11_07_21_21_12.txt` and the slot file).** Test seed `AP_05499520754356937898`, slot `Coco`, game save slot 1 (`playerArchipelago_1.json`, now `goldCount: 6`, `allLocationsReached: []`). ✅ = confirmed by a log, 🟡 = written but not confirmed, ❌ = not done. The test save has about 13,200 extra gold from the wrong-seed bug (see "Lessons learned").
+
+**Careful:** the last test (21:24) ran a DLL older than the current `Plugin.cs` (saved 21:34). Rebuild before the next test.
 
 | Area | State | Evidence |
 |---|---|---|
-| Connect, 696 location lookup | ✅ | Log |
-| Receive fabrics and patterns | ✅ | Log |
-| Gold, no repeat payouts across restarts | ✅ | Log: `Gold skipped` ×3, `goldCount` stays 3 |
-| Gold, no repeat payouts across reconnects | ❌ | `allItemsReceivedList` is never emptied (see connection plan, step C1) |
+| Connect (async), 696 location lookup | ✅ | `LogOutput.log` 21:24: `Connection Success!`, `696 Locations`, no freeze |
+| Receive fabrics and patterns | ⚠️ | Worked on 2026-11-04. **In the 21:24 run the log has no item lines at all** (no `unlocked`, `already`, or `Gold`). Possible cause (unconfirmed): `ItemReceived` is now subscribed *after* `await LoginAsync`, and the server sends the items right after login, so they may arrive before anyone is listening. Test: log something in `ItemReceived`, or compare `session.Items.AllItemsReceived.Count` with the queue |
+| Gold, no repeat payouts across restarts | ✅ | Log: `Gold skipped` ×3 (earlier test). `goldCount` is now 6 |
+| Gold, no repeat payouts across reconnects | 🟡 | Now counted from `session.Items.AllItemsReceived` (C1's alternative). Not tested |
 | Per-slot JSON file, load and save | ✅ | `goldCount` and `seed` survive restarts |
-| Seed check | ✅ | Wrong-seed test: one error, no Gold paid |
-| Send all saved checks after login | 🟡 | `Plugin.cs:95-107`, not run yet |
+| Seed check | ✅ | Wrong-seed test: one error, no Gold paid. But see issue 1 below (queue leak) |
+| Send all saved checks after login | 🟡 | `Plugin.cs:160-172`. Not run with a non-empty list yet (the file's list is empty) |
 | Delete JSON file when a save is deleted | 🟡 | `HarmonyClass.cs:35-44`, not run yet |
 | Pattern checks | ✅ | Server log 2026-11-04 |
 | Friendship checks | ✅ | Server log 2026-11-05: `Reach friendship: 1 with Prudence` |
 | Fabric checks | 🟡 | Never in a server log |
 | Reputation checks | 🟡 | Never in a server log |
-| Story, pigeon and final commission checks | ❌ | Hook found: see "Commission hook" above |
-| Mod reads slot_data, checks the goal, tells the server | ❌ | The apworld already sends the options (`world.py:81`) |
-| No freezing, reconnecting, connection settings | ❌ | See connection plan |
+| Story and pigeon commission checks | 🟡 | `CompleteQuest` postfix + `CheckQuest` written, not tested. See issues 3-4 |
+| Final commission check | ❌ | Written, but the name compare can never match (issue 2) |
+| Mod reads slot_data, checks the goal, tells the server | ❌ | Commented-out start in `LocationChecks.cs:20-37`. The apworld already sends the options (`world.py:81`) |
+| Disconnect on title screen | 🟡 | `Plugin.cs:44-55`. The server log shows 4 join/leave pairs between 21:21 and 21:28; can't tell restarts from title-screen returns |
+| No freezing when the server is down | 🟡 | Async + 2 s retry written. Not tested with the server off |
+| Reconnect after a drop | 🟡 | `SocketClosed` → `isConnected = false`, so the retry should reconnect. Not tested |
+| Connection settings | ❌ | Still hard-coded |
 | Native starter patterns and fabrics locked | 🟡 | The DLL shows they come only from `ApplyStartingUnlocks` and `ApplyUnlocksForPrestigeLevel`, which are both blocked. Not checked in the shop on a fresh save |
 | Other unlock paths | ❌ | `UnlockHiddenItems` (fabrics), `YarnBridge.UnlockFabric` and `YarnBridge.UnlockPattern` (dialogue) add unlocks and aren't blocked. When the game calls them is unknown |
 
@@ -304,7 +312,9 @@ What I built:
 ### Connection plan (current focus, 2026-11-07)
 Design decided 2026-11-06: see the plan's "PHASE 3b". Do these in order. Each one has a "Your job" and a "Check". Teach them one or two at a time, with farming-game examples only.
 
-**C1. Empty the item list on each new session.**
+**Progress (2026-11-07 evening):** C1 written (the alternative: count from `AllItemsReceived`). C4 mostly written (disconnect + resets; the item queue isn't emptied). C5 written (async + 2 s retry + Stop button). C6 half written (`SocketClosed` handler; sends already `try/catch`, but they swallow the error without a warning). C2, C3 and C7 not done. **None of these have a passing Check yet.** Start the next session by re-running the Checks below for C1, C4, C5 and C6, after fixing the "no items received" problem in the status table.
+
+**C1. Empty the item list on each new session.** (written, untested)
 - *Why:* every new session resends all items. `allItemsReceivedList` keeps the old ones, so Gold gets counted (and paid) twice. Fabrics and patterns are safe because they check "already unlocked".
 - *Your job:* a small `internal static` method in `UnlockItems` that empties the list, called in `Login()` right after `CreateSession`. Alternative: count Gold from `session.Items.AllItemsReceived`, which belongs to the session and starts empty with each new one.
 - *Check:* login logs `Gold skipped` ×3 and no `Gold given`. The real test is C6.
@@ -318,19 +328,19 @@ Design decided 2026-11-06: see the plan's "PHASE 3b". Do these in order. Each on
 - *Your job:* start a new game in an empty slot (not slot 1!), load it once so its JSON file appears, go back to the title screen, and delete that save.
 - *Check:* that slot's `playerArchipelago_<n>.json` is gone, and `playerArchipelago_1.json` is still there.
 
-**C4. Switching saves.**
+**C4. Switching saves.** (mostly written: disconnect and resets are in. Still missing: empty the item queue, see issue 1)
 - *Why:* going back to the title screen resets `isLoaded`, but not `isConnected`, and the session stays open. Loading another save (maybe another seed) keeps the old connection, so the seed check never runs for the new save.
 - *Your job:* on the title screen, disconnect the session, set `isConnected` back to `false`, and empty the item queue and list. Only do it once, not every frame.
 - *Check:* load slot 1, go back to the title screen, load slot 1 again. The log should show a new `Connection Success!` and `Gold skipped` ×3, with no `Gold given`.
 
-**C5. No freezing when the server is down.**
+**C5. No freezing when the server is down.** (written, untested. Leftovers: issue 5)
 - *Why:* `TryConnectAndLogin` blocks the main thread until it gives up, and `Update` calls `Login()` every frame, so the game freezes and Windows closes it.
 - *Your job, part 1 (retry delay):* only start an attempt when you're not connected, an attempt isn't already running (an "is connecting" bool), and a few seconds have passed since the last try. You already know the timer idea from plugin #1 (`Time.time` and a stored start time). `Time.realtimeSinceStartup` ignores game pauses.
 - *Your job, part 2 (don't block):* the library has async versions, `session.ConnectAsync()` then `session.LoginAsync(...)`, checked in the MultiClient.Net 6.7.1 docs. `Login()` is already `async void`, so you can `await` them. In Unity, code after an `await` started on the main thread continues on the main thread, so `ShowNotification` stays safe. Not yet tested here.
 - *Also:* each attempt makes a new session and adds `ItemReceived` again. Make sure only one session is ever hooked up (remove the handler from the old one, or reuse the session).
 - *Check:* with the server off, load your save. The game stays playable, and `Failed` is logged every few seconds, not every frame. Start the server and it should connect within a few seconds.
 
-**C6. Reconnect after a drop.**
+**C6. Reconnect after a drop.** (half written: the `SocketClosed` handler is in. Still to do: warnings in the `catch` blocks, and check the wrong-seed case)
 - *Why:* nothing notices when the connection drops. `isConnected` stays `true`, and sends start failing.
 - *Your job:* subscribe to `session.Socket.SocketClosed`. It runs on a background thread, so the handler should only set a flag (for example `isConnected = false`), with no Unity calls. C5's retry then reconnects on its own. Also:
   - The wrong-seed disconnect will also fire `SocketClosed`. Make sure it doesn't start retrying (`isCorrectServer` stays `false`).
@@ -342,17 +352,30 @@ Design decided 2026-11-06: see the plan's "PHASE 3b". Do these in order. Each on
 - *Your job (simplest first):* BepInEx config entries (`Config.Bind(...)` in `Awake`, giving `ConfigEntry<string>`/`<int>`). BepInEx writes `BepInEx\config\<GUID>.cfg`, which players edit. `TryConnectAndLogin`/`LoginAsync` take a `password` argument. Later, maybe in-game text fields with `GUI.TextField` and the Connect button.
 - *Check:* set a wrong slot name in the `.cfg`, and the log shows a failed login without freezing. Set the right one and it connects.
 
-**After the connection plan:** confirm fabric and reputation checks → two-dress test (temporary logging in `CheckFabrics` of fabric name, `placedOnMannequin` and `panelStates.Count`) → make dress checks go through the saved list only (and fix `CheckPatterns`' `allLocations[...]` and missing bodice/skirt null checks) → commission checks → goal.
+**After the connection plan:** confirm fabric and reputation checks → two-dress test (temporary logging in `CheckFabrics` of fabric name, `placedOnMannequin` and `panelStates.Count`) → make dress checks go through the saved list only (and add the missing bodice/skirt null checks in `CheckPatterns`) → fix and test commission checks (issues 2-4) → goal.
 
-**Other known mod issues:**
-1. Gold is counted as paid when it's added, not when the game saves. Quitting without saving loses it. Accepted for now because it's only filler.
-2. `CheckPatterns` still uses `allLocations[...]`, so one unknown name stops the fabric check for that dress. It also doesn't null-check the bodice and skirt.
-3. `CheckFabrics` sends one message per panel, which is harmless but wasteful.
-4. Cleanup: unused `givenGoldCount` (`UnlockItems.cs:19`) and `Plugin.seed` (`Plugin.cs:20`). Unused `using`s (`Newtonsoft.Json.Linq` and `UnityEngine.UIElements` in `UnlockItems.cs`, `UnityEngine.TextCore.Text` in `LocationChecks.cs`).
-5. **Unexplained game errors:** `Sketchbook.UpdateTags` threw `KeyNotFoundException` for `Professional (ItemTag)`, and `Sketchbook.RecreateTexture` threw a null reference. Cause unknown. Not in the 2026-11-07 `Player.log`, but that only covers one run.
-6. `[BepInDependency("yuu.dressmaker.mods")]` makes Dressmaker Mods required. Decide if that's wanted for release.
-7. `world\dressmaker` in the mod repo still has stale `locations.py`, `world.py` and `data\dressmaker_dump.json`, so that copy won't load. Use `Archipelago\worlds\dressmaker`.
-8. Fixed 2026-11-06/07: the `itemList` thread race (it's now only touched on the main thread in `UnlockQueue`), and the Gold file not being tied to a seed (now one file per slot with the seed inside).
+**Other known mod issues (re-checked against the code 2026-11-07 evening). Explain them in words; don't write the fix:**
+1. **Wrong-seed items can leak into the next save.** `ItemReceived` is subscribed (`Plugin.cs:100`) before the seed check. On a mismatch, `Update` stops before `UnlockQueue`, but the queue keeps those items. The title screen resets `isCorrectServer` without emptying the queue, so the next save loaded gets the wrong server's fabrics and patterns. The wrong-seed session is also never disconnected.
+2. **Final commission never matches.** `LocationChecks.cs:50` compares with `"finalQuest"`, but the game's name is `FinalQuest` (dump: `"name":"FinalQuest"`), and `Equals` is case-sensitive. Also `RememberCheck` saves `FinalQuest`, which isn't an `allLocations` key, so the resend after login skips it too.
+3. **Commission checks only run when a dress check runs.** `CheckQuest` is only called from `DressLocationCheck`, which only runs while the dress flag `locationNeedsChecked` is true. If `RecordCompletedQuest` fires after that frame, the quest waits until the next finished dress. Which of the two fires first is unknown.
+4. **Only one quest fits.** `completedQuest` is a single field, so two quests recorded close together (e.g. `ConfirmSell`) lose one. Gift quests are also recorded: they aren't locations, so `TryGetValue` fails and ID `0` is sent (harmless), but their names land in `allLocationsReached`.
+5. **Login leftovers:**
+   - A failed login (`!login.Successful`, e.g. bad slot name) doesn't throw, so `ItemReceived` is still attached to that dead session.
+   - `isRetry` is only set in the `catch`, so the Stop button never shows for a bad login.
+   - The `catch` shows a notification every 2 s while the server is down.
+6. **Dress data read after an `await`.** `CheckFabrics` reads `finishedDress.state` after `await CheckPatterns()`, and frames can pass in between. That may explain the old "something went null moments later" errors. Read what you need before the first `await`.
+7. `CheckPatterns` now uses `TryGetValue` (fixed), but still doesn't null-check the bodice and skirt (`LocationChecks.cs:148-149`).
+8. `CheckFabrics` sends one message per panel, which is harmless but wasteful.
+9. Gold is counted as paid when it's added, not when the game saves. Quitting without saving loses it. Accepted for now because it's only filler.
+10. `PlayerJson`'s constructor still calls `SaveFile()` when the file is missing. No loop any more, but a constructor writing files is a surprising side effect.
+11. **Game errors, cause unknown:** `Sketchbook.UpdateTags` threw `KeyNotFoundException` for `Professional (ItemTag)` and `Sketchbook.RecreateTexture` threw a null reference (earlier runs). The 21:24 run's `Player.log` has 5 `NullReferenceException`s in `Sketchbook.UpdateDisplay` (from `Sketchbook.Show`, on `OnSceneChange` and `ViewPreviousDress`), none in mod code. Worth checking in ILSpy whether `UpdateDisplay` expects a pattern or fabric the mod has locked.
+12. `[BepInDependency("yuu.dressmaker.mods")]` makes Dressmaker Mods required. Decide if that's wanted for release.
+13. The `.csproj` copy targets hard-code `bin\Debug\...`, so a Release build would copy the old Debug DLL.
+14. Dev-only: the K key cheat-quest toggle in `Plugin.cs:56-67`. Remove before release.
+15. Mod repo copies: in `world\dressmaker\`, only `rules.py` is out of date (checked 2026-11-07 evening; the rest match the master). The **root** `dressmaker_dump.json` is an old dump with no `characterNames`. Use `Archipelago\worlds\dressmaker` as the master.
+16. Fixed: the `itemList` thread race (now only touched on the main thread in `UnlockQueue`), the Gold file not being tied to a seed (one file per slot, seed inside), the unused `givenGoldCount`/`Plugin.seed`, and the unused `using`s in `UnlockItems.cs`/`LocationChecks.cs`.
+
+**Checked 2026-11-07:** all 597 internal names (quests, patterns, fabrics) are unique, none contains `/`, and none has outer spaces. So keying `allLocations` by the text after the last `/` is safe.
 
 **Not a bug:** "No Collar" / "No Sleeves" leave a `0` in the ID array, but the server ignores unknown IDs (`MultiServer.py:1222`), so it's only untidy. Sent checks don't need tracking per save either, because the server ignores repeats (`MultiServer.py:1221`).
 
@@ -362,7 +385,7 @@ Design decided 2026-11-06: see the plan's "PHASE 3b". Do these in order. Each on
 
 **🔀 Focus changed 2026-11-01 (later session): mod first, beatability logic later.** The black fabric task and the open apworld bugs below are parked.
 
-**Mod roadmap (updated 2026-11-07):** 1. connect ✅ → 2. receive items ✅ (adds directly to `unlockedFabrics` / `unlockedPatterns`) → 3. send checks 🔧 (patterns ✅, friendship ✅; fabric and reputation written but never reached the server; commissions not started) → 4. goal ❌ → 5. connection handling 🔧 (**current focus**, moved ahead of 3 and 4 on 2026-11-06; see "Connection plan" above).
+**Mod roadmap (updated 2026-11-07 evening):** 1. connect ✅ (async) → 2. receive items ⚠️ (worked 2026-11-04 and adds directly to `unlockedFabrics` / `unlockedPatterns`, but no items were logged in the 21:24 run) → 3. send checks 🔧 (patterns ✅, friendship ✅; fabric and reputation written but never reached the server; commissions written, untested, final broken) → 4. goal ❌ → 5. connection handling 🔧 (**current focus**, moved ahead of 3 and 4 on 2026-11-06; C1/C4/C5/C6 mostly written, nothing tested; see "Connection plan" above).
 
 **Mod status (2026-11-01):**
 - `Archipelago.MultiClient.Net` NuGet package added. `CopyLocalLockFileAssemblies` is on, and the post-build copy also copies `Archipelago.MultiClient.Net.dll` to `plugins`. Lesson: MSBuild target `Name`s can't contain `.`, and two targets with the same name override each other. The game's Newtonsoft is 13.0.2, which works with MultiClient.Net (don't ship a second Newtonsoft).
@@ -381,11 +404,11 @@ Design decided 2026-11-06: see the plan's "PHASE 3b". Do these in order. Each on
 | `regions.py` | One region, `workshop` (`origin_region_name = "workshop"`) |
 | `locations.py` | **696 locations** = 53 story + 24 pigeon + 155 "Use pattern: …" + 50 "Reach reputation level: N" + 50 "Reach friendship: N with <char>" + 363 "Use fabric: …" + 1 "Complete Final Commission". ID blocks: story 1000, pigeon 2000, pattern 3000, reputation 4000, friendship 5000, fabric 6000, final 8000. Each group is its own dict (`STORY_QUEST_LOCATIONS` etc.), unioned into `LOCATION_NAME_TO_ID`. All go in `workshop`. Victory event = `"Dressmaker goal reached"` → item `"Victory"`. Note: "Complete Final Commission" is inside `STORY_QUEST_LOCATIONS` (54 entries) |
 | `items.py` | `PATTERN_ITEMS` (155, "Pattern: <prettyName>/<name>", IDs 1000+), `FABRIC_ITEMS` (363, "Fabric: <prettyName>/<name>", IDs 2000+), `FILLER_ITEMS = {"Gold": 50}`. `PATTERNS_BY_TYPE` (Bodice 59 / Skirt 46 / Sleeve 30 / Collar 20). Borrows `DRESSMAKER_DATA` from `.locations`. Patterns + fabrics = progression, Gold = filler. `create_all_items` precollects random starting patterns per type and starting fabrics from the options, pools the rest, fills with Gold |
-| `rules.py` | Each "Use pattern: X" needs "Pattern: X", each "Use fabric: X" needs "Fabric: X" (built with `.replace` on item names; stops an item landing on its own use-location). Goal event needs `HasFromList(*PATTERN_ITEMS, count=…)`. Completion = `Has("Victory")`. Only the pattern goal has a rule; `goal_choice` is not read yet |
+| `rules.py` | Each "Use pattern: X" needs "Pattern: X", each "Use fabric: X" needs "Fabric: X" (built with `.replace` on item names; stops an item landing on its own use-location). Completion = `Has("Victory")`. **As of 2026-11-07 evening the goal rule has been taken out** (`set_completion_condition` only sets the completion rule, and `from . import options` was added), presumably to rebuild it around `goal_choice`. Until a rule is back, `"Dressmaker goal reached"` is reachable with nothing |
 | `options.py` | `goal_choice` (pattern / fabric / main_story / all_commissions, default pattern), `pattern_goal_percentage` and `fabric_goal_percentage` (0–100, default 50), `starting_bodices` (3–30, 6), `starting_skirts` (3–30, 7), `starting_sleeves` (3–15, 4), `starting_collars` (3–10, 3), `starting_fabrics` (23–100, 23). Option groups "Goal Options" / "Starting Options". No presets (decided: not needed) |
 
 **Open bugs / loose ends (fix first next session):**
-1. ✅ **Fixed (checked 2026-11-07):** `rules.py` line 28 now computes `int(155 * (pct / 100))`. Dividing a `Range` option works (`Options.py:364`). `pattern_goal_percentage: 0` no longer crashes, but means "0 patterns needed" (an instant win). Still decide whether the range should start at 1.
+1. ✅ **Fixed (checked 2026-11-07):** `rules.py` computed `int(155 * (pct / 100))`. Dividing a `Range` option works (`Options.py:364`). `pattern_goal_percentage: 0` no longer crashed, but meant "0 patterns needed" (an instant win). Still decide whether the range should start at 1. (That line was removed later on 2026-11-07, see `rules.py` in the table above.)
 2. `items.py` line 57 passes `world.options.starting_fabrics` without `.value`. It works (Range options act like ints), but `.value` is clearer and matches the pattern lines.
 3. `goal_choice` isn't used in `rules.py` yet. Only the pattern goal works. Next: an `if` on the goal for `fabric` (same as patterns but with `FABRIC_ITEMS`). `main_story` / `all_commissions` have no rule yet (they need the pinned commission logic). Consider commenting them out of the Choice until then.
 4. Small: `rules.py` imports `HasAll`/`Rule` unused. Leftover APQuest docstring and comments in `world.py` and other files. (The `StartingCollars` docstring is fixed.)

@@ -40,25 +40,15 @@ class GoalChoice(Choice):
     default = option_pattern
 
 
-class PatternGoalPercentage(Range):
+class GoalPercentage(Range):
     """
-    Percentage of patterns needed to be used in order to win. (if patterns was your goal)
-    """
-
-    display_name = "Pattern Percentage Completion Requirement"
-
-    range_start = 0
-    range_end = 100
-    default = 50
-
-class FabricGoalPercentage(Range):
-    """
-    Percentage of fabrics needed to be used in order to win. (if fabric was your goal)
+    Percentage of patterns or fabrics needed to be used in order to win.
+    (if either patterns or fabrics were your goal)
     """
 
-    display_name = "Fabric Percentage Completion Requirement"
+    display_name = "Pattern or Fabric % Completion Requirement"
 
-    range_start = 0
+    range_start = 1
     range_end = 100
     default = 50
 
@@ -97,7 +87,7 @@ class StartingSleeves(Range):
 
 class StartingCollars(Range):
     """
-    How many collars you want to start with.
+    How many collar patterns you want to start with.
     """
 
     display_name = "Starting Amount of Collars"
@@ -117,13 +107,10 @@ class StartingFabrics(Range):
     range_end = 100
     default = 23
 
-# We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
-# This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
 class DressmakerOptions(PerGameCommonOptions):
     goal_choice: GoalChoice
-    fabric_goal_percentage: FabricGoalPercentage
-    pattern_goal_percentage: PatternGoalPercentage
+    goal_percentage: GoalPercentage
     starting_bodices: StartingBodices
     starting_skirts: StartingSkirts
     starting_sleeves: StartingSleeves
@@ -131,11 +118,10 @@ class DressmakerOptions(PerGameCommonOptions):
     starting_fabrics: StartingFabrics
 
 
-# If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
     OptionGroup(
         "Goal Options",
-        [GoalChoice, FabricGoalPercentage, PatternGoalPercentage],
+        [GoalChoice, GoalPercentage],
     ),
     OptionGroup(
         "Starting Options",
