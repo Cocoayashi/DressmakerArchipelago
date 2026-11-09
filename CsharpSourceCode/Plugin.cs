@@ -40,9 +40,9 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
         Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         harmony.PatchAll();
-        serverAddress = Config.Bind("Connection", "Server", "localhost:38281",
+        serverAddress = Config.Bind("Connection", "Server", "YourServerHere",
         "Server address and port (e.g. archipelago.gg:38281)");
-        slotName = Config.Bind("Connection", "SlotName", "Coco",
+        slotName = Config.Bind("Connection", "SlotName", "YourNameHere",
             "the 'name:' in your YAML");
         password = Config.Bind("Connection", "Password", "",
             "Room password. Leave empty if there is none");
