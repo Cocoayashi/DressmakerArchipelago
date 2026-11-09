@@ -1,6 +1,7 @@
+# Tutorial for how to use this mod
 Step 1.) Download DressmakerArchipelago.dll and dressmaker.apworld from this github
 
-Step 2.) Install Yuuma's Dressmaker Modloader in Nexus mods.
+Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
 
 Step 3.) go to your dressmaker game's folder (right click the name on steam, manage browse local files)
 
@@ -18,7 +19,7 @@ Step 9.) Put your player name in the box at the top, hit export. This will give 
 
 
 
-If you are the host of the archipelago, or you are the only player in your archipelago, these are your next steps:
+## If you are the host of the archipelago, or you are the only player in your archipelago, these are your next steps:
 
 Step 1.) put all players' .YAML files in your archipelago in the Archipelago/Players folder. Can also be JUST your file, if you just want a randomized dressmaker run
 
@@ -32,13 +33,13 @@ Step 4.) create a room
 
 
 
-If you are NOT the host:
+## If you are NOT the host:
 
 Step 1.) give your host the YAML, let them deal with that stuff
 
 
 
-EVERYBODY steps next, after the server has been launched
+## EVERYBODY steps next, after the server has been launched
 
 Step 1.) launch dressmaker
 
