@@ -71,7 +71,7 @@ namespace DressmakerArchipelago
 
         private static void CheckCompletedFinalQuest()
         {
-            if (Plugin.playerJson.allLocationsReached.Contains("finalQuest"))
+            if (Plugin.playerJson.allLocationsReached.Contains("FinalQuest"))
             {
                 SendVictoryCheck();
             }
@@ -150,7 +150,7 @@ namespace DressmakerArchipelago
             string locationName = completedQuest.questDefinition.name;
             RememberCheck(locationName);
             allLocations.TryGetValue(locationName, out long locationID);
-            if (locationName.Equals("finalQuest"))
+            if (locationName.Equals("FinalQuest"))
             {
                 allLocations.TryGetValue("Complete Final Commission", out locationID);
             }

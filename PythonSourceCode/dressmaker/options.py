@@ -2,35 +2,17 @@ from dataclasses import dataclass
 
 from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
 
-# In this file, we define the options the player can pick.
-# The most common types of options are Toggle, Range and Choice.
 
-# Options will be in the game's template yaml.
-# They will be represented by checkboxes, sliders etc. on the game's options page on the website.
-# (Note: Options can also be made invisible from either of these places by overriding Option.visibility.
-#  APQuest doesn't have an example of this, but this can be used for secret / hidden / advanced options.)
-
-# For further reading on options, you can also read the Options API Document:
-# https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/options%20api.md
-
-
-# The first type of Option we'll discuss is the Toggle.
-# A toggle is an option that can either be on or off. This will be represented by a checkbox on the website.
-# The default for a toggle is "off".
-# If you want a toggle to be on by default, you can use the "DefaultOnToggle" class instead of the "Toggle" class.
 class GoalChoice(Choice):
     """
     Goal choices in order of how hard and long they take:
-    Pattern percentage: use a certain % of patterns in dresses to win. There are 155 patterns.
-    Fabric percentage: use a certain % of fabrics in dresses to win There are 363 fabrics.
-    Story: Complete the final 53rd commission, does not include pigeon quests as location. There are 54 commissions.
+    Pattern percentage: use a certain % of patterns in dresses to win. There are 157 patterns.
+    Fabric percentage: use a certain % of fabrics in dresses to win. There are 363 fabrics.
+    Story: Complete the final 54th commission.
     Complete EVERY commission: There's 78 of these bad boys, choose this one if you
     REALLY want another 35+ hour playthrough. This one adds 24 pigeon commissions.
     """
 
-    # The docstring of an option is used as the description on the website and in the template yaml.
-
-    # You'll also want to set a display name, which will determine what the option is called on the website.
     display_name = "Win Condition"
     option_pattern = 0
     option_fabric = 1
@@ -50,7 +32,7 @@ class GoalPercentage(Range):
 
     range_start = 1
     range_end = 100
-    default = 50
+    default = 75
 
 class StartingBodices(Range):
     """
@@ -103,7 +85,7 @@ class StartingFabrics(Range):
 
     display_name = "Starting Amount of fabrics"
 
-    range_start = 23
+    range_start = 24
     range_end = 100
     default = 30
 

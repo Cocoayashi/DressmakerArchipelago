@@ -7,6 +7,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using BepInEx.Configuration;
 
 namespace DressmakerArchipelago;
 [BepInDependency("yuu.dressmaker.mods")]
@@ -25,7 +26,9 @@ public class Plugin : BaseUnityPlugin
     internal static bool isConnected = false;
     internal float timeSinceLastConnectionAttempt = -999f;
     private bool isRetry = false;
-
+    private ConfigEntry<string> serverAddress;
+    private ConfigEntry<string> slotName;
+    private ConfigEntry<string> password;
 
 
     //NOTE: ApplyStartingUnlocks() Hijack that for beginning
@@ -37,6 +40,12 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
         Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         harmony.PatchAll();
+        serverAddress = Config.Bind("Connection", "Server", "localhost:38281",
+        "Server address and port (e.g. archipelago.gg:38281)");
+        slotName = Config.Bind("Connection", "SlotName", "Coco",
+            "the 'name:' in your YAML");
+        password = Config.Bind("Connection", "Password", "",
+            "Room password. Leave empty if there is none");
     }
     private void Update()
     {
@@ -79,14 +88,14 @@ public class Plugin : BaseUnityPlugin
         timeSinceLastConnectionAttempt = Time.realtimeSinceStartup;
         openingConnection = true;
 
-        session = ArchipelagoSessionFactory.CreateSession("localhost", 38281);
+        session = ArchipelagoSessionFactory.CreateSession(serverAddress.Value.Trim(), 38281);
         session.Items.ItemReceived += unlocker.ItemReceived;
 
         LoginResult login;
         try
         {
             await session.ConnectAsync();
-            login = await session.LoginAsync("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
+            login = await session.LoginAsync("Dressmaker", slotName.Value.Trim(), ItemsHandlingFlags.AllItems, password: password.Value);
 
         }
         catch (System.Exception ex)
