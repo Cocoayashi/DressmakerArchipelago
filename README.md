@@ -1,7 +1,7 @@
 # Tutorial for how to use this mod
 Step 1.) Download DressmakerArchipelago.dll and dressmaker.apworld from this github
 
-Step 2.) Install Yuuma's Dressmaker Modloader in Nexus mods.
+Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
 
 Step 3.) go to your dressmaker game's folder (right click the name on steam, manage browse local files)
 
