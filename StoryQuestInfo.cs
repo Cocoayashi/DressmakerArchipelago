@@ -37,6 +37,8 @@ namespace DressmakerArchipelago
         public string name;
         public string prettyName;
         public Dictionary<string, float> itemTags;
+        public bool isBlack = false;
+
 
     }
 

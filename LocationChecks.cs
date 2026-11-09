@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Framework;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -250,17 +251,15 @@ namespace DressmakerArchipelago
             string bodiceName = dress.bodiceDefinition.name.Trim();
             string skirtName = dress.skirtDefinition.name.Trim();
             long[] patternLocations = [0, 0, 0, 0];
-            if (!collarName.Equals("No Collar") && !collarName.Equals(""))
+            if (!collarName.IsNullOrEmpty())
             {
                 allLocations.TryGetValue(collarName, out patternLocations[0]);
                 RememberCheck(collarName);
-
             }
-            if (!sleeveName.Equals("No Sleeves") && !sleeveName.Equals(""))
+            if (!sleeveName.IsNullOrEmpty())
             {
                 allLocations.TryGetValue(sleeveName, out patternLocations[1]);
                 RememberCheck(sleeveName);
-
             }
             allLocations.TryGetValue(bodiceName, out patternLocations[2]);
             allLocations.TryGetValue(skirtName, out patternLocations[3]);

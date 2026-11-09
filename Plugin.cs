@@ -80,12 +80,13 @@ public class Plugin : BaseUnityPlugin
         openingConnection = true;
 
         session = ArchipelagoSessionFactory.CreateSession("localhost", 38281);
+        session.Items.ItemReceived += unlocker.ItemReceived;
+
         LoginResult login;
         try
         {
             await session.ConnectAsync();
             login = await session.LoginAsync("Dressmaker", "Coco", ItemsHandlingFlags.AllItems);
-            session.Items.ItemReceived += unlocker.ItemReceived;
 
         }
         catch (System.Exception ex)
@@ -177,6 +178,10 @@ public class Plugin : BaseUnityPlugin
             {
                 keepRetrying = false;
             }
+        }
+        if (GUI.Button(new Rect(10, 200, 150, 30), "Dump Data"))
+        {
+            GetDump.GetDressmakerDump();
         }
 
     }

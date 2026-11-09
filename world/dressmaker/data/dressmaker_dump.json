@@ -3034,7 +3034,9 @@
         "Risque": -10.0,
         "Uncomfortable": 50.0,
         "Eclectic": -10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CorduroyBlack",
@@ -3045,7 +3047,9 @@
         "Simple": 50.0,
         "Daywear": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "CorduroyChocolateBrown",
@@ -3055,7 +3059,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Daywear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CorduroyMerlotRed",
@@ -3066,7 +3072,9 @@
         "Simple": 50.0,
         "Daywear": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CorduroyOliveGreen",
@@ -3076,7 +3084,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Daywear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CorduroySandalwood",
@@ -3086,7 +3096,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Daywear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Black",
@@ -3099,7 +3111,9 @@
         "Romantic": 10.0,
         "Simple": 50.0,
         "Workwear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Cotton Embroidered Diamond Teal",
@@ -3113,7 +3127,9 @@
         "Patterned": 100.0,
         "Eclectic": 50.0,
         "Elegant": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonAmethyst",
@@ -3127,7 +3143,9 @@
         "Eclectic": 25.0,
         "Romantic": 10.0,
         "Workwear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonAquaBlue",
@@ -3141,7 +3159,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonBlackFloral",
@@ -3157,7 +3177,9 @@
         "Daywear": 50.0,
         "Eclectic": 15.0,
         "Workwear": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "CottonBlue",
@@ -3171,7 +3193,9 @@
         "Playful": 25.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonCoral",
@@ -3185,7 +3209,9 @@
         "Playful": 50.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDarkGrey",
@@ -3196,7 +3222,9 @@
         "Cool": 50.0,
         "Daywear": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "CottonDarkPurpleFloral",
@@ -3211,7 +3239,9 @@
         "Elegant": 50.0,
         "Workwear": 25.0,
         "Casual": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDotDesign Brown",
@@ -3224,7 +3254,9 @@
         "Simple": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonFloralEmbroidered",
@@ -3240,7 +3272,9 @@
         "Romantic": 50.0,
         "Playful": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonFloralLibertyOrange",
@@ -3254,7 +3288,9 @@
         "Playful": 50.0,
         "Cute": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonFloralSilhouette Blue",
@@ -3269,7 +3305,9 @@
         "Cute": 15.0,
         "Flowers": 100.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonGinghamBlue",
@@ -3283,7 +3321,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonGreen",
@@ -3297,7 +3337,9 @@
         "Workwear": 50.0,
         "Playful": 50.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonHoneyYellow",
@@ -3312,7 +3354,9 @@
         "Eclectic": 15.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonKaleidoscopePink",
@@ -3324,7 +3368,9 @@
         "Daywear": 50.0,
         "Eclectic": 50.0,
         "Elaborate": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonMulticolouredFloral",
@@ -3339,7 +3385,9 @@
         "Casual": 50.0,
         "Elegant": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonOliveGreen",
@@ -3353,7 +3401,9 @@
         "Cute": 50.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonOrange",
@@ -3367,7 +3417,9 @@
         "Playful": 10.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPastelPurple",
@@ -3381,7 +3433,9 @@
         "Playful": 10.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPastelYellow",
@@ -3395,7 +3449,9 @@
         "Playful": 10.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPink",
@@ -3409,7 +3465,9 @@
         "Romantic": 50.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPurple",
@@ -3422,7 +3480,9 @@
         "Cute": 50.0,
         "Romantic": 50.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonSalmon",
@@ -3435,7 +3495,9 @@
         "Cute": 50.0,
         "Playful": 50.0,
         "Workwear": 52.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonScandiFlowers",
@@ -3449,7 +3511,9 @@
         "Patterned": 100.0,
         "Daywear": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonStrawberryFieldsPrint",
@@ -3464,7 +3528,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonUmber",
@@ -3476,7 +3542,9 @@
         "Cute": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonVermilion",
@@ -3491,7 +3559,9 @@
         "Playful": 25.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonWhite",
@@ -3506,7 +3576,9 @@
         "Workwear": 50.0,
         "Cute": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonYellow",
@@ -3520,7 +3592,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Floral French Black",
@@ -3536,7 +3610,9 @@
         "Goth": 80.0,
         "Romantic": 50.0,
         "Cool": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Lace Overlay Red Silk",
@@ -3552,7 +3628,9 @@
         "Risque": 50.0,
         "Goth": 50.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace White",
@@ -3570,7 +3648,9 @@
         "Romantic": 50.0,
         "Cute": 50.0,
         "Flowers": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenBeige",
@@ -3584,7 +3664,9 @@
         "Professional": 25.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenCoolGrey",
@@ -3596,7 +3678,9 @@
         "Simple": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenEggshell",
@@ -3610,7 +3694,9 @@
         "Workwear": 50.0,
         "Cute": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenFloral",
@@ -3626,7 +3712,9 @@
         "Romantic": 25.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenGreen",
@@ -3639,7 +3727,9 @@
         "Professional": 25.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenGrey",
@@ -3651,7 +3741,9 @@
         "Simple": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenGreyPink",
@@ -3665,7 +3757,9 @@
         "Professional": 25.0,
         "Cute": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenLightGrey",
@@ -3677,7 +3771,9 @@
         "Simple": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenPink",
@@ -3692,7 +3788,9 @@
         "Professional": 25.0,
         "Playful": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenPolka Black",
@@ -3707,7 +3805,9 @@
         "Simple": 50.0,
         "Elegant": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "LinenRhiannonTrailingFloralBronze",
@@ -3721,7 +3821,9 @@
         "Patterned": 100.0,
         "Professional": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenWhite",
@@ -3735,7 +3837,9 @@
         "Professional": 25.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Flower Orange",
@@ -3751,7 +3855,9 @@
         "Elaborate": 25.0,
         "Eclectic": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Leaf Print Green",
@@ -3767,7 +3873,9 @@
         "Flowers": 10.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Paisley Plum Brocade",
@@ -3782,7 +3890,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkAmber",
@@ -3797,7 +3907,9 @@
         "Risque": 10.0,
         "Eclectic": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkAzure",
@@ -3813,7 +3925,9 @@
         "Eclectic": 25.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBarbaraPink",
@@ -3829,7 +3943,9 @@
         "Playful": 50.0,
         "Cute": 50.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBlack",
@@ -3845,7 +3961,9 @@
         "Risque": 50.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "SilkBlueBird",
@@ -3861,7 +3979,9 @@
         "Cute": 25.0,
         "Eclectic": 10.0,
         "Playful": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBordeaux",
@@ -3877,7 +3997,9 @@
         "Risque": 50.0,
         "Eclectic": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkCeladon",
@@ -3892,7 +4014,9 @@
         "Risque": 10.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkClementine",
@@ -3908,7 +4032,9 @@
         "Playful": 25.0,
         "Romantic": 25.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkCornflower",
@@ -3923,7 +4049,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkDaffodil",
@@ -3939,7 +4067,9 @@
         "Eclectic": 10.0,
         "Playful": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFloralPurple",
@@ -3954,7 +4084,9 @@
         "Patterned": 100.0,
         "Eclectic": 50.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFuchsia",
@@ -3970,7 +4102,9 @@
         "Cute": 10.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkGlacierBlue",
@@ -3986,7 +4120,9 @@
         "Romantic": 50.0,
         "Eclectic": 10.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkHoneyGold",
@@ -4000,7 +4136,9 @@
         "Simple": 50.0,
         "Romantic": 10.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkHoneyYellow",
@@ -4016,7 +4154,9 @@
         "Eclectic": 25.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkJadeGreen",
@@ -4031,7 +4171,9 @@
         "Risque": 10.0,
         "Eclectic": 25.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkLaurelGreen",
@@ -4045,7 +4187,9 @@
         "Simple": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkLilac",
@@ -4062,7 +4206,9 @@
         "Goth": 10.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkMagenta",
@@ -4078,7 +4224,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkMarigold",
@@ -4094,7 +4242,9 @@
         "Eclectic": 25.0,
         "Playful": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkMidnightMoss",
@@ -4108,7 +4258,9 @@
         "Simple": 50.0,
         "Goth": 50.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkMIntGreen",
@@ -4124,7 +4276,9 @@
         "Cute": 50.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkOliveGreen",
@@ -4140,7 +4294,9 @@
         "Eclectic": 25.0,
         "Playful": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkOrange",
@@ -4154,7 +4310,9 @@
         "Elegant": 50.0,
         "Eclectic": 25.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkOrchid",
@@ -4170,7 +4328,9 @@
         "Eclectic": 10.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPeriwinkle",
@@ -4186,7 +4346,9 @@
         "Cute": 10.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPlum",
@@ -4202,7 +4364,9 @@
         "Risque": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPoppy",
@@ -4218,7 +4382,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkProsecco",
@@ -4234,7 +4400,9 @@
         "Risque": 25.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkRoseMint",
@@ -4249,7 +4417,9 @@
         "Romantic": 25.0,
         "Eclectic": 10.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkRosePink",
@@ -4265,7 +4435,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkRoyalPurple",
@@ -4281,7 +4453,9 @@
         "Risque": 25.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkSeaMist",
@@ -4297,7 +4471,9 @@
         "Eclectic": 10.0,
         "Playful": 25.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkSnowdropWhite",
@@ -4313,7 +4489,9 @@
         "Cute": 25.0,
         "Eclectic": 10.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkStormyBlue",
@@ -4327,7 +4505,9 @@
         "Simple": 50.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkStrawberry",
@@ -4343,7 +4523,9 @@
         "Eclectic": 10.0,
         "Playful": 50.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTaffeta Smokey Honey",
@@ -4357,7 +4539,9 @@
         "Elegant": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTaffeta Tasar Moth",
@@ -4373,7 +4557,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTaupe",
@@ -4386,7 +4572,9 @@
         "Glamour": 25.0,
         "Goth": 25.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTeal",
@@ -4402,7 +4590,9 @@
         "Cute": 10.0,
         "Eclectic": 25.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTurquoise",
@@ -4418,7 +4608,9 @@
         "Cute": 10.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkViridianGreen",
@@ -4434,7 +4626,9 @@
         "Risque": 25.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkWhiteFloralEmbroidered",
@@ -4451,7 +4645,9 @@
         "Elaborate": 25.0,
         "Cute": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkWineRed",
@@ -4466,7 +4662,9 @@
         "Romantic": 10.0,
         "Risque": 50.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkWisteria",
@@ -4482,7 +4680,9 @@
         "Cute": 50.0,
         "Playful": 10.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Tweed Brown",
@@ -4495,7 +4695,9 @@
         "Casual": 50.0,
         "Playful": 50.0,
         "Patterned": 100.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetAmber",
@@ -4509,7 +4711,9 @@
         "Romantic": 10.0,
         "Warm": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetBlack",
@@ -4525,7 +4729,9 @@
         "Risque": 25.0,
         "Eclectic": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "VelvetBlossomingBlancEmbellished",
@@ -4543,7 +4749,9 @@
         "Goth": 25.0,
         "Romantic": 10.0,
         "Shimmering": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetBlushPink",
@@ -4559,7 +4767,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetBurntThistle",
@@ -4574,7 +4784,9 @@
         "Eclectic": 25.0,
         "Romantic": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCaramel",
@@ -4588,7 +4800,9 @@
         "Romantic": 10.0,
         "Warm": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCarmine",
@@ -4604,7 +4818,9 @@
         "Eclectic": 25.0,
         "Goth": 25.0,
         "Risque": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCeladon",
@@ -4620,7 +4836,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCerulean",
@@ -4635,7 +4853,9 @@
         "Warm": 50.0,
         "Cute": 10.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetClementine",
@@ -4651,7 +4871,9 @@
         "Eclectic": 50.0,
         "Playful": 25.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCrimson",
@@ -4667,7 +4889,9 @@
         "Eclectic": 25.0,
         "Goth": 25.0,
         "Risque": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCyan",
@@ -4683,7 +4907,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetHunter",
@@ -4697,7 +4923,9 @@
         "Romantic": 10.0,
         "Warm": 50.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetIvory",
@@ -4713,7 +4941,9 @@
         "Cute": 25.0,
         "Eclectic": 10.0,
         "Playful": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetLaurelGreen",
@@ -4729,7 +4959,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMauveLight",
@@ -4746,7 +4978,9 @@
         "Eclectic": 10.0,
         "Playful": 25.0,
         "Risque": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMossGreen",
@@ -4760,7 +4994,9 @@
         "Romantic": 25.0,
         "Warm": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMulberry",
@@ -4776,7 +5012,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Risque": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMushroomPolka",
@@ -4789,7 +5027,9 @@
         "Simple": 25.0,
         "Cool": 50.0,
         "Daywear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetPrussianBlue",
@@ -4804,7 +5044,9 @@
         "Warm": 50.0,
         "Eclectic": 25.0,
         "Risque": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetPurple",
@@ -4821,7 +5063,9 @@
         "Elegant": 50.0,
         "Goth": 10.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetRaspberry",
@@ -4837,7 +5081,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetRose",
@@ -4853,7 +5099,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetRoyalBlue",
@@ -4868,7 +5116,9 @@
         "Cute": 10.0,
         "Eclectic": 25.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetSageGreen",
@@ -4884,7 +5134,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetSienna",
@@ -4898,7 +5150,9 @@
         "Romantic": 10.0,
         "Warm": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetStrawberry",
@@ -4914,7 +5168,9 @@
         "Cute": 50.0,
         "Eclectic": 10.0,
         "Playful": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetTurquoise",
@@ -4929,7 +5185,9 @@
         "Warm": 50.0,
         "Cute": 10.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WhiteWool",
@@ -4940,7 +5198,9 @@
         "Professional": 50.0,
         "Cute": 25.0,
         "Goth": 80.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolArgyleBlack",
@@ -4951,7 +5211,9 @@
         "Patterned": 100.0,
         "Goth": 50.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolArgyleBlue",
@@ -4961,7 +5223,9 @@
         "Warm": 50.0,
         "Patterned": 100.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolArgyleBrown",
@@ -4971,7 +5235,9 @@
         "Warm": 50.0,
         "Patterned": 100.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolArgyleGreen",
@@ -4981,7 +5247,9 @@
         "Warm": 50.0,
         "Patterned": 100.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolBlack",
@@ -4992,7 +5260,9 @@
         "Simple": 50.0,
         "Professional": 50.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "WoolBordeaux",
@@ -5003,7 +5273,9 @@
         "Simple": 50.0,
         "Goth": 80.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolCaramelBrown",
@@ -5012,7 +5284,9 @@
         "Professional": 50.0,
         "Warm": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolCerulean",
@@ -5021,7 +5295,9 @@
         "Professional": 50.0,
         "Warm": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolChocolate",
@@ -5031,7 +5307,9 @@
         "Simple": 50.0,
         "Warm": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolDarkBeige",
@@ -5040,7 +5318,9 @@
         "Professional": 50.0,
         "Simple": 50.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolEcru",
@@ -5049,7 +5329,9 @@
         "Professional": 50.0,
         "Warm": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolGreenChevronTweed",
@@ -5061,7 +5343,9 @@
         "Patterned": 10.0,
         "Cute": 25.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolHoundstoothBlack",
@@ -5072,7 +5356,9 @@
         "Warm": 50.0,
         "Simple": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "WoolHoundstoothCool",
@@ -5083,7 +5369,9 @@
         "Warm": 50.0,
         "Simple": 25.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolMossGreen",
@@ -5093,7 +5381,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolOrange",
@@ -5103,7 +5393,9 @@
         "Simple": 50.0,
         "Warm": 50.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolPinstripesBrown",
@@ -5114,7 +5406,9 @@
         "Patterned": 50.0,
         "Warm": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolPinstripesWhite",
@@ -5126,7 +5420,9 @@
         "Goth": 80.0,
         "Elegant": 25.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "WoolPlaid Black",
@@ -5137,7 +5433,9 @@
         "Patterned": 100.0,
         "Simple": 25.0,
         "Goth": 80.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "WoolPlaid Green",
@@ -5148,7 +5446,9 @@
         "Patterned": 100.0,
         "Simple": 25.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolPlaid Red",
@@ -5159,7 +5459,9 @@
         "Patterned": 100.0,
         "Simple": 25.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolRosewood",
@@ -5170,7 +5472,9 @@
         "Simple": 50.0,
         "Cute": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolRusset",
@@ -5180,7 +5484,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolSienna",
@@ -5189,7 +5495,9 @@
         "Professional": 50.0,
         "Simple": 50.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolSlateGrey",
@@ -5199,7 +5507,9 @@
         "Warm": 50.0,
         "Simple": 50.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolThistle",
@@ -5210,7 +5520,9 @@
         "Cute": 25.0,
         "Simple": 50.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Embroidered Eclectic Scalloped Winter",
@@ -5224,7 +5536,9 @@
         "Patterned": 100.0,
         "Eclectic": 50.0,
         "Elegant": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Arctic",
@@ -5238,7 +5552,9 @@
         "Romantic": 15.0,
         "Simple": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Blue Jay",
@@ -5252,7 +5568,9 @@
         "Workwear": 50.0,
         "Simple": 50.0,
         "Daywear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Blush",
@@ -5267,7 +5585,9 @@
         "Workwear": 50.0,
         "Simple": 50.0,
         "Daywear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Daffodil",
@@ -5281,7 +5601,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Harvest",
@@ -5295,7 +5617,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Mauve",
@@ -5310,7 +5634,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Mossy Green",
@@ -5325,7 +5651,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Olive Green",
@@ -5340,7 +5668,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Peony",
@@ -5354,7 +5684,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Rosewood",
@@ -5369,7 +5701,9 @@
         "Simple": 50.0,
         "Workwear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Sage Green",
@@ -5384,7 +5718,9 @@
         "Simple": 50.0,
         "Workwear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Terracotta",
@@ -5399,7 +5735,9 @@
         "Simple": 50.0,
         "Workwear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Wisteria",
@@ -5414,7 +5752,9 @@
         "Romantic": 50.0,
         "Workwear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Blue Pansy",
@@ -5429,7 +5769,9 @@
         "Romantic": 25.0,
         "Eclectic": 25.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetTechnicolourYellowGreen",
@@ -5444,7 +5786,9 @@
         "Playful": 10.0,
         "Eclectic": 50.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDotDesign Blue",
@@ -5459,7 +5803,9 @@
         "Playful": 25.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Black",
@@ -5475,7 +5821,9 @@
         "Risque": 50.0,
         "Goth": 80.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Sequins Black",
@@ -5493,7 +5841,9 @@
         "Risque": 50.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "SequinsEmerald",
@@ -5510,7 +5860,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Grey-dient",
@@ -5525,7 +5877,9 @@
         "Romantic": 25.0,
         "Goth": 80.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPatriceOrchil",
@@ -5542,7 +5896,9 @@
         "Goth": 25.0,
         "Risque": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Burnout Capricorn",
@@ -5559,7 +5915,9 @@
         "Simple": 50.0,
         "Warm": 50.0,
         "Patterned": 100.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "CottonDotDesign Red",
@@ -5572,7 +5930,9 @@
         "Simple": 50.0,
         "Eclectic": 15.0,
         "Workwear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonElegantPlumFoliage",
@@ -5589,7 +5949,9 @@
         "Daywear": 50.0,
         "Professional": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Gold",
@@ -5607,7 +5969,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFrostedTeal",
@@ -5623,7 +5987,9 @@
         "Romantic": 25.0,
         "Eclectic": 10.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Gingham Meadow",
@@ -5637,7 +6003,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Simple": 35.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonFloralLibertyGrey",
@@ -5651,7 +6019,9 @@
         "Playful": 15.0,
         "Cool": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonKaleidoscopeRed",
@@ -5663,7 +6033,9 @@
         "Elaborate": 25.0,
         "Daywear": 50.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPeonyRows",
@@ -5678,7 +6050,9 @@
         "Elegant": 25.0,
         "Elaborate": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Prussian Blue",
@@ -5697,7 +6071,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Cross Patty Embroidered Yellow",
@@ -5710,7 +6086,9 @@
         "Patterned": 100.0,
         "Daywear": 50.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Gingham Sky",
@@ -5724,7 +6102,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDarkPink",
@@ -5738,7 +6118,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDotDesign Pink",
@@ -5753,7 +6135,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonNadineFloralDiamondRed",
@@ -5767,7 +6151,9 @@
         "Patterned": 100.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Overlay Pink",
@@ -5784,7 +6170,9 @@
         "Goth": 80.0,
         "Romantic": 50.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SequinsChameleonPurpleGreen",
@@ -5802,7 +6190,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SequinsRuby",
@@ -5820,7 +6210,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Paisley Yellow",
@@ -5835,7 +6227,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBlockPrintDiamondYellow",
@@ -5850,7 +6244,9 @@
         "Eclectic": 25.0,
         "Elaborate": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Burnout Medusa",
@@ -5863,7 +6259,9 @@
         "Goth": 80.0,
         "Patterned": 100.0,
         "Risque": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetFloralBurnout Green",
@@ -5878,7 +6276,9 @@
         "Patterned": 100.0,
         "Eclectic": 50.0,
         "Elaborate": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolHoundstoothRed",
@@ -5888,7 +6288,9 @@
         "Professional": 50.0,
         "Warm": 50.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetAmethyst",
@@ -5903,7 +6305,9 @@
         "Warm": 50.0,
         "Cute": 10.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetEspresso",
@@ -5915,7 +6319,9 @@
         "Formal": 50.0,
         "Glamour": 50.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMerlotRed",
@@ -5931,7 +6337,9 @@
         "Risque": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetStarryNight",
@@ -5950,7 +6358,9 @@
         "Elaborate": 25.0,
         "Romantic": 25.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "WoolDarkGreen",
@@ -5960,7 +6370,9 @@
         "Simple": 50.0,
         "Professional": 50.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Leaf Print Black",
@@ -5978,7 +6390,9 @@
         "Eclectic": 10.0,
         "Flowers": 1.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "SilkBlockPrintDiamond",
@@ -5994,7 +6408,9 @@
         "Elaborate": 25.0,
         "Eclectic": 25.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkContinuousFloralDaintyBeige",
@@ -6012,12 +6428,16 @@
         "Eveningwear": 50.0,
         "Eclectic": 10.0,
         "Elaborate": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Crushed Rouge",
       "prettyName": "Rouge Crushed Velvet",
-      "itemTags": {}
+      "itemTags": {},
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMidnightBlue",
@@ -6033,7 +6453,9 @@
         "Eclectic": 25.0,
         "Goth": 10.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Radishing Print",
@@ -6046,7 +6468,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonNadineFloralDiamondPink",
@@ -6061,7 +6485,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonStrawberryFieldsMonochrome",
@@ -6076,7 +6502,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Desert Dawn",
@@ -6092,7 +6520,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolBeige",
@@ -6101,7 +6531,9 @@
         "Professional": 50.0,
         "Warm": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Gingham Dijon",
@@ -6115,7 +6547,9 @@
         "Playful": 50.0,
         "Simple": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace French Red",
@@ -6131,7 +6565,9 @@
         "Risque": 50.0,
         "Goth": 80.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Violet-Crowned Woodnymph",
@@ -6146,7 +6582,9 @@
         "Eclectic": 10.0,
         "Elegant": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkContinuousFloralDaintyBlue",
@@ -6163,7 +6601,9 @@
         "Eclectic": 10.0,
         "Elaborate": 25.0,
         "Eveningwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Forget Me Not Red",
@@ -6178,7 +6618,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonKaleidoscopeBlue",
@@ -6190,7 +6632,9 @@
         "Elaborate": 25.0,
         "Daywear": 50.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Absynthe",
@@ -6207,7 +6651,9 @@
         "Romantic": 25.0,
         "Patterned": 100.0,
         "Flowers": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LaceSnowPetal",
@@ -6223,7 +6669,9 @@
         "Risque": 50.0,
         "Goth": 80.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkEmbellished Geometric Gold",
@@ -6238,7 +6686,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Shimmering": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkEmbellished Geometric Green",
@@ -6253,7 +6703,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Shimmering": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkEmbellished Swirling Citrine",
@@ -6268,7 +6720,9 @@
         "Eclectic": 50.0,
         "Elaborate": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolYellowChevronTweed",
@@ -6279,7 +6733,9 @@
         "Professional": 50.0,
         "Cute": 25.0,
         "Patterned": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonAbstractPastelSplashes",
@@ -6294,7 +6750,9 @@
         "Romantic": 25.0,
         "Simple": 10.0,
         "Workwear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Linen Ochre",
@@ -6308,7 +6766,9 @@
         "Professional": 25.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFloralScrollClassicLight",
@@ -6323,7 +6783,9 @@
         "Patterned": 100.0,
         "Romantic": 25.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPaleGold",
@@ -6338,7 +6800,9 @@
         "Cute": 10.0,
         "Eclectic": 25.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Embroidered Diamond Red",
@@ -6352,7 +6816,9 @@
         "Patterned": 100.0,
         "Eclectic": 50.0,
         "Elegant": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDaisyDitsyPrint",
@@ -6370,7 +6836,9 @@
         "Romantic": 50.0,
         "Workwear": 50.0,
         "Professional": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Parrot FIsh",
@@ -6385,7 +6853,9 @@
         "Romantic": 25.0,
         "Goth": 25.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetStarryNightRed",
@@ -6403,7 +6873,9 @@
         "Elaborate": 25.0,
         "Goth": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Lucky Day",
@@ -6417,7 +6889,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonKaleidoscopeGreen",
@@ -6429,7 +6903,9 @@
         "Elaborate": 25.0,
         "Daywear": 50.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonNadineFloralDiamondBlue",
@@ -6444,7 +6920,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetTechnicolourPurpleOrange",
@@ -6459,7 +6937,9 @@
         "Playful": 25.0,
         "Eclectic": 50.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolPinstripesBlue",
@@ -6470,7 +6950,9 @@
         "Professional": 50.0,
         "Workwear": 10.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Mermaid Dream",
@@ -6487,7 +6969,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Sanguine Dreams",
@@ -6506,7 +6990,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Violet",
@@ -6525,7 +7011,9 @@
         "Cute": 25.0,
         "Playful": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBlockPrintDiamond Green",
@@ -6540,7 +7028,9 @@
         "Elaborate": 25.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkCoolBlush",
@@ -6556,7 +7046,9 @@
         "Eclectic": 10.0,
         "Elegant": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPinkFloralEmbroidered",
@@ -6574,7 +7066,9 @@
         "Elaborate": 25.0,
         "Cute": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonBlossomsOnMidnightEmbroidered",
@@ -6590,7 +7084,9 @@
         "Eclectic": 50.0,
         "Elegant": 25.0,
         "Goth": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "CottonFloralPainterly",
@@ -6605,7 +7101,9 @@
         "Elegant": 50.0,
         "Cute": 15.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Joan d'Arc",
@@ -6622,7 +7120,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Leaf Green",
@@ -6640,7 +7140,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Pearl",
@@ -6659,7 +7161,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Frangipani",
@@ -6674,7 +7178,9 @@
         "Romantic": 25.0,
         "Eclectic": 25.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkAgedCopper",
@@ -6689,7 +7195,9 @@
         "Risque": 10.0,
         "Romantic": 25.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetAlexandriaPrint",
@@ -6705,7 +7213,9 @@
         "Patterned": 100.0,
         "Romantic": 25.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetStarry Night Blue",
@@ -6723,7 +7233,9 @@
         "Romantic": 25.0,
         "Simple": 25.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDiamondPrint",
@@ -6737,7 +7249,9 @@
         "Romantic": 10.0,
         "Workwear": 50.0,
         "Cute": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPlaidPink",
@@ -6752,7 +7266,9 @@
         "Playful": 50.0,
         "Romantic": 10.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenContinuousPoppy",
@@ -6769,7 +7285,9 @@
         "Playful": 25.0,
         "Workwear": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Autumnal Vine Border Print",
@@ -6783,7 +7301,9 @@
         "Patterned": 100.0,
         "Romantic": 15.0,
         "Flowers": 100.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Spring Vine Border Print",
@@ -6797,7 +7317,9 @@
         "Patterned": 100.0,
         "Romantic": 15.0,
         "Flowers": 100.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Undine",
@@ -6813,7 +7335,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Dante Swirling",
@@ -6830,7 +7354,9 @@
         "Glamour": 50.0,
         "Professional": -25.0,
         "Workwear": -25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Burning Forest",
@@ -6844,7 +7370,9 @@
         "Romantic": 25.0,
         "Goth": 50.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Golden Dawn",
@@ -6858,7 +7386,9 @@
         "Glamour": 25.0,
         "Romantic": 25.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Lavender Field",
@@ -6874,7 +7404,9 @@
         "Goth": 25.0,
         "Eclectic": 25.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Snowflake",
@@ -6889,7 +7421,9 @@
         "Romantic": 25.0,
         "Goth": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonGinghamGreen",
@@ -6903,7 +7437,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCrushedPeacock",
@@ -6919,7 +7455,9 @@
         "Eclectic": 25.0,
         "Elegant": 50.0,
         "Risque": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Check Rainbow Magic",
@@ -6932,7 +7470,9 @@
         "Daywear": 50.0,
         "Patterned": 100.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonSerpentPrintGreen",
@@ -6948,7 +7488,9 @@
         "Risque": 50.0,
         "Eclectic": 10.0,
         "Elaborate": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonSerpentPrintRed",
@@ -6964,7 +7506,9 @@
         "Patterned": 100.0,
         "Risque": 50.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonTaupe",
@@ -6975,7 +7519,9 @@
         "Casual": 50.0,
         "Professional": 25.0,
         "Simple": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "LinenVictorian",
@@ -6989,7 +7535,9 @@
         "Workwear": 50.0,
         "Daywear": 50.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Peacock",
@@ -7006,7 +7554,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SequinsSapphire",
@@ -7023,7 +7573,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkEmbellished Geometric Purple",
@@ -7038,7 +7590,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Shimmering": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Pastel Sunrise",
@@ -7054,7 +7608,9 @@
         "Goth": 25.0,
         "Eclectic": 25.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Unicorn",
@@ -7070,7 +7626,9 @@
         "Cute": 50.0,
         "Eclectic": 25.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Paisley Purple",
@@ -7085,7 +7643,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkContinuousRoseBrocade",
@@ -7101,7 +7661,9 @@
         "Flowers": 100.0,
         "Patterned": 100.0,
         "Playful": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFloralBrocade",
@@ -7118,7 +7680,9 @@
         "Playful": 50.0,
         "Elaborate": 25.0,
         "Cute": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFloralScrollClassicDark",
@@ -7133,7 +7697,9 @@
         "Flowers": 10.0,
         "Romantic": 25.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkRed",
@@ -7149,7 +7715,9 @@
         "Risque": 50.0,
         "Eclectic": 25.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Check Rhubarb & Custard",
@@ -7163,7 +7731,9 @@
         "Patterned": 100.0,
         "Simple": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Denim Medium",
@@ -7175,7 +7745,9 @@
         "Cute": 15.0,
         "Daywear": 50.0,
         "Playful": 15.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Protea",
@@ -7193,7 +7765,9 @@
         "Workwear": -25.0,
         "Shimmering": 50.0,
         "Cute": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkCacao",
@@ -7208,7 +7782,9 @@
         "Romantic": 25.0,
         "Eclectic": 25.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkNewMoon",
@@ -7223,7 +7799,9 @@
         "Risque": 25.0,
         "Goth": 50.0,
         "Cute": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "SilkViolet",
@@ -7239,7 +7817,9 @@
         "Cute": 25.0,
         "Eclectic": 25.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Pastel Pink",
@@ -7256,7 +7836,9 @@
         "Goth": 80.0,
         "Romantic": 50.0,
         "Cute": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Stalactite",
@@ -7273,7 +7855,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkChampagneWhite",
@@ -7289,7 +7873,9 @@
         "Cute": 25.0,
         "Eclectic": 10.0,
         "Goth": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkDesertRain",
@@ -7304,7 +7890,9 @@
         "Eclectic": 50.0,
         "Elaborate": 10.0,
         "Shimmering": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Friends of a Feather",
@@ -7318,7 +7906,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Strawberry Thief",
@@ -7332,7 +7922,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonRectanglePattern Olive",
@@ -7345,7 +7937,9 @@
         "Simple": 50.0,
         "Professional": 25.0,
         "Workwear": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Denim Light",
@@ -7357,7 +7951,9 @@
         "Cute": 15.0,
         "Daywear": 50.0,
         "Playful": 15.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Lace Silver",
@@ -7373,7 +7969,9 @@
         "Risque": 50.0,
         "Goth": 80.0,
         "Romantic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Mercury",
@@ -7387,7 +7985,9 @@
         "Goth": 25.0,
         "Simple": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetCrushedDeepRose",
@@ -7403,7 +8003,9 @@
         "Eclectic": 25.0,
         "Elegant": 50.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetDustyPink",
@@ -7420,7 +8022,9 @@
         "Eclectic": 10.0,
         "Goth": 10.0,
         "Playful": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetFloralBurnout Purple",
@@ -7436,7 +8040,9 @@
         "Eclectic": 25.0,
         "Elaborate": 50.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonForgetMeNots",
@@ -7451,7 +8057,9 @@
         "Patterned": 100.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkTaffeta Ichor",
@@ -7465,7 +8073,9 @@
         "Elegant": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Check Ochre",
@@ -7479,7 +8089,9 @@
         "Patterned": 100.0,
         "Playful": 50.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Heron Migration",
@@ -7495,7 +8107,9 @@
         "Goth": 15.0,
         "Workwear": 50.0,
         "Professional": 15.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Cotton Midnight Garden Print",
@@ -7512,7 +8126,9 @@
         "Playful": 25.0,
         "Romantic": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Cotton Spring Bouquet",
@@ -7528,7 +8144,9 @@
         "Romantic": 50.0,
         "Workwear": 50.0,
         "Elegant": 15.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDiamondPrint Purple",
@@ -7543,7 +8161,9 @@
         "Playful": 25.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonDiamondPrintYellow",
@@ -7558,7 +8178,9 @@
         "Playful": 20.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonGinghamWarmBlack",
@@ -7574,7 +8196,9 @@
         "Workwear": 50.0,
         "Goth": 50.0,
         "Professional": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonNadineFloralDiamondYellow",
@@ -7589,7 +8213,9 @@
         "Playful": 50.0,
         "Romantic": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonPastelFloral",
@@ -7604,7 +8230,9 @@
         "Cute": 50.0,
         "Playful": 25.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "CottonStemmedHydrangea",
@@ -7619,7 +8247,9 @@
         "Cute": 50.0,
         "Elegant": 50.0,
         "Workwear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Denim Dark",
@@ -7631,7 +8261,9 @@
         "Cute": 15.0,
         "Playful": 15.0,
         "Daywear": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Artemis",
@@ -7648,7 +8280,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Galaxy",
@@ -7665,7 +8299,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Gradient Jellyfish",
@@ -7682,7 +8318,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Mica",
@@ -7699,7 +8337,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequin Shooting Star",
@@ -7717,7 +8357,9 @@
         "Professional": -25.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Azura",
@@ -7735,7 +8377,9 @@
         "Risque": 50.0,
         "Workwear": -25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Hellebore",
@@ -7753,7 +8397,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Strawberry",
@@ -7773,7 +8419,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Sequins Styx",
@@ -7792,7 +8440,9 @@
         "Workwear": -25.0,
         "Risque": 50.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Shimmer Silk Blushing Skies",
@@ -7806,7 +8456,9 @@
         "Goth": 25.0,
         "Risque": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Shimmer Silk Cosmos",
@@ -7820,7 +8472,9 @@
         "Goth": 50.0,
         "Risque": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Shimmer Silk Galaxy",
@@ -7834,7 +8488,9 @@
         "Goth": 50.0,
         "Risque": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Shimmer Silk Scarab",
@@ -7848,7 +8504,9 @@
         "Goth": 50.0,
         "Risque": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Shimmer Silk Solar Flare",
@@ -7862,7 +8520,9 @@
         "Goth": 80.0,
         "Risque": 25.0,
         "Shimmering": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Diamond Filigree",
@@ -7876,7 +8536,9 @@
         "Patterned": 100.0,
         "Romantic": 25.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Ebony Egoli",
@@ -7890,7 +8552,9 @@
         "Goth": 80.0,
         "Simple": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Silk Gradient Blue Flame",
@@ -7905,7 +8569,9 @@
         "Romantic": 25.0,
         "Goth": 25.0,
         "Eclectic": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Radioactive",
@@ -7920,7 +8586,9 @@
         "Romantic": 25.0,
         "Goth": 50.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Sanguine Smoke",
@@ -7935,7 +8603,9 @@
         "Romantic": 50.0,
         "Goth": 80.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Gradient Sea Witch",
@@ -7950,7 +8620,9 @@
         "Romantic": 25.0,
         "Eclectic": 25.0,
         "Goth": 80.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Leaf Print Teal",
@@ -7966,7 +8638,9 @@
         "Eclectic": 25.0,
         "Romantic": 25.0,
         "Elaborate": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Paisley Emerald Brocade",
@@ -7981,7 +8655,9 @@
         "Elaborate": 50.0,
         "Eclectic": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Paisley Red",
@@ -7997,7 +8673,9 @@
         "Eclectic": 50.0,
         "Romantic": 25.0,
         "Risque": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Razzmatazz",
@@ -8012,7 +8690,9 @@
         "Romantic": 25.0,
         "Risque": 25.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Silk Sea Cave",
@@ -8025,7 +8705,9 @@
         "Glamour": 25.0,
         "Romantic": 25.0,
         "Simple": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBicolourPurple",
@@ -8041,7 +8723,9 @@
         "Playful": 25.0,
         "Cute": 25.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkBridgetSilkBrocade",
@@ -8059,7 +8743,9 @@
         "Eclectic": 10.0,
         "Goth": 25.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkButterscotch",
@@ -8073,7 +8759,9 @@
         "Simple": 50.0,
         "Romantic": 25.0,
         "Eclectic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkDustyPink",
@@ -8089,7 +8777,9 @@
         "Eveningwear": 50.0,
         "Eclectic": 10.0,
         "Playful": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFrostedBlush",
@@ -8104,7 +8794,9 @@
         "Romantic": 50.0,
         "Cute": 10.0,
         "Eclectic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkFrostedClover",
@@ -8120,7 +8812,9 @@
         "Eclectic": 10.0,
         "Playful": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkGreen",
@@ -8135,7 +8829,9 @@
         "Romantic": 25.0,
         "Eclectic": 25.0,
         "Risque": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkIrisPurple",
@@ -8151,7 +8847,9 @@
         "Cute": 50.0,
         "Eclectic": 25.0,
         "Playful": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkMetallicTeal",
@@ -8165,7 +8863,9 @@
         "Simple": 50.0,
         "Goth": 50.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkPatricendigo",
@@ -8181,7 +8881,9 @@
         "Flowers": 10.0,
         "Risque": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkRollingMist",
@@ -8197,7 +8899,9 @@
         "Cute": 25.0,
         "Eclectic": 10.0,
         "Goth": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "SilkYellow",
@@ -8213,7 +8917,9 @@
         "Cute": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Black Magic",
@@ -8229,7 +8935,9 @@
         "Romantic": 50.0,
         "Simple": 50.0,
         "Warm": 50.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": true
     },
     {
       "name": "Velvet Crushed Magenta Mood",
@@ -8244,7 +8952,9 @@
         "Risque": 25.0,
         "Romantic": 25.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Crushed Mirage",
@@ -8258,7 +8968,9 @@
         "Goth": 50.0,
         "Risque": 25.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "Velvet Siren",
@@ -8272,7 +8984,9 @@
         "Goth": 50.0,
         "Risque": 25.0,
         "Simple": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetBirdsongTeal",
@@ -8288,7 +9002,9 @@
         "Patterned": 100.0,
         "Eclectic": 10.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetGreen",
@@ -8303,7 +9019,9 @@
         "Eclectic": 25.0,
         "Risque": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetMermaidBlue",
@@ -8317,7 +9035,9 @@
         "Elegant": 50.0,
         "Eclectic": 25.0,
         "Romantic": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetTajMahalFloral",
@@ -8335,7 +9055,9 @@
         "Goth": 10.0,
         "Risque": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "VelvetTeal",
@@ -8350,7 +9072,9 @@
         "Eclectic": 25.0,
         "Risque": 10.0,
         "Romantic": 10.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     },
     {
       "name": "WoolOlive",
@@ -8360,7 +9084,9 @@
         "Warm": 50.0,
         "Professional": 50.0,
         "Goth": 25.0
-      }
+      },
+      "type": "Fabric",
+      "isBlack": false
     }
   ],
   "characterNames": [

@@ -25,6 +25,8 @@ namespace DressmakerArchipelago
             List<string> characters = new List<string>();
             DressmakerDump dump = new DressmakerDump();
             List<StoryQuestInfo> mainStory = new List<StoryQuestInfo>();
+
+            //Story
             foreach (QuestDefinition storyQuest in SingletonBehaviour<GameManager>.Instance.ActiveCampaign.quests)
             {
                 StoryQuestInfo storyQuestInfo = new StoryQuestInfo();
@@ -57,6 +59,8 @@ namespace DressmakerArchipelago
             }
             dump.sideQuestInfos = pigeonStories;
 
+
+            //Fabrics
             List<FabricInfo> allFabrics = new List<FabricInfo>();
             foreach (Fabric fabric in PlayerProgress.Current.unlockedFabrics)
             {
@@ -65,6 +69,18 @@ namespace DressmakerArchipelago
                 if (fabric.name.Contains("Missing"))
                 {
                     continue;
+                }
+                foreach(ColorType color in fabric.colors)
+                {
+                    if (color.ToString().Equals("Black"))
+                    {
+                        fabricInfo.isBlack = true;
+                    }
+                    else
+                    {
+                        fabricInfo.isBlack = false;
+                        break;
+                    }
                 }
                 var _addTagDict = Plugin.getTags(fabric);
                 fabricInfo.name = fabric.name.Trim();
@@ -76,7 +92,7 @@ namespace DressmakerArchipelago
 
 
             List<PatternInfo> list = new List<PatternInfo>();
-
+            //Garments
             foreach (GarmentComponent garment in PlayerProgress.Current.unlockedPatterns)
             {
                 if (garment.name.Contains("Missing"))

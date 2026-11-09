@@ -29,8 +29,6 @@ for pigeon_quest in DRESSMAKER_DATA["sideQuestInfos"]:
 PATTERN_LOCATIONS = {}
 next_id = 3000
 for pattern in DRESSMAKER_DATA["patternInfos"]:
-    if pattern['prettyName'] in ["No Collar", "No Sleeves"]:
-        continue
     PATTERN_LOCATIONS[f"Use pattern: {pattern['prettyName']}/{pattern['name']}"] = next_id
     next_id += 1
 REPUTATION_LOCATIONS = {}

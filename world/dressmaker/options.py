@@ -105,7 +105,7 @@ class StartingFabrics(Range):
 
     range_start = 23
     range_end = 100
-    default = 23
+    default = 30
 
 @dataclass
 class DressmakerOptions(PerGameCommonOptions):
