@@ -64,9 +64,9 @@ namespace DressmakerArchipelago
             {
                 Plugin.playerJson.goldCount++;
                 Plugin.playerJson.SaveFile();
-                SingletonBehaviour<GameManager>.Instance.AddGold(100);
-                SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("100 gold given");
-                Plugin.Logger.LogInfo("100 Gold given");
+                SingletonBehaviour<GameManager>.Instance.AddGold(50);
+                SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("50 gold given");
+                Plugin.Logger.LogInfo("50 Gold given");
                 return;
             }
             Plugin.Logger.LogInfo("Gold skipped");
