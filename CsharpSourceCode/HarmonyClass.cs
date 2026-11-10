@@ -49,6 +49,7 @@ namespace DressmakerArchipelago
         public static void CompleteQuestCheck(PlayerProgress __instance, QuestState qs)
         {
             LocationChecks.completedQuest = qs;
+            LocationChecks.locationNeedsChecked = true;
         }
     }
 }
