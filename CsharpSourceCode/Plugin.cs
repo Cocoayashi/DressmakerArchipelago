@@ -29,6 +29,7 @@ public class Plugin : BaseUnityPlugin
     private ConfigEntry<string> serverAddress;
     private ConfigEntry<string> slotName;
     private ConfigEntry<string> password;
+    public static ConfigEntry<bool> showCheckmarks;
 
 
     //NOTE: ApplyStartingUnlocks() Hijack that for beginning
@@ -36,16 +37,29 @@ public class Plugin : BaseUnityPlugin
     private void Awake()
     {
         // Plugin startup logic
-        Logger = base.Logger;
-        Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
-        Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
-        harmony.PatchAll();
+        showCheckmarks = Config.Bind("Appearance", "ShowCheckmarks", true,
+            "Visibility setting for turning off the green checkmarks on game (values true/false) \n Requires a restart.");
         serverAddress = Config.Bind("Connection", "Server", "YourServerHere",
-        "Server address and port (e.g. archipelago.gg:38281)");
+            "Server address and port (e.g. archipelago.gg:38281)");
         slotName = Config.Bind("Connection", "SlotName", "YourNameHere",
             "the 'name:' in your YAML");
         password = Config.Bind("Connection", "Password", "",
             "Room password. Leave empty if there is none");
+        Logger = base.Logger;
+        Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
+        Harmony harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+        try
+        {
+            harmony.PatchAll();
+        }
+        catch (System.Exception ex)
+        {
+            Logger.LogError(ex.Message);
+            Logger.LogError("Archipelago mod broken, crashing to avoid save corruption");
+
+            throw;
+        }
+
     }
     private void Update()
     {
@@ -118,7 +132,7 @@ public class Plugin : BaseUnityPlugin
         {
             SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
             await session.Socket.DisconnectAsync();
-            Logger.LogError("Connection error - bad log in");
+            Logger.LogError("Connection error: bad log in");
             isConnected = false;
             openingConnection = false;
 

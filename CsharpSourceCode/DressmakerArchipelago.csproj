@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
 	 <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -44,6 +44,14 @@
 	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
 			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\UnityEngine.UI.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>$(DressmakerFolder)\Dressmaker_Data\Managed\Unity.TextMeshPro.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
 		<Reference Include="Framework">
