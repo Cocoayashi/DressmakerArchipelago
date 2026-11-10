@@ -103,7 +103,7 @@ public class Plugin : BaseUnityPlugin
             Plugin.Logger.LogError(ex.Message);
             SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
 
-            Logger.LogError("Connection failed, loser");
+            Logger.LogError("Connection attempt failed");
             isConnected = false;
             openingConnection = false;
             isRetry = true;
@@ -118,7 +118,7 @@ public class Plugin : BaseUnityPlugin
         {
             SingletonBehaviour<NotificationHandler>.Instance.ShowNotification("Could not connect to archipelago");
             await session.Socket.DisconnectAsync();
-            Logger.LogError("Connection failed, loser");
+            Logger.LogError("Connection error - bad log in");
             isConnected = false;
             openingConnection = false;
 
