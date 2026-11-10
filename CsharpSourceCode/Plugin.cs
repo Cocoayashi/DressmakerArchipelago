@@ -183,15 +183,12 @@ public class Plugin : BaseUnityPlugin
         if(isRetry && keepRetrying)
         {
 
-            if (GUI.Button(new Rect(10, 100, 150, 30), "Stop attempting connection"))
+            if (GUI.Button(new Rect(10, 100, 170, 30), "Stop attempting connection"))
             {
                 keepRetrying = false;
             }
         }
-        if (GUI.Button(new Rect(10, 200, 150, 30), "Dump Data"))
-        {
-            GetDump.GetDressmakerDump();
-        }
+
 
     }
 
