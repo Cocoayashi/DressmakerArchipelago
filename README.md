@@ -1,13 +1,11 @@
 # Tutorial for how to use this mod
-Step 1.) Download DressmakerArchipelago.dll, Archipelago.MultiClient.Net.dll and dressmaker.apworld from this github
+Step 1.) Download BepInEx.zip and dressmaker.apworld from this github
 
 Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
 
 Step 3.) go to your dressmaker game's folder (right click the name on steam, manage browse local files)
 
-Step 4.) Go inside BepInEx > plugins
-
-Step 5.) Place DressmakerArchipelago.dll and Archipelago.MultiClient.Net.dll (from the github) in there
+Step 5.) Place the contents of the BepInEx folder (from the github) in there
 
 Step 6.) Open archipelago launcher
 
