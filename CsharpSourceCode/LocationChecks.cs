@@ -23,9 +23,10 @@ namespace DressmakerArchipelago
             if (!locationNeedsChecked) return;
             locationNeedsChecked = false;
 
+            await CheckQuest();
+
             await CheckPatterns();
             await CheckFabrics();
-            await CheckQuest();
             await CheckCompletion();
         }
 
