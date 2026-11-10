@@ -43,17 +43,19 @@ Step 1.) give your host the YAML, let them deal with that stuff
 
 Step 1.) launch dressmaker
 
-Step 2.) Go to dressmaker folder again, BepInEx > Config > DressmakerArchipelago.cfg
+Step 2.) Open Mod Manager in the settings menu and enable Dressmaker Archipelago, restart the game
 
-Step 3.) Put your archipelago's information in that config file.
+Step 3.) Go to dressmaker folder again, BepInEx > Config > DressmakerArchipelago.cfg
 
-Step 4.) Return to dressmaker, launch a brand new save file
+Step 4.) Put your archipelago's information in that config file.
 
-Step 5.) If everything is done correctly, is should give you a bunch of notifications saying what you've unlocked as your starter items
+Step 5.) Return to dressmaker, launch a brand new save file
 
-Step 6.) Start the first commission, i recommend skipping the tutorial.
+Step 6.) If everything is done correctly, is should give you a bunch of notifications saying what you've unlocked as your starter items
 
-Step 7.) when you go to open the sketchbook, nothing will appear. Head back to the main menu, start the save file again and it will load
+Step 7.) Start the first commission, i recommend skipping the tutorial.
+
+Step 8.) when you go to open the sketchbook, nothing will appear. Head back to the main menu, start the save file again and it will load
 
 
 
