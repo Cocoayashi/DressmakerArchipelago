@@ -1,5 +1,5 @@
 # Tutorial for how to use this mod
-Step 1.) Download BepInEx.zip and dressmaker.apworld from this github
+Step 1.) Download BepInEx.zip and dressmaker.apworld from [here](https://github.com/Cocoayashi/DressmakerArchipelago/releases/tag/v0.2.2)
 
 Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
 
