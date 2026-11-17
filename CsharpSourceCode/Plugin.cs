@@ -1,13 +1,14 @@
 ﻿using Archipelago.MultiClient.Net;
 using Archipelago.MultiClient.Net.Enums;
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using Framework;
 using HarmonyLib;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using BepInEx.Configuration;
 
 namespace DressmakerArchipelago;
 [BepInDependency("yuu.dressmaker.mods")]
@@ -156,6 +157,31 @@ public class Plugin : BaseUnityPlugin
         isConnected = true;
         await LocationChecks.CheckCompletion();
 
+        GetLocations();
+        await FindReachedLocations();
+        
+    }
+
+    private static async System.Threading.Tasks.Task FindReachedLocations()
+    {
+        List<long> locations = new List<long>();
+        foreach (string locationCheck in playerJson.allLocationsReached)
+        {
+            if (LocationChecks.allLocations.TryGetValue(locationCheck, out long locationID))
+            {
+                locations.Add(locationID);
+            }
+            Plugin.Logger.LogInfo("Added check for " + locationCheck);
+        }
+        if (locations.Count > 0)
+        {
+            await Plugin.session.Locations.CompleteLocationChecksAsync(locations.ToArray());
+        }
+        Plugin.Logger.LogInfo(LocationChecks.allLocations.Count + " Locations");
+    }
+
+    private static void GetLocations()
+    {
         foreach (long id in Plugin.session.Locations.AllLocations)
         {
             string itemName = "";
@@ -171,20 +197,6 @@ public class Plugin : BaseUnityPlugin
             }
             LocationChecks.allLocations[itemName] = id;
         }
-        List<long> locations = new List<long>();
-        foreach (string locationCheck in playerJson.allLocationsReached)
-        {
-            if (LocationChecks.allLocations.TryGetValue(locationCheck, out long locationID))
-            {
-                locations.Add(locationID);
-            }
-            Plugin.Logger.LogInfo("Added check for " + locationCheck);
-        }
-        if (locations.Count > 0)
-        {
-            await Plugin.session.Locations.CompleteLocationChecksAsync(locations.ToArray());
-        }
-        Plugin.Logger.LogInfo(LocationChecks.allLocations.Count + " Locations");
     }
 
     private void closedConnection(string reason)
