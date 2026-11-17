@@ -1,19 +1,19 @@
 # Tutorial for how to use this mod
-Step 1.) Download BepInEx.zip and dressmaker.apworld from this github
+Step 1.) Download BepInEx.zip and dressmaker.apworld from [here](https://github.com/Cocoayashi/DressmakerArchipelago/releases/tag/v0.2.2)
 
 Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
 
 Step 3.) go to your dressmaker game's folder (right click the name on steam, manage browse local files)
 
-Step 5.) Place the contents of the BepInEx folder (from the github) in there
+Step 4.) Place the contents of the BepInEx folder (from the github) in there
 
-Step 6.) Open archipelago launcher
+Step 5.) Open archipelago launcher
 
-Step 7.) "Install APWorld" > dressmaker.apworld
+Step 6.) "Install APWorld" > dressmaker.apworld
 
-Step 8.) "Options Creator" > dressmaker
+Step 7.) "Options Creator" > dressmaker
 
-Step 9.) Put your player name in the box at the top, hit export. This will give you default settings YAML
+Step 8.) Put your player name in the box at the top, hit export. This will give you default settings YAML
 
 
 
