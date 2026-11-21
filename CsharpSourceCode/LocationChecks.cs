@@ -145,20 +145,22 @@ namespace DressmakerArchipelago
             {
                 locationName = "Reach reputation level: " + prestige;
                 RememberCheck(locationName);
+
+                if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))
+                {
+                    try
+                    {
+                        await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
             }
 
 
-            if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))
-            {
-                try
-                {
-                    await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
-                }
-                catch (System.Exception)
-                {
 
-                }
-            }
 
         }
 
