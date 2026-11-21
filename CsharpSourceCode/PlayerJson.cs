@@ -21,13 +21,21 @@ namespace DressmakerArchipelago
 
         public static PlayerJson Loadfile()
         {
-            if (File.Exists(filepath))
+            try
             {
-                string jsonText = File.ReadAllText(filepath);
-                PlayerJson data = JsonConvert.DeserializeObject<PlayerJson>(jsonText);
-                return data;
+                if (File.Exists(filepath))
+                {
+                    string jsonText = File.ReadAllText(filepath);
+                    PlayerJson data = JsonConvert.DeserializeObject<PlayerJson>(jsonText);
+                    return data;
+                }
             }
-            return new PlayerJson();
+            catch (System.Exception ex)
+            {
+                Plugin.Logger.LogError("Load json file error.");
+            }
+                return new PlayerJson();
+
         }
 
         public void SaveFile()

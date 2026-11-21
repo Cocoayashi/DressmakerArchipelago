@@ -42,7 +42,8 @@ namespace DressmakerArchipelago
         {
             if (UnlockItems.isLoaded && level > 0)
             {
-                LocationChecks.PrestigeLocationCheck(level);
+                LocationChecks.locationNeedsChecked = true;
+                LocationChecks.prestigeLevel = level;
 
             }
 

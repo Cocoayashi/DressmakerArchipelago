@@ -6,7 +6,6 @@ using BepInEx.Logging;
 using Framework;
 using HarmonyLib;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -69,7 +68,7 @@ public class Plugin : BaseUnityPlugin
             }
             UnlockItems.isLoaded = false;
             ProgressLabel.currentScene = null;
-            LocationChecks.progressString = string.Empty; 
+            LocationChecks.progressString = string.Empty;
             Plugin.saveSlot = -1;
             isCorrectServer = true;
             return;
@@ -82,7 +81,11 @@ public class Plugin : BaseUnityPlugin
         // Resets on title screen if this happens
         if (!isCorrectServer) return;
 
-        if (!isConnected && keepRetrying) Login();
+        if (!isConnected && keepRetrying)
+        {
+            Login();
+            return;
+        }
 
         // as long as all those other ifs don't pass, these will be called every frame.
 
@@ -96,7 +99,7 @@ public class Plugin : BaseUnityPlugin
     private async void Login()
     {
         var timeDif = Time.realtimeSinceStartup - timeSinceLastConnectionAttempt;
-        if (timeDif < 2f || openingConnection == true)
+        if (timeDif < 5f || openingConnection == true)
         {
             return;
         }
@@ -159,11 +162,14 @@ public class Plugin : BaseUnityPlugin
 
         GetLocations();
         await FindReachedLocations();
-        
+
     }
 
     private static async System.Threading.Tasks.Task FindReachedLocations()
     {
+        LocationChecks.prestigeLevel = PlayerProgress.Current.PrestigeLevel;
+        await LocationChecks.PrestigeLocationCheck();
+
         List<long> locations = new List<long>();
         foreach (string locationCheck in playerJson.allLocationsReached)
         {
@@ -206,7 +212,7 @@ public class Plugin : BaseUnityPlugin
 
     private void OnGUI()
     {
-        if(isRetry && keepRetrying)
+        if (isRetry && keepRetrying)
         {
 
             if (GUI.Button(new Rect(10, 100, 170, 30), "Stop attempting connection"))

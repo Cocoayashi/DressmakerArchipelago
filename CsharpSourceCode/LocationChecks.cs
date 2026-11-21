@@ -21,6 +21,8 @@ namespace DressmakerArchipelago
         internal static int goalPercentage = 75;
         
         internal static int goalChoice = -1;
+        internal static int prestigeLevel;
+
         internal async static void DressLocationCheck()
         {
             if (!locationNeedsChecked) return;
@@ -31,6 +33,8 @@ namespace DressmakerArchipelago
             await CheckPatterns();
             await CheckFabrics();
             await CheckCompletion();
+            await PrestigeLocationCheck();
+
         }
 
         public static async Task CheckCompletion()
@@ -138,26 +142,29 @@ namespace DressmakerArchipelago
             }
         }
 
-        internal static async Task PrestigeLocationCheck(int prestige)
+        internal static async Task PrestigeLocationCheck()
         {
+            List<long> locations = new List<long>();
             string locationName = "";
-            for (int i = 0; i <= prestige; i++)
+            for (int i = 1; i <= prestigeLevel; i++)
             {
-                locationName = "Reach reputation level: " + prestige;
+                locationName = "Reach reputation level: " + i;
                 RememberCheck(locationName);
-
                 if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))
                 {
-                    try
-                    {
-                        await Plugin.session.Locations.CompleteLocationChecksAsync(locationID);
-                    }
-                    catch (System.Exception)
-                    {
-
-                    }
+                    locations.Add(locationID);
                 }
             }
+            var array = locations.ToArray();
+            try
+            {
+                await Plugin.session.Locations.CompleteLocationChecksAsync(array);
+            }
+            catch (System.Exception)
+            {
+
+            }
+
 
 
 
@@ -183,10 +190,18 @@ namespace DressmakerArchipelago
 
         private async static Task CheckFabrics()
         {
+            List<PanelState> panelStates = new List<PanelState>();
+            try
+            {
 
-            DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
+                DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
 
-            List<PanelState> panelStates = dress.panelStates;
+                panelStates = dress.panelStates;
+            }
+            catch (System.Exception ex)
+            {
+                return;
+            }
 
             foreach (PanelState panelState in panelStates)
             {
@@ -211,35 +226,44 @@ namespace DressmakerArchipelago
 
         private static async Task CheckPatterns()
         {
-            DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
-            string collarName = "";
-            string sleeveName = "";
-
-            if (dress.collarDefinition != null)
-            {
-                collarName = dress.collarDefinition.name.Trim();
-            }
-            if (dress.sleeveDefinition != null)
-            {
-                sleeveName = dress.sleeveDefinition.name.Trim();
-            }
-            string bodiceName = dress.bodiceDefinition.name.Trim();
-            string skirtName = dress.skirtDefinition.name.Trim();
             long[] patternLocations = [0, 0, 0, 0];
-            if (!collarName.IsNullOrEmpty())
+
+            try
             {
-                allLocations.TryGetValue(collarName, out patternLocations[0]);
-                RememberCheck(collarName);
+
+                DressState dress = OverrideCheckSteamAchievements.finishedDress.state;
+                string collarName = "";
+                string sleeveName = "";
+
+                if (dress.collarDefinition != null)
+                {
+                    collarName = dress.collarDefinition.name.Trim();
+                }
+                if (dress.sleeveDefinition != null)
+                {
+                    sleeveName = dress.sleeveDefinition.name.Trim();
+                }
+                string bodiceName = dress.bodiceDefinition.name.Trim();
+                string skirtName = dress.skirtDefinition.name.Trim();
+                if (!collarName.IsNullOrEmpty())
+                {
+                    allLocations.TryGetValue(collarName, out patternLocations[0]);
+                    RememberCheck(collarName);
+                }
+                if (!sleeveName.IsNullOrEmpty())
+                {
+                    allLocations.TryGetValue(sleeveName, out patternLocations[1]);
+                    RememberCheck(sleeveName);
+                }
+                allLocations.TryGetValue(bodiceName, out patternLocations[2]);
+                allLocations.TryGetValue(skirtName, out patternLocations[3]);
+                RememberCheck(skirtName);
+                RememberCheck(bodiceName);
             }
-            if (!sleeveName.IsNullOrEmpty())
+            catch (System.Exception ex)
             {
-                allLocations.TryGetValue(sleeveName, out patternLocations[1]);
-                RememberCheck(sleeveName);
+                Plugin.Logger.LogError(ex.Message);
             }
-            allLocations.TryGetValue(bodiceName, out patternLocations[2]);
-            allLocations.TryGetValue(skirtName, out patternLocations[3]);
-            RememberCheck(skirtName);
-            RememberCheck(bodiceName);
 
 
             try
