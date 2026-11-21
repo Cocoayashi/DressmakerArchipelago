@@ -21,7 +21,9 @@ namespace DressmakerArchipelago
         internal static void Update()
         {
             bool shouldShow = currentScene == GameManager.Scene.FrontDesk
-                              && !string.IsNullOrEmpty(LocationChecks.progressString);
+                              && !string.IsNullOrEmpty(LocationChecks.progressString)
+                              && (LocationChecks.goalChoice == 0 || LocationChecks.goalChoice == 1);
+
 
             if (box == null)
             {
