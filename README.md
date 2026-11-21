@@ -1,11 +1,11 @@
 # Tutorial for how to use this mod
 Step 1.) Download BepInEx.zip and dressmaker.apworld from [here](https://github.com/Cocoayashi/DressmakerArchipelago/releases/tag/v0.2.2)
 
-Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods.
+Step 2.) Install Yuuma's Dressmaker Modloader from Nexus mods and have launched the game with it at least once.
 
 Step 3.) go to your dressmaker game's folder (right click the name on steam, manage browse local files)
 
-Step 4.) Place the contents of the BepInEx folder (from the github) in there
+Step 4.) Place the contents of the BepInEx.zip in there. (you're combining the bepinex folders together) 
 
 Step 5.) Open archipelago launcher
 
