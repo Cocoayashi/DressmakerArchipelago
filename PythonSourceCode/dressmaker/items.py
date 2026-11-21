@@ -56,6 +56,7 @@ def create_item_with_correct_classification(world: DressmakerWorld, name: str) -
     else:
         classification = ItemClassification.progression
 
+
     return DressmakerItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
 

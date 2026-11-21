@@ -18,7 +18,22 @@ namespace DressmakerArchipelago
             return false;
         }
     }
-    
+    [HarmonyPatch]
+    public class StopVanillaUnlock
+    {
+        public static MethodBase TargetMethod()
+        {
+            return AccessTools.Method(AccessTools.TypeByName("FrontDesk"), "PlayProgressChange");
+        }
+        [HarmonyPrefix]
+        public static bool StopVanillaUnlocks()
+        {
+            Plugin.Logger.LogInfo("Skipped progress vanilla Unlocks");
+
+            return false;
+        }
+    }
+
     [HarmonyPatch(typeof(PlayerProgress), "ApplyUnlocksForPrestigeLevel")]
     public class StopUnlockFabrics
     {

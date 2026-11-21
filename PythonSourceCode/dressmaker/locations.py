@@ -117,6 +117,9 @@ def create_regular_locations(world: DressmakerWorld) -> None:
             quest_name = quest_location.split("/")[-1]
         region = world.get_region("Region: " + quest_name)
         region_location = get_location_names_with_ids([quest_location])
+        region.add_event(
+            quest_location, quest_name, location_type=DressmakerLocation, item_type=items.DressmakerItem
+        )
         region.add_locations(region_location, DressmakerLocation)
         location = world.get_location(quest_location)
         count+=1
@@ -133,7 +136,7 @@ def create_regular_locations(world: DressmakerWorld) -> None:
         region_location = get_location_names_with_ids([reputation_name])
         region.add_locations(region_location, DressmakerLocation)
         location = world.get_location(reputation_name)
-        if ' 4' in reputation_name or ' 5' in reputation_name:
+        if ' 4' in reputation_name or ' 5' in reputation_name or ' 3' in reputation_name:
             location.progress_type = LocationProgressType.EXCLUDED
     workshop_locations = get_location_names_with_ids(NO_STORY_LOCATION_NAME_TO_ID
     )
@@ -148,6 +151,7 @@ def create_pigeon_quest_locations(world: DressmakerWorld) -> None:
 
 def create_events(world: DressmakerWorld) -> None:
     workshop = world.get_region("workshop")
+
 
     workshop.add_event(
         "Dressmaker goal reached", "Victory", location_type=DressmakerLocation, item_type=items.DressmakerItem

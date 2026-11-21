@@ -16,8 +16,11 @@ namespace DressmakerArchipelago
 
         internal static bool locationNeedsChecked = false;
         internal static Dictionary<string, long> allLocations = new Dictionary<string, long>();
+        internal static string progressString = string.Empty;
         internal static QuestState completedQuest = null;
         internal static int goalPercentage = 75;
+        
+        internal static int goalChoice = -1;
         internal async static void DressLocationCheck()
         {
             if (!locationNeedsChecked) return;
@@ -47,15 +50,15 @@ namespace DressmakerArchipelago
             }
             
             int.TryParse(goalPercentageObject.ToString(), out goalPercentage);
-            int.TryParse(goalChoiceObject.ToString(), out int goalChoice);
+            int.TryParse(goalChoiceObject.ToString(), out goalChoice);
             switch (goalChoice)
             {
 
                 case PATTERN_GOAL:
-                    CheckPatternCompletion();
+                    CheckCollectionGoal("Use pattern: ", GarmentComponent.AllGarmentComponents.Select(x => x.name), "patterns");
                     break;
                 case FABRIC_GOAL:
-                    CheckFabricCompletion();
+                    CheckCollectionGoal("Use fabric: ", Fabric.AllFabrics.Select(x => x.name), "fabrics");
                     break;
                 case MAIN_STORY_GOAL:
                     CheckCompletedFinalQuest();
@@ -77,54 +80,20 @@ namespace DressmakerArchipelago
                 SendVictoryCheck();
             }
         }
-
-        private static void CheckFabricCompletion()
+        private static void CheckCollectionGoal(string locationPrefix, IEnumerable<string> gameNames, string goalType)
         {
-            int fabricsChecked = 0;
-            int fabricsTotal = 0;
-            foreach (string location in Plugin.playerJson.allLocationsReached)
-            {
-                if (Fabric.AllFabrics.ToList().Select(x => x.name).Contains(location))
-                {
-                    fabricsChecked++;
-                }
-            }
-            foreach (long locationID in Plugin.session.Locations.AllLocations)
-            {
-                string locationName = Plugin.session.Locations.GetLocationNameFromId(locationID);
-                if (locationName.Contains("fabric"))
-                {
-                    fabricsTotal++;
-                }
-            }
-            int patternsNeeded = fabricsTotal * goalPercentage / 100;
-            if (fabricsChecked >= patternsNeeded)
-            {
-                SendVictoryCheck();
-            }
-        }
+            HashSet<string> names = new HashSet<string>(gameNames);
+            int current = Plugin.playerJson.allLocationsReached.Count(names.Contains);
+            int total = Plugin.session.Locations.AllLocations.Count(id =>
+                Plugin.session.Locations.GetLocationNameFromId(id, "Dressmaker")?.StartsWith(locationPrefix) == true);
+            if (total == 0) return;
+            int percent = current * 100 / total;
 
-        private static void CheckPatternCompletion()
-        {
-            int patternsChecked = 0;
-            int patternsTotal = 0;
-            foreach (string location in Plugin.playerJson.allLocationsReached)
-            {
-                if (GarmentComponent.AllGarmentComponents.ToList().Select(x => x.name).Contains(location))
-                {
-                    patternsChecked++;
-                }
-            }
-            foreach (long locationID in Plugin.session.Locations.AllLocations)
-            {
-                string locationName = Plugin.session.Locations.GetLocationNameFromId(locationID);
-                if (locationName.Contains("pattern"))
-                {
-                    patternsTotal++;
-                }
-            }
-            int patternsNeeded = patternsTotal * goalPercentage / 100;
-            if (patternsChecked >= patternsNeeded)
+            progressString =
+                    $"{current} / {total} of {goalType} {percent}%";
+
+            int needed = total * goalPercentage / 100;
+            if (current >= needed)
             {
                 SendVictoryCheck();
             }
@@ -171,9 +140,12 @@ namespace DressmakerArchipelago
 
         internal static async Task PrestigeLocationCheck(int prestige)
         {
-
-            string locationName = "Reach reputation level: " + prestige;
-            RememberCheck(locationName);
+            string locationName = "";
+            for (int i = 0; i <= prestige; i++)
+            {
+                locationName = "Reach reputation level: " + prestige;
+                RememberCheck(locationName);
+            }
 
 
             if (LocationChecks.allLocations.TryGetValue(locationName, out long locationID))

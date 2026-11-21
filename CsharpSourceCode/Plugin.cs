@@ -32,12 +32,8 @@ public class Plugin : BaseUnityPlugin
     private ConfigEntry<string> password;
     public static ConfigEntry<bool> showCheckmarks;
 
-
-    //NOTE: ApplyStartingUnlocks() Hijack that for beginning
-    // CheckAvhievements() SingletonBehaviour<GameManager>.Instance.activeDress.DressState;
     private void Awake()
     {
-        // Plugin startup logic
         showCheckmarks = Config.Bind("Appearance", "ShowCheckmarks", true,
             "Visibility setting for turning off the green checkmarks on game (values true/false) \n Requires a restart.");
         serverAddress = Config.Bind("Connection", "Server", "YourServerHere",
@@ -72,6 +68,8 @@ public class Plugin : BaseUnityPlugin
                 isConnected = false;
             }
             UnlockItems.isLoaded = false;
+            ProgressLabel.currentScene = null;
+            LocationChecks.progressString = string.Empty; 
             Plugin.saveSlot = -1;
             isCorrectServer = true;
             return;
@@ -89,7 +87,9 @@ public class Plugin : BaseUnityPlugin
         // as long as all those other ifs don't pass, these will be called every frame.
 
         UnlockItems.UnlockQueue();
+        MessageNotifications.ShowPending();
         LocationChecks.DressLocationCheck();
+        ProgressLabel.Update();
 
     }
     //God this method is such a mess. Makes me want to throw up for real for real
@@ -105,7 +105,7 @@ public class Plugin : BaseUnityPlugin
 
         session = ArchipelagoSessionFactory.CreateSession(serverAddress.Value.Trim(), 38281);
         session.Items.ItemReceived += unlocker.ItemReceived;
-
+        session.MessageLog.OnMessageReceived += MessageNotifications.OnMessageReceived;
         LoginResult login;
         try
         {

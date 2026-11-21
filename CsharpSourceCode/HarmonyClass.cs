@@ -11,6 +11,7 @@ namespace DressmakerArchipelago
         [HarmonyPostfix]
         public static void LogArea(GameManager.Scene newScene)
         {
+            ProgressLabel.currentScene = newScene;
             if (!UnlockItems.isLoaded && newScene == GameManager.Scene.FrontDesk)
             {
                 UnlockItems.isLoaded = true;

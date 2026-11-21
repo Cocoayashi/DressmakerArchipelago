@@ -46,7 +46,6 @@ def set_completion_condition(world: DressmakerWorld) -> None:
     if world.options.goal_choice == options.GoalChoice.option_main_story:
         world.set_rule(goal_location, CanReachLocation("Complete Final Commission"))
     if world.options.goal_choice == options.GoalChoice.option_all_commissions:
-        all_commissions = ( locations.STORY_QUEST_LOCATIONS | locations.SIDE_QUEST_LOCATIONS )
         #Temporary placeholder. As temporary as duct tape haha
-        world.set_rule(goal_location, CanReachLocation(all_commissions))
+        world.set_rule(goal_location, CanReachLocation("Complete Final Commission"))
     world.set_completion_rule(Has("Victory"))
